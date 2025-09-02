@@ -1,23 +1,33 @@
-# TÍTULO DO PROJETO
+# Mão na Massa
 
-`CURSO`
+`Sistemas de Informação`
 
-`DISCIPLINA`
+`Trabalho Interdisciplinar: Aplicações para Processos de Negócios `
 
-`SEMESTRE`
+`3ºSEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto "Mão na Massa" é um aplicativo que visa modernizar e otimizar o mercado de serviços manuais e técnicos no Brasil,
+solucionando a desconexão entre clientes e profissionais qualificados. A plataforma busca resolver a falta de segurança,
+a dificuldade de encontrar mão de obra confiável e a informalidade que afeta milhões de trabalhadores.
+
+O aplicativo "Mão na Massa" conecta pessoas que precisam de serviços como pintura,
+elétrica ou hidráulica com profissionais autônomos qualificados, oferecendo um ambiente seguro para a busca, negociação,
+pagamento e avaliação dos serviços. Com um sistema de reputação mútuo e canais de comunicação integrados,
+o projeto visa aumentar a confiança, a eficiência e a formalização nesse setor, beneficiando tanto os prestadores quanto os contratantes.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Bruno César Lima Araújo
+* Camila Moreira Pessoa
+* Davi Alves Silveira
+* Glendha Paulino Caldeira Tolentino
+* Matheus Henrique de Carvalho Costa
+* Pricilla Lopes Braga
 
 ## Orientador
 
-* Nome completo do professor 1
+* Cleia Marcia Gomes Amaral
+
 
 ## Instruções de utilização
 

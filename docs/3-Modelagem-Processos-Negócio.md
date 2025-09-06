@@ -6,11 +6,23 @@
 > - [20 Dicas Práticas de Modelagem de Processos](https://dheka.com.br/20-dicas-praticas-de-modelagem-de-processos/)
 
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
+Atualmente, a contratação de serviços manuais (como pintura, elétrica ou hidráulica) ocorre de forma informal e descentralizada. Clientes recorrem a grupos de WhatsApp, redes sociais, anúncios de internet ou indicações de conhecidos para encontrar prestadores de serviço. Esse processo traz diversos problemas: insegurança, falta de garantias e dificuldade de verificar a qualidade do profissional. 
 
-_Apresente uma descrição textual de como os sistemas atuais resolvem o problema que se propõe a resolver.  Caso sua proposta seja inovadora e não existam processos claramente definidos, **apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente**, mesmo que não se utilize tecnologia computacional._
+Exemplo de como o processo acontece hoje: 
 
-Com o tema do projeto definido, escolham alguns processos neste contexto de negócios. Para ilustrar potenciais ganhos com a automatização, imaginem processos manuais, ineficientes e/ou com muitas idas e vindas, gerando, assim, retrabalho.
-Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
+O cliente percebe a necessidade de um serviço. 
+
+Ele procura por profissionais em grupos, redes sociais ou por indicação de conhecidos. 
+
+A negociação acontece de maneira informal, via telefone ou mensagens. 
+
+O pagamento é feito diretamente (dinheiro ou transferência), sem contrato. 
+
+O serviço é executado, mas sem garantia formal ou registro de avaliação. 
+
+Esse fluxo é manual, ineficiente e sem padrão, gerando riscos como golpes, serviços mal executados e falta de transparência. Os profissionais também sofrem, já que trabalham de forma informal e com baixa visibilidade. 
+
+ 
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 

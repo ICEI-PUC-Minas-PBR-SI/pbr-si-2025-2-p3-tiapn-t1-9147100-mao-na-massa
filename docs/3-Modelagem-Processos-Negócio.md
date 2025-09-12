@@ -1,4 +1,4 @@
-## 3. Modelagem dos Processos de Negócio
+m## 3. Modelagem dos Processos de Negócio
 
 
 > **Links Úteis**:
@@ -14,12 +14,43 @@ Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoi
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
-Tendo identificado os gargalos dos modelos AS IS, apresentem uma descrição da proposta de solução, buscando maior eficiência com a introdução da tecnologia. Abordem também os limites dessa solução e o seu alinhamento com as estratégias e objetivos do contexto de negócio escolhido. 
-Colem aqui os modelos da solução proposta (modelo TO BE) elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
-Cada processo identificado deve ter seu modelo TO-BE específico. Descrevam as oportunidades de melhoria de cada processo da solução proposta.
+A proposta do projeto Mão na Massa é transformar um processo atualmente informal e descentralizado em uma experiência digital centralizada, eficiente e segura. O modelo TO-BE descreve como o fluxo de contratação de serviços será reorganizado a partir da introdução da plataforma, considerando as necessidades de Contratantes, Prestadores de Serviço e Administrador.
 
-_Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias._
+Principais melhorias em relação ao AS-IS
 
+Centralização do processo: todas as etapas (busca, contato, negociação, contratação, pagamento e avaliação) passam a ocorrer dentro da plataforma.
+
+Segurança: o pagamento será retido pelo sistema e só liberado após a conclusão do serviço, garantindo confiança para ambas as partes.
+
+Comunicação integrada: chat e chamadas de vídeo permitem esclarecer dúvidas e evitar deslocamentos desnecessários.
+
+Reputação e confiabilidade: sistema de avaliações mútuas reduz riscos de fraudes e aumenta a confiança.
+
+Notificações e agenda: o prestador é informado em tempo real sobre novas solicitações e pode organizar sua agenda diretamente no sistema.
+
+Gestão administrativa: o administrador terá acesso a relatórios, dados de uso da plataforma e poderá gerenciar permissões de usuários.
+
+Limites da solução
+
+Requer acesso à internet e dispositivos digitais, o que pode excluir parte do público.
+
+A qualidade final do serviço ainda depende da atuação do prestador.
+
+É necessária moderação constante do administrador para evitar fraudes ou conflitos.
+
+Alinhamento estratégico
+
+A modelagem TO-BE está alinhada ao objetivo central do projeto: facilitar e profissionalizar a contratação de serviços técnicos e manuais, garantindo eficiência para o cliente, oportunidades para o prestador e segurança para ambos. Além disso, a coleta de dados pela plataforma possibilita decisões estratégicas futuras, como sugerir serviços em alta ou implementar planos de assinatura para prestadores.
+
+Oportunidades de melhoria
+
+Expansão para novas categorias de serviço.
+
+Inclusão de geolocalização para facilitar a busca por profissionais próximos.
+
+Planos premium para prestadores, com destaque em buscas.
+
+Relatórios preditivos para administradores, auxiliando em estratégias de crescimento.
 ### 3.3. Modelagem dos processos
 
 [PROCESSO 1 - Nome do Processo](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")

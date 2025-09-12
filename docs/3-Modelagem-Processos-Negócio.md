@@ -16,7 +16,7 @@ Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoi
 
 A proposta do projeto Mão na Massa é transformar um processo atualmente informal e descentralizado em uma experiência digital centralizada, eficiente e segura. O modelo TO-BE descreve como o fluxo de contratação de serviços será reorganizado a partir da introdução da plataforma, considerando as necessidades de Contratantes, Prestadores de Serviço e Administrador.
 
-Principais melhorias em relação ao AS-IS
+Principais melhorias em relação ao AS-IS:
 
 Centralização do processo: todas as etapas (busca, contato, negociação, contratação, pagamento e avaliação) passam a ocorrer dentro da plataforma.
 
@@ -30,7 +30,7 @@ Notificações e agenda: o prestador é informado em tempo real sobre novas soli
 
 Gestão administrativa: o administrador terá acesso a relatórios, dados de uso da plataforma e poderá gerenciar permissões de usuários.
 
-Limites da solução
+Limites da solução:
 
 Requer acesso à internet e dispositivos digitais, o que pode excluir parte do público.
 
@@ -38,11 +38,11 @@ A qualidade final do serviço ainda depende da atuação do prestador.
 
 É necessária moderação constante do administrador para evitar fraudes ou conflitos.
 
-Alinhamento estratégico
+Alinhamento estratégico:
 
 A modelagem TO-BE está alinhada ao objetivo central do projeto: facilitar e profissionalizar a contratação de serviços técnicos e manuais, garantindo eficiência para o cliente, oportunidades para o prestador e segurança para ambos. Além disso, a coleta de dados pela plataforma possibilita decisões estratégicas futuras, como sugerir serviços em alta ou implementar planos de assinatura para prestadores.
 
-Oportunidades de melhoria
+Oportunidades de melhoria:
 
 Expansão para novas categorias de serviço.
 
@@ -50,7 +50,8 @@ Inclusão de geolocalização para facilitar a busca por profissionais próximos
 
 Planos premium para prestadores, com destaque em buscas.
 
-Relatórios preditivos para administradores, auxiliando em estratégias de crescimento.
+Relatórios preditivos para administradores, auxiliando em estratégias de crescimento. 
+
 ### 3.3. Modelagem dos processos
 
 [PROCESSO 1 - Nome do Processo](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")

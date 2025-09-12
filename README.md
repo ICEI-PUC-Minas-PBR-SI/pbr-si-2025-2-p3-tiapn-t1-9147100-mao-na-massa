@@ -4,7 +4,7 @@
 
 `Trabalho Interdisciplinar: Aplicações para Processos de Negócios `
 
-`2025`
+`2. 2025`
 
 O projeto "Mão na Massa" é um aplicativo que visa modernizar e otimizar o mercado de serviços manuais e técnicos no Brasil,
 solucionando a desconexão entre clientes e profissionais qualificados. A plataforma busca resolver a falta de segurança,

@@ -1,4 +1,4 @@
-## 3. Modelagem dos Processos de Negócio
+m## 3. Modelagem dos Processos de Negócio
 
 
 > **Links Úteis**:
@@ -14,12 +14,17 @@ Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoi
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
-Tendo identificado os gargalos dos modelos AS IS, apresentem uma descrição da proposta de solução, buscando maior eficiência com a introdução da tecnologia. Abordem também os limites dessa solução e o seu alinhamento com as estratégias e objetivos do contexto de negócio escolhido. 
-Colem aqui os modelos da solução proposta (modelo TO BE) elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
-Cada processo identificado deve ter seu modelo TO-BE específico. Descrevam as oportunidades de melhoria de cada processo da solução proposta.
+3.2. Descrição geral da proposta (Modelagem TO-BE)
 
-_Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias._
+A proposta consiste no desenvolvimento de uma plataforma digital que centraliza a contratação de profissionais autônomos para serviços diversos, como faxina, pintura, reparos e manutenção. Atualmente, os processos de busca e contratação são manuais e pouco organizados, o que gera perda de tempo, retrabalho e insegurança tanto para os clientes quanto para os prestadores.
 
+Com a nova solução, esses processos passam a ser realizados de forma digital, simples e padronizada. O cliente poderá buscar profissionais de acordo com a categoria desejada, visualizar avaliações de outros usuários, verificar preços, disponibilidade e realizar a contratação diretamente pelo sistema. Já o prestador de serviço terá a oportunidade de criar um perfil profissional, cadastrar seus serviços, definir horários e ampliar sua visibilidade para potenciais clientes.
+
+Essa proposta tem como objetivo principal aumentar a eficiência e a confiabilidade na contratação de mão de obra, reduzindo gargalos como a dificuldade de encontrar profissionais disponíveis, a falta de referências e a ausência de um canal seguro para negociação. Além disso, o uso da tecnologia possibilita maior alcance de mercado para os profissionais, fortalecendo a relação de confiança por meio de avaliações e feedbacks registrados na plataforma.
+
+Entretanto, a solução também possui alguns limites. O acesso depende de conexão com a internet e de certo grau de familiaridade com o uso de tecnologia por parte dos usuários. Outro ponto é que, apesar do sistema oferecer avaliações e intermediação, a qualidade do serviço ainda dependerá da atuação individual de cada profissional.
+
+Mesmo com essas limitações, a proposta se alinha diretamente à estratégia do negócio de facilitar o encontro entre demanda e oferta de serviços, promovendo eficiência, segurança e transparência no processo de contratação. Além disso, abre espaço para melhorias futuras, como a inclusão de métodos de pagamento integrados, planos de assinatura para profissionais e funcionalidades de geolocalização para aproximar clientes e prestadores em uma mesma região.
 ### 3.3. Modelagem dos processos
 
 [PROCESSO 1 - Nome do Processo](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")

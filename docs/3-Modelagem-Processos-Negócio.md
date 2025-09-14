@@ -14,17 +14,44 @@ Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoi
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
-3.2. Descrição geral da proposta (Modelagem TO-BE)
+A proposta do projeto Mão na Massa é transformar um processo atualmente informal e descentralizado em uma experiência digital centralizada, eficiente e segura. O modelo TO-BE descreve como o fluxo de contratação de serviços será reorganizado a partir da introdução da plataforma, considerando as necessidades de Contratantes, Prestadores de Serviço e Administrador.
 
-A proposta consiste no desenvolvimento de uma plataforma digital que centraliza a contratação de profissionais autônomos para serviços diversos, como faxina, pintura, reparos e manutenção. Atualmente, os processos de busca e contratação são manuais e pouco organizados, o que gera perda de tempo, retrabalho e insegurança tanto para os clientes quanto para os prestadores.
+Principais melhorias em relação ao AS-IS:
 
-Com a nova solução, esses processos passam a ser realizados de forma digital, simples e padronizada. O cliente poderá buscar profissionais de acordo com a categoria desejada, visualizar avaliações de outros usuários, verificar preços, disponibilidade e realizar a contratação diretamente pelo sistema. Já o prestador de serviço terá a oportunidade de criar um perfil profissional, cadastrar seus serviços, definir horários e ampliar sua visibilidade para potenciais clientes.
+Centralização do processo: todas as etapas (busca, contato, negociação, contratação, pagamento e avaliação) passam a ocorrer dentro da plataforma.
 
-Essa proposta tem como objetivo principal aumentar a eficiência e a confiabilidade na contratação de mão de obra, reduzindo gargalos como a dificuldade de encontrar profissionais disponíveis, a falta de referências e a ausência de um canal seguro para negociação. Além disso, o uso da tecnologia possibilita maior alcance de mercado para os profissionais, fortalecendo a relação de confiança por meio de avaliações e feedbacks registrados na plataforma.
+Segurança: o pagamento será retido pelo sistema e só liberado após a conclusão do serviço, garantindo confiança para ambas as partes.
 
-Entretanto, a solução também possui alguns limites. O acesso depende de conexão com a internet e de certo grau de familiaridade com o uso de tecnologia por parte dos usuários. Outro ponto é que, apesar do sistema oferecer avaliações e intermediação, a qualidade do serviço ainda dependerá da atuação individual de cada profissional.
+Comunicação integrada: chat e chamadas de vídeo permitem esclarecer dúvidas e evitar deslocamentos desnecessários.
 
-Mesmo com essas limitações, a proposta se alinha diretamente à estratégia do negócio de facilitar o encontro entre demanda e oferta de serviços, promovendo eficiência, segurança e transparência no processo de contratação. Além disso, abre espaço para melhorias futuras, como a inclusão de métodos de pagamento integrados, planos de assinatura para profissionais e funcionalidades de geolocalização para aproximar clientes e prestadores em uma mesma região.
+Reputação e confiabilidade: sistema de avaliações mútuas reduz riscos de fraudes e aumenta a confiança.
+
+Notificações e agenda: o prestador é informado em tempo real sobre novas solicitações e pode organizar sua agenda diretamente no sistema.
+
+Gestão administrativa: o administrador terá acesso a relatórios, dados de uso da plataforma e poderá gerenciar permissões de usuários.
+
+Limites da solução:
+
+Requer acesso à internet e dispositivos digitais, o que pode excluir parte do público.
+
+A qualidade final do serviço ainda depende da atuação do prestador.
+
+É necessária moderação constante do administrador para evitar fraudes ou conflitos.
+
+Alinhamento estratégico:
+
+A modelagem TO-BE está alinhada ao objetivo central do projeto: facilitar e profissionalizar a contratação de serviços técnicos e manuais, garantindo eficiência para o cliente, oportunidades para o prestador e segurança para ambos. Além disso, a coleta de dados pela plataforma possibilita decisões estratégicas futuras, como sugerir serviços em alta ou implementar planos de assinatura para prestadores.
+
+Oportunidades de melhoria:
+
+Expansão para novas categorias de serviço.
+
+Inclusão de geolocalização para facilitar a busca por profissionais próximos.
+
+Planos premium para prestadores, com destaque em buscas.
+
+Relatórios preditivos para administradores, auxiliando em estratégias de crescimento. 
+
 ### 3.3. Modelagem dos processos
 
 [PROCESSO 1 - Nome do Processo](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")

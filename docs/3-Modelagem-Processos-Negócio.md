@@ -1,10 +1,6 @@
 m## 3. Modelagem dos Processos de Negócio
 
 
-> **Links Úteis**:
-> - [Modelagem de Processos AS-IS x TO-BE](https://dheka.com.br/modelagem-as-is-to-be/)
-> - [20 Dicas Práticas de Modelagem de Processos](https://dheka.com.br/20-dicas-praticas-de-modelagem-de-processos/)
-
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 Atualmente, a contratação de serviços manuais (como pintura, elétrica ou hidráulica) ocorre de forma informal e descentralizada. Clientes recorrem a grupos de WhatsApp, redes sociais, anúncios de internet ou indicações de conhecidos para encontrar prestadores de serviço. Esse processo traz diversos problemas: insegurança, falta de garantias e dificuldade de verificar a qualidade do profissional. 
 
@@ -31,6 +27,7 @@ A proposta do projeto Mão na Massa é transformar um processo atualmente inform
 Principais melhorias em relação ao AS-IS:
 
 Centralização do processo: todas as etapas (busca, contato, negociação, contratação, pagamento e avaliação) passam a ocorrer dentro da plataforma.
+
 
 Comunicação integrada: chat e chamadas de vídeo permitem esclarecer dúvidas e evitar deslocamentos desnecessários.
 

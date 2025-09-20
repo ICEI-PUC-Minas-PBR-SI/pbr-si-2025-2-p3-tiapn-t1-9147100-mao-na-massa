@@ -29,14 +29,16 @@ Motivação: José é um profissional experiente, mas tem dificuldades para divu
 
 Cenário: José quer aumentar sua renda e conquistar mais clientes. Atualmente, ele depende de indicações de boca a boca. Ele precisa de uma plataforma que o conecte com pessoas que precisam de seus serviços e que elimine a incerteza de pagamentos, já que muitos clientes costumam atrasar ou, em alguns casos, não pagam.
 
-3. O Administrador
-Nome: Glendha
-Idade: 20 anos
-Ocupação: Analista de Operações
-Motivação: Glendha é responsável por garantir o bom funcionamento da plataforma. Ela precisa de acesso a relatórios e ferramentas de gerenciamento para monitorar o desempenho, resolver problemas de usuários e manter a qualidade do serviço. Ela busca eficiência e dados concretos para tomar decisões informadas e otimizar a experiência do usuário.
+O Contratante
+Nome: João Victor Idade: 28 anos Ocupação: Professor de Educação Física Motivação: João tem uma rotina intensa entre academia e aulas particulares. Ele gosta de manter a casa organizada, mas não entende de reparos técnicos. Valoriza agilidade e segurança, já que não tem tempo para lidar com várias negociações. 
 
-Cenário: Glendha precisa identificar quais tipos de serviço estão em alta e quais profissionais têm maior demanda. Ela também precisa emitir relatórios de atividades para a liderança e, ocasionalmente, intervir para resolver disputas entre contratantes e prestadores ou banir usuários que violam as regras da plataforma.
+Cenário: João planeja receber amigos em casa para um churrasco no fim de semana e percebe que a área externa precisa de ajustes: uma tomada está queimada, o portão eletrônico apresenta falhas e a iluminação do quintal não funciona. Ele procura rapidamente por um profissional que consiga resolver todos esses pontos de uma vez, evitando que precise chamar diferentes prestadores.
 
+Prestador de Serviço
+Nome: Marcos Silva Idade: 38 anos Ocupação: Técnico em Manutenção Residencial
+Motivação: Marcos é conhecido como “faz-tudo”: trabalha com reparos elétricos, pequenos consertos hidráulicos e manutenção geral em residências.
+Costuma atender em bairros próximos, mas quer aumentar sua clientela e conquistar clientes que valorizem sua versatilidade. Cenário: Marcos busca oportunidades de atender clientes que precisam de múltiplos reparos em um único atendimento.
+Ele vê em plataformas digitais uma forma de mostrar seu diferencial: resolver vários problemas domésticos de forma rápida e segura, economizando tempo para o cliente.
 
 ## Histórias de Usuários
 
@@ -45,7 +47,7 @@ Com base nas personas, as seguintes histórias de usuários são relevantes para
 |EU COMO | QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
 |Contratante  | solicitar um serviço detalhadamente (descrição, fotos e urgência)     | que os profissionais saibam exatamente o que eu preciso. |
-|Contratante| me comunicar com o prestador de serviço antes de fechar o negócio      | Ptirar dúvidas e negociar os detalhes do trabalho. |
+|Contratante| me comunicar com o prestador de serviço antes de fechar o negócio      | tirar dúvidas e negociar os detalhes do trabalho. |
 |Contratante| realizar o pagamento de forma segura dentro do aplicativo         | garantir que o valor só será repassado após a conclusão do serviço. |
 |Contratante| avaliar o prestador de serviço após a conclusão do trabalho        | contribuir para a reputação dele na plataforma e ajudar outros usuários.|
 

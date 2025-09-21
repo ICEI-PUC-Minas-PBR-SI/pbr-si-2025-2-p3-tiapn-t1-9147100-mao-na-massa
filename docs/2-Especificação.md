@@ -14,6 +14,7 @@ Restrições do Projeto: Para elencar as limitações e os fatores limitantes pa
 
 Para o projeto "Mão na Massa", foram definidas três personas principais que representam os usuários-alvo da plataforma: o Contratante, o Prestador de Serviço e o Administrador.
 
+1. O Contratante
 Nome: Ana Clara
 Idade: 42 anos
 Ocupação: Gerente de Recursos Humanos
@@ -29,16 +30,20 @@ Motivação: José é um profissional experiente, mas tem dificuldades para divu
 
 Cenário: José quer aumentar sua renda e conquistar mais clientes. Atualmente, ele depende de indicações de boca a boca. Ele precisa de uma plataforma que o conecte com pessoas que precisam de seus serviços e que elimine a incerteza de pagamentos, já que muitos clientes costumam atrasar ou, em alguns casos, não pagam.
 
-O Contratante
-Nome: João Victor Idade: 28 anos Ocupação: Professor de Educação Física Motivação: João tem uma rotina intensa entre academia e aulas particulares. Ele gosta de manter a casa organizada, mas não entende de reparos técnicos. Valoriza agilidade e segurança, já que não tem tempo para lidar com várias negociações. 
+3. O Contratante
+Nome: João Victor 
+Idade: 28 anos 
+Ocupação: Professor de Educação Física Motivação: João tem uma rotina intensa entre academia e aulas particulares. Ele gosta de manter a casa organizada, mas não entende de reparos técnicos. Valoriza agilidade e segurança, já que não tem tempo para lidar com várias negociações. 
 
 Cenário: João planeja receber amigos em casa para um churrasco no fim de semana e percebe que a área externa precisa de ajustes: uma tomada está queimada, o portão eletrônico apresenta falhas e a iluminação do quintal não funciona. Ele procura rapidamente por um profissional que consiga resolver todos esses pontos de uma vez, evitando que precise chamar diferentes prestadores.
 
-Prestador de Serviço
-Nome: Marcos Silva Idade: 38 anos Ocupação: Técnico em Manutenção Residencial
-Motivação: Marcos é conhecido como “faz-tudo”: trabalha com reparos elétricos, pequenos consertos hidráulicos e manutenção geral em residências.
-Costuma atender em bairros próximos, mas quer aumentar sua clientela e conquistar clientes que valorizem sua versatilidade. Cenário: Marcos busca oportunidades de atender clientes que precisam de múltiplos reparos em um único atendimento.
-Ele vê em plataformas digitais uma forma de mostrar seu diferencial: resolver vários problemas domésticos de forma rápida e segura, economizando tempo para o cliente.
+4. O Prestador de Serviço (Profissional)
+Nome: Marcos Silva Idade:
+38 anos 
+Ocupação: Técnico em Manutenção Residencial
+Marcos é conhecido como “faz-tudo”: trabalha com reparos elétricos, pequenos consertos hidráulicos e manutenção geral em residências. 
+
+Cenário: Costuma atender em bairros próximos, mas quer aumentar sua clientela e conquistar clientes que valorizem sua versatilidade. Cenário: Marcos busca oportunidades de atender clientes que precisam de múltiplos reparos em um único atendimento. Ele vê em plataformas digitais uma forma de mostrar seu diferencial: resolver vários problemas domésticos de forma rápida e segura, economizando tempo para o cliente.
 
 ## Histórias de Usuários
 
@@ -81,13 +86,17 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-001| O sistema deve permitir que o Contratante solicite um serviço com detalhes. | ALTA | 
 |RNF-002| O sistema deve permitir a comunicação via chat entre Contratante e Prestador.| ALTA | 
 |RNF-003| O sistema deve permitir que o Prestador receba notificações de novas solicitações.| ALTA | 
-|RNF-004| O sistema deve gerenciar um sistema de pagamento seguro (retenção do valor).|  ALTA | 
+|RNF-004| O sistema deve gerenciar um sistema de pagamento seguro (retenção do valor).|  MÉDIA | 
 |RNF-005| O sistema deve permitir a avaliação mútua entre Contratante e Prestador.|ALTA | 
 |RNF-006| O sistema deve permitir a realização de chamadas de vídeo integradas. |  MÉDIA | 
 |RNF-007| O sistema deve permitir que o Prestador gerencie sua agenda.| MÉDIA | 
 |RNF-008| O sistema deve permitir que o Administrador acesse dados do banco de dados. |   ALTA  | 
 |RNF-009| O sistema deve permitir que o Administrador gere relatórios. | ALTA  | 
-|RNF-010| Deve processar requisições do usuário em no máximo 3s |  ALTA  | 
+|RNF-010| O sistema deve permitir o cadastro de contratante e contratado | ALTA  | 
+|RNF-011| O sistema deve permitir alterar o cadastro de contratante e contratado | ALTA  | 
+|RNF-012| O sistema deve permitir buscas com base em tipo de serviço pelo contratante | ALTA  | 
+|RNF-013| O sistema deve permitir ao prestador de serviço incluir o tipo de serviço que ele presta | ALTA  |
+|RNF-014| O sistema deve permitir ao contratante fazer buscas com base em sua região | ALTA  |
 
 ### Requisitos não Funcionais
 
@@ -96,10 +105,9 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-001| O sistema deve ser responsivo para rodar em dispositivos móveis (web,iOS e Android). | ALTA | 
 |RF-002| A plataforma deve ter um tempo de resposta máximo de 3 segundos para carregamento.  | MÉDIA |
 |RF-003| A plataforma deve garantir a segurança das transações financeiras e dos dados pessoais. | ALTA | 
-|RF-004| O sistema deve estar disponível 99,5% do tempo. | MÉDIA |
+|RF-004| O sistema deve estar disponível 99,5% do tempo | MÉDIA |
 |RF-005| A interface do Administrador deve ser intuitiva para facilitar a manutenção. | MÉDIA |
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
+|RF-006| Deve processar requisições do usuário em no máximo 3s  | ALTA |
 
 
 ## Restrições

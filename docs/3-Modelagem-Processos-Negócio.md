@@ -48,6 +48,8 @@ A qualidade final do serviço ainda depende da atuação do prestador.
 
 ### 3.3. Modelagem dos processos
 
-[PROCESSO 1 - Nome do Processo](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
+Detalhamento do Processo 1
 
-[PROCESSO 2 - Nome do Processo](./processos/processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
+![modelagem processo 1 e 2 .jpeg](images/modelagem%20processo%201%20e%202%20.jpeg)
+
+Detalhamento do Processo 2

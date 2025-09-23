@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mão na Massa - Serviços Domésticos</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h2>Mão na Massa</h2>
+                </div>
+                <nav class="nav">
+                    <a href="#inicio">Início</a>
+                    <a href="#filtro">Buscar</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#depoimentos">Depoimentos</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle">🌙</button>
+                    <button class="btn btn-primary" onclick="goToAuth()">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Serviços domésticos de <span class="highlight">qualidade</span> para sua casa</h1>
+                    <p>Conectamos você aos melhores profissionais para cuidar da sua casa. Limpeza, manutenção, jardinagem e muito mais.</p>
+                    
+                    <div class="benefits">
+                        <div class="benefit-item">
+                            <span class="check-icon">✓</span>
+                            <span>Profissionais verificados e qualificados</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="check-icon">✓</span>
+                            <span>Orçamento gratuito e sem compromisso</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="check-icon">✓</span>
+                            <span>Garantia de satisfação</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="goToAuth()">Solicitar Orçamento</button>
+                        <button class="btn btn-outline btn-large" onclick="goToAuth()">Ver Serviços</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseSUyMGhvbWV8ZW58MXx8fHwxNzU4MzkxNDQzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Família feliz em casa">
+                    <div class="floating-card">
+                        <div class="card-icon">✓</div>
+                        <div class="card-text">
+                            <p>+500 famílias atendidas</p>
+                            <strong>98% de satisfação</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Region Filter Section -->
+    <section id="filtro" class="region-filter">
+        <div class="container">
+            <h2>Encontre serviços na sua região</h2>
+            <p>Selecione sua cidade e tipo de serviço para encontrar os melhores profissionais</p>
+            
+            <div class="filter-form">
+                <div class="filter-row">
+                    <div class="form-group">
+                        <label for="city">Cidade</label>
+                        <select id="city" class="form-select">
+                            <option value="">Selecione sua cidade</option>
+                            <option value="sao-paulo">São Paulo - SP</option>
+                            <option value="rio-janeiro">Rio de Janeiro - RJ</option>
+                            <option value="belo-horizonte">Belo Horizonte - MG</option>
+                            <option value="brasilia">Brasília - DF</option>
+                            <option value="salvador">Salvador - BA</option>
+                            <option value="fortaleza">Fortaleza - CE</option>
+                            <option value="curitiba">Curitiba - PR</option>
+                            <option value="recife">Recife - PE</option>
+                            <option value="porto-alegre">Porto Alegre - RS</option>
+                            <option value="manaus">Manaus - AM</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="neighborhood">Bairro</label>
+                        <input type="text" id="neighborhood" class="form-input" placeholder="Digite seu bairro">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service-type">Tipo de Serviço</label>
+                        <select id="service-type" class="form-select">
+                            <option value="">Todos os serviços</option>
+                            <option value="limpeza">Limpeza Residencial</option>
+                            <option value="manutencao">Manutenção e Reparos</option>
+                            <option value="jardinagem">Jardinagem</option>
+                            <option value="pintura">Pintura</option>
+                            <option value="eletrica">Elétrica</option>
+                            <option value="encanamento">Encanamento</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="searchServices()">
+                        <span>🔍</span>
+                        Buscar
+                    </button>
+                </div>
+                
+                <div class="quick-filters">
+                    <span>Filtros rápidos:</span>
+                    <button class="quick-filter-btn" onclick="quickFilter('limpeza')">Limpeza</button>
+                    <button class="quick-filter-btn" onclick="quickFilter('manutencao')">Manutenção</button>
+                    <button class="quick-filter-btn" onclick="quickFilter('jardinagem')">Jardinagem</button>
+                    <button class="quick-filter-btn" onclick="quickFilter('emergencia')">Emergência</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Serviços</h2>
+                <p>Oferecemos uma ampla gama de serviços domésticos para manter sua casa sempre limpa, organizada e bem cuidada.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card popular">
+                    <div class="popular-badge">Mais Popular</div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581578949510-fa7315c4c350?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3VzZSUyMGNsZWFuaW5nJTIwc2VydmljZSUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NTg0NjI3ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Limpeza Residencial">
+                        <div class="service-icon">✨</div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3>Limpeza Residencial</h3>
+                            <span class="price">A partir de R$ 80</span>
+                        </div>
+                        <p>Serviços completos de limpeza para sua casa, incluindo faxina geral, limpeza pesada e manutenção regular.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Produtos inclusos</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Profissionais treinados</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Equipamentos próprios</span>
+                            </div>
+                        </div>
+
+                        <div class="service-rating">
+                            <div class="rating">
+                                <span class="star">⭐</span>
+                                <span>4.9 (120+ avaliações)</span>
+                            </div>
+                            <div class="duration">
+                                <span>🕒</span>
+                                <span>2-4h</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-full" onclick="goToAuth()">Solicitar Orçamento</button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1608752503578-52f35965e3d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob21lJTIwbWFpbnRlbmFuY2UlMjByZXBhaXIlMjB0b29sc3xlbnwxfHx8fDE3NTg0ODA4ODh8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Manutenção e Reparos">
+                        <div class="service-icon">🔧</div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3>Manutenção e Reparos</h3>
+                            <span class="price">A partir de R$ 60</span>
+                        </div>
+                        <p>Serviços de manutenção preventiva e reparos diversos para manter sua casa sempre em perfeito estado.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Diagnóstico gratuito</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Garantia de 6 meses</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Atendimento emergencial</span>
+                            </div>
+                        </div>
+
+                        <div class="service-rating">
+                            <div class="rating">
+                                <span class="star">⭐</span>
+                                <span>4.9 (120+ avaliações)</span>
+                            </div>
+                            <div class="duration">
+                                <span>🕒</span>
+                                <span>2-4h</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-full" onclick="goToAuth()">Solicitar Orçamento</button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1729526368510-6a220407f287?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYXJkZW4lMjBsYW5kc2NhcGluZyUyMHNlcnZpY2VzfGVufDF8fHx8MTc1ODQ4MzAzMXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Jardinagem">
+                        <div class="service-icon">🌲</div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-header">
+                            <h3>Jardinagem</h3>
+                            <span class="price">A partir de R$ 90</span>
+                        </div>
+                        <p>Cuidados especializados para seu jardim, incluindo poda, plantio, manutenção de gramado e paisagismo.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Projeto personalizado</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Plantas selecionadas</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Manutenção mensal</span>
+                            </div>
+                        </div>
+
+                        <div class="service-rating">
+                            <div class="rating">
+                                <span class="star">⭐</span>
+                                <span>4.9 (120+ avaliações)</span>
+                            </div>
+                            <div class="duration">
+                                <span>🕒</span>
+                                <span>2-4h</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-full" onclick="goToAuth()">Solicitar Orçamento</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="more-services">
+                <p>Precisa de outros serviços? Temos profissionais para pintura, elétrica, encanamento, organização e muito mais.</p>
+                <button class="btn btn-outline btn-large" onclick="goToAuth()">Ver Todos os Serviços</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Por que escolher a Mão na Massa?</h2>
+                    <p>Somos uma plataforma que conecta você aos melhores profissionais de serviços domésticos da sua região. Nossa missão é facilitar sua vida, oferecendo qualidade e confiança em cada serviço.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Famílias atendidas</p>
+                        </div>
+                        <div class="stat">
+                            <h3>98%</h3>
+                            <p>Satisfação dos clientes</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Profissionais qualificados</p>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="goToAuth()">Conhecer Nossa Equipe</button>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwd29ya2luZyUyMHRvZ2V0aGVyJTIwb2ZmaWNlfGVufDF8fHx8MTc1ODU2NzY5N3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Nossa equipe">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que nossos clientes dizem</h2>
+                <p>Veja os depoimentos de quem já confia nos nossos serviços</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p>"Excelente serviço! A equipe de limpeza foi muito profissional e deixou minha casa impecável. Recomendo!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNtaWxpbmclMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTg1NjkwMjl8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Ana Silva">
+                            <div>
+                                <strong>Ana Silva</strong>
+                                <span>São Paulo, SP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p>"Precisava de manutenção urgente e eles atenderam no mesmo dia. Trabalho de qualidade e preço justo!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW4lMjBzbWlsaW5nJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzU4NTY5MDc0fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Carlos Santos">
+                            <div>
+                                <strong>Carlos Santos</strong>
+                                <span>Rio de Janeiro, RJ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p>"O serviço de jardinagem transformou meu quintal! Profissionais muito capacitados e atenciosos."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhhcHB5JTIwcG9ydHJhaXR8ZW58MXx8fHwxNzU4NTY5MTE5fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Maria Oliveira">
+                            <div>
+                                <strong>Maria Oliveira</strong>
+                                <span>Belo Horizonte, MG</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Entre em contato</h2>
+                    <p>Tem alguma dúvida ou precisa de um orçamento personalizado? Fale conosco!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <span class="icon">📧</span>
+                            <div>
+                                <strong>Email</strong>
+                                <p>contato@maonamassa.com.br</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="icon">📱</span>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p>(11) 99999-9999</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="icon">🕒</span>
+                            <div>
+                                <strong>Horário</strong>
+                                <p>Seg-Sáb: 8h às 18h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <h3>Solicite seu orçamento</h3>
+                    <div class="form-row">
+                        <input type="text" placeholder="Seu nome" required>
+                        <input type="email" placeholder="Seu email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Seu telefone" required>
+                        <select required>
+                            <option value="">Tipo de serviço</option>
+                            <option value="limpeza">Limpeza</option>
+                            <option value="manutencao">Manutenção</option>
+                            <option value="jardinagem">Jardinagem</option>
+                        </select>
+                    </div>
+                    <textarea placeholder="Descreva o que você precisa..." rows="4" required></textarea>
+                    <button type="button" class="btn btn-primary btn-full" onclick="goToAuth()">Enviar Solicitação</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mão na Massa</h3>
+                    <p>Conectando você aos melhores profissionais de serviços domésticos.</p>
+                    <div class="social-links">
+                        <a href="#" onclick="goToAuth()">Facebook</a>
+                        <a href="#" onclick="goToAuth()">Instagram</a>
+                        <a href="#" onclick="goToAuth()">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <a href="#" onclick="goToAuth()">Limpeza Residencial</a>
+                    <a href="#" onclick="goToAuth()">Manutenção</a>
+                    <a href="#" onclick="goToAuth()">Jardinagem</a>
+                    <a href="#" onclick="goToAuth()">Pintura</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <a href="#sobre">Sobre Nós</a>
+                    <a href="#" onclick="goToAuth()">Trabalhe Conosco</a>
+                    <a href="#" onclick="goToAuth()">Política de Privacidade</a>
+                    <a href="#" onclick="goToAuth()">Termos de Uso</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📧 contato@maonamassa.com.br</p>
+                    <p>📱 (11) 99999-9999</p>
+                    <p>🕒 Seg-Sáb: 8h às 18h</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mão na Massa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-content">
+            <button class="close-btn" onclick="closeAuth()">&times;</button>
+            <div class="auth-header">
+                <h2>Bem-vindo à Mão na Massa</h2>
+                <p>Faça login ou crie sua conta para continuar</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="showLogin()">Login</button>
+                <button class="auth-tab" onclick="showRegister()">Cadastro</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit" class="btn btn-primary btn-full">Entrar</button>
+                <a href="#" class="forgot-password">Esqueci minha senha</a>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <div class="form-row">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="text" placeholder="Sobrenome" required>
+                </div>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Telefone" required>
+                <input type="password" placeholder="Senha" required>
+                <input type="password" placeholder="Confirmar senha" required>
+                <label class="checkbox-label">
+                    <input type="checkbox" required>
+                    <span>Aceito os termos de uso e política de privacidade</span>
+                </label>
+                <button type="submit" class="btn btn-primary btn-full">Criar conta</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

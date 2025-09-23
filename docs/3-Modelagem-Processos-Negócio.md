@@ -53,3 +53,14 @@ Detalhamento do Processo 1
 ![modelagem processo 1 e 2 .jpeg](images/modelagem%20processo%201%20e%202%20.jpeg)
 
 Detalhamento do Processo 2
+
+<img width="1606" height="973" alt="image" src="https://github.com/user-attachments/assets/0fa4aac7-0b03-41e5-855a-89e1a4da5e53" />
+
+Subprocessos
+
+Cadastro Cliente
+<img width="1658" height="445" alt="image" src="https://github.com/user-attachments/assets/8856b274-3d2e-4f7f-b846-cf54f243413c" />
+
+Cadastro Prestador
+<img width="1622" height="469" alt="image" src="https://github.com/user-attachments/assets/4b9fc11e-00db-4636-a856-9351ba7edf3f" />
+

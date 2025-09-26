@@ -21,7 +21,7 @@ O protótipo desenvolvido apresenta a visão geral da plataforma Mão na Massa, 
 
 As telas contemplam tanto os clientes quanto os contribuidores (prestadores de serviços), atendendo às histórias de usuário levantadas na especificação do projeto. A organização segue requisitos funcionais (cadastro, login, solicitação de orçamento, exibição de serviços e avaliações) e requisitos não funcionais (usabilidade, clareza visual, acessibilidade, responsividade e segurança na autenticação).
 
-Cada interface foi pensada para guiar o usuário em um fluxo claro: conhecer os serviços → avaliar credibilidade → solicitar orçamento ou se cadastrar → acompanhar status e feedback.
+Cada interface foi pensada para guiar o usuário em um fluxo claro: conhecer os serviços, avaliar credibilidade, solicitar orçamento ou se cadastrar, acompanhar status e feedback.
 
 Tela Inicial
 

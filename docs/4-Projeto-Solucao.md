@@ -17,20 +17,14 @@
 
 ### 4.2. Protótipos de telas
 
-O protótipo foi elaborado para garantir a jornada completa do usuário, tanto cliente quanto prestador. Ele cobre desde a descoberta de serviços (landing page e catálogo) até a contratação (orçamento) e o pós-serviço (avaliações e depoimentos). O design pensado em fluxos claros, chamadas para ação e simplicidade de navegação atende os requisitos funcionais, não funcionais e histórias de usuário descritos na especificação do projeto.
+O protótipo desenvolvido apresenta a visão geral da plataforma Mão na Massa, que conecta clientes a profissionais especializados em serviços domésticos. O design das telas foi elaborado para ser simples, direto e responsivo, garantindo facilidade de uso, navegabilidade intuitiva e experiência agradável ao usuário.
+
+As telas contemplam tanto os clientes quanto os contribuidores (prestadores de serviços), atendendo às histórias de usuário levantadas na especificação do projeto. A organização segue requisitos funcionais (cadastro, login, solicitação de orçamento, exibição de serviços e avaliações) e requisitos não funcionais (usabilidade, clareza visual, acessibilidade, responsividade e segurança na autenticação).
+
+Cada interface foi pensada para guiar o usuário em um fluxo claro: conhecer os serviços → avaliar credibilidade → solicitar orçamento ou se cadastrar → acompanhar status e feedback.
+
+Tela Inicial
 ![Exemplo de Wireframe](images/inicial.png)
-
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
-
 
 ## Diagrama de Classes
 

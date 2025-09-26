@@ -24,8 +24,16 @@ As telas contemplam tanto os clientes quanto os contribuidores (prestadores de s
 Cada interface foi pensada para guiar o usuário em um fluxo claro: conhecer os serviços → avaliar credibilidade → solicitar orçamento ou se cadastrar → acompanhar status e feedback.
 
 Tela Inicial
+
 ![Exemplo de Wireframe](images/inicial.png)
 
+Tela de Serviços
+
+![Exemplo de Wireframe](images/servicos.png)
+
+Tela FeedBack dos Clientes 
+
+![Exemplo de Wireframe](images/feedback.png)
 ## Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.

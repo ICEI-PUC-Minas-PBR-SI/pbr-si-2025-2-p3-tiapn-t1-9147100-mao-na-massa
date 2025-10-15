@@ -1,0 +1,5 @@
+### 3.3.3 Processo 3 – Solicitar serviço
+
+O processo de solicitação de serviço inicia-se com o cliente acessando a plataforma, onde pode visualizar o perfil do profissional e inserir detalhes do serviço. Após o preenchimento das informações, a plataforma verifica se os dados estão completos para realizar o envio da solicitação. Caso haja algum dado incompleto ou falha, a plataforma notifica o cliente sobre o erro e o processo é interrompido até que os dados sejam corrigidos.
+Com os dados completos, a plataforma encaminha a solicitação ao profissional, que analisa o tipo de serviço solicitado e decide se deseja aceitar ou não. Caso o profissional recuse a solicitação, o cliente é notificado e pode optar por procurar outro profissional ou refazer a pesquisa.
+Caso o profissional aceite o serviço, a plataforma confirma a solicitação, cria um canal de comunicação entre as partes e notifica  o cliente. A confirmação da aceitação encerra o processo de solicitação de serviço, concluindo a etapa na plataforma.

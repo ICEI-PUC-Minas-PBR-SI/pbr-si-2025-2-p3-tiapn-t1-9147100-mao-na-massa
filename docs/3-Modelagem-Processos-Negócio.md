@@ -1,6 +1,6 @@
 m## 3. Modelagem dos Processos de Negócio
 
-
+![1.jpeg](images/1.jpeg)
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 Atualmente, a contratação de serviços manuais (como pintura, elétrica ou hidráulica) ocorre de forma informal e descentralizada. Clientes recorrem a grupos de WhatsApp, redes sociais, anúncios de internet ou indicações de conhecidos para encontrar prestadores de serviço. Esse processo traz diversos problemas: insegurança, falta de garantias e dificuldade de verificar a qualidade do profissional. 
 
@@ -18,7 +18,7 @@ O serviço é executado, mas sem garantia formal ou registro de avaliação.
 
 Esse fluxo é manual, ineficiente e sem padrão, gerando riscos como golpes, serviços mal executados e falta de transparência. Os profissionais também sofrem, já que trabalham de forma informal e com baixa visibilidade. 
 
- 
+![2.jpeg](images/2.jpeg) 
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
@@ -44,21 +44,10 @@ Requer acesso à internet e dispositivos digitais, o que pode excluir parte do p
 A qualidade final do serviço ainda depende da atuação do prestador.
 
 É necessária moderação constante do administrador para evitar fraudes ou conflitos.
-
-
+![3.jpeg](images/3.jpeg)
+ 
 ### 3.3. Modelagem dos processos
 
-Detalhamento do Processo 1 e 2
+![4.jpeg](images/4.jpeg)
 
-![modelagem processo 1 e 2 .jpeg](images/modelagem%20processo%201%20e%202%20.jpeg)
-
-Subprocessos
-![1.png](images/1.png)
-
-Cadastro Cliente
-
-![cont.png](images/cont.png)
-
-Cadastro Prestador
-
-![prestador.png](images/prestador.png)
+![5.jpeg](images/5.jpeg)

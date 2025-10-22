@@ -64,7 +64,7 @@ Atualizado em: 10/10/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| Pricilla Lopes Braga        | Modelagem do processo 2 em BPMN | 06/09/2025	     | 05/09/2025 | ✔️    | 22/08/2025      |
+| Pricilla Lopes Braga        | Modelagem do processo 2 em BPMN | 06/09/2025	     | 05/09/2025 | ✔️    | 15/09/2025      |
 | Camila Moreira Pessoa        | Wireframes do processo 2, 3   | 06/09/2025     | 15/09/2025 | ✔️    |    15/09/2025      |
 | Glendha Paulino Caldeira Tolentino        | Campos e comandos do processo 2, 3  | 06/09/2025     | 15/09/2025 | ✔️     |   15/09/2025              |
 | Bruno César Lima Araújo       | Front-end do processo 3  |    06/09/2025        | 15/09/2025 | ✔️    |  15/09/2025     |

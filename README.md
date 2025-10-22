@@ -21,7 +21,6 @@ o projeto visa aumentar a confiança, a eficiência e a formalização nesse set
 * Camila Moreira Pessoa
 * Davi Alves Silveira
 * Glendha Paulino Caldeira Tolentino
-* Matheus Henrique de Carvalho Costa
 * Pricilla Lopes Braga
 
 ## Orientador

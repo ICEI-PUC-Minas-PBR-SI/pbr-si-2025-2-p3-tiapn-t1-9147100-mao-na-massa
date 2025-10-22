@@ -36,26 +36,28 @@
 
 ## Sprint 1
 
-Atualizado em: 22/10/2025
+Atualizado em: 01/09/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| Glendha Paulino Caldeira Tolentino        | Introdução | 01/09/2025     | 05/09/2025 | ✔️    | 05/09/2025      |
-| Glendha Paulino Caldeira Tolentino        | Objetivos    | 01/09/2025     | 05/09/2025 | ✔️    |                 |
-| Pricilla Lopes Braga        | Histórias de usuário  | 05/09/2025     | 01/09/2025 | ✔️     |                 |
-| Pricilla Lopes Braga        | Personas 1  |    01/09/2025        | 05/09/2025 | ✔️    |       |
+| Glendha Paulino Caldeira Tolentino        | Introdução | 05/08/2025     | 05/09/2025 | ✔️    | 22/08/2025      |
+| Glendha Paulino Caldeira Tolentino        | Objetivos    | 05/08/2025     | 22/08/2025 | ✔️    |    22/08/2025             |
+| Pricilla Lopes Braga        | Histórias de usuário  | 05/08/2025     | 22/08/2025 | ✔️     |   22/08/2025              |
+| Pricilla Lopes Braga        | Personas 1  |    05/08/2025        | 22/08/2025 | ✔️    |  22/08/2025     |
 
 ## Sprint 2
 
-Atualizado em: 22/10/2025
+Atualizado em: 15/09/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| Bruno         | Home-Page        | 10/09/2025     | 12/09/2025 | ✔️    | 05/01/2005      |
-| Camila        | CSS Unificado    | 15/09/2025     | 12/03/2025 | ✔️    |                 |
-| Bruno         | Página de login  | 12/09/2025     | 07/03/2025 | ✔️    |                 |
-| Camila        | Script de login  | 14/09/2025     | 12/03/2024 | ✔️    |       |
-0
+| Camila Moreira Pessoa         | Relatório "Análise da situação atual" - BPMN        | 02/09/2025	     | 12/09/2025 | ✔️    | 05/01/2005      |
+| Glendha Paulino Caldeira Tolentino         | Relatório "Descrição geral da proposta de solução"        | 02/09/2025     | 12/09/2025 | ✔️    | 12/09/2025      |
+| Davi Alves Silveira         | Modelagem do processo 1 - BPMN        | 02/09/2025     | 12/09/2025 | ✔️    | 05/01/2005      |
+| Glendha Paulino Caldeira Tolentino e Davi Alves Silveira     | Personas    | 10/09/2025     | 12/09/2025 | ✔️    |   12/09/2025              |
+| Pricilla Lopes Braga        | Requisitos funcionais  | 10/09/2025     | 12/09/2025 | ✔️    |  12/09/2025               |
+| Pricilla Lopes Braga      | Requisitos não-funcionais  | 10/09/2025     | 12/09/2025 | ✔️    | 12/09/2025      |
+
 
 Legenda:
 - ✔️: terminado

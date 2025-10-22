@@ -29,6 +29,14 @@
 - Front-end do Processo 3: Bruno César Lima Araújo
 - Correção da Modelagem do Processo 1: Pricilla Lopes Braga, Glendha Paulino Caldeira Tolentino
 
+### Sprint 4
+- Project Owner: Pricilla Lopes Braga
+- _Scrum master_: Glendha Paulino Caldeira Tolentino 
+- Modelagem dos Processos (atualização): Davi Alves Silveira
+- Modelagem de Dados (atualização):Glendha Paulino Caldeira Tolentino
+- Desenvolvimento do Back-end (Processo 1): Bruno César Lima Araújo
+
+
 
 ## 5.1. Quadro de tarefas
 

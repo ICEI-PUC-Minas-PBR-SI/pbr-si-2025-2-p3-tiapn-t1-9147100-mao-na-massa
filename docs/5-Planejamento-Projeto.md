@@ -51,9 +51,9 @@ Atualizado em: 15/09/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| Camila Moreira Pessoa         | Relatório "Análise da situação atual" - BPMN        | 02/09/2025	     | 12/09/2025 | ✔️    | 05/01/2005      |
+| Camila Moreira Pessoa         | Relatório "Análise da situação atual" - BPMN        | 02/09/2025	     | 12/09/2025 | ✔️    | 12/09/2025     |
 | Glendha Paulino Caldeira Tolentino         | Relatório "Descrição geral da proposta de solução"        | 02/09/2025     | 12/09/2025 | ✔️    | 12/09/2025      |
-| Davi Alves Silveira         | Modelagem do processo 1 - BPMN        | 02/09/2025     | 12/09/2025 | ✔️    | 05/01/2005      |
+| Davi Alves Silveira         | Modelagem do processo 1 - BPMN        | 02/09/2025     | 12/09/2025 | ✔️    | 12/09/2025      |
 | Glendha Paulino Caldeira Tolentino e Davi Alves Silveira     | Personas    | 10/09/2025     | 12/09/2025 | ✔️    |   12/09/2025              |
 | Pricilla Lopes Braga        | Requisitos funcionais  | 10/09/2025     | 12/09/2025 | ✔️    |  12/09/2025               |
 | Pricilla Lopes Braga      | Requisitos não-funcionais  | 10/09/2025     | 12/09/2025 | ✔️    | 12/09/2025      |

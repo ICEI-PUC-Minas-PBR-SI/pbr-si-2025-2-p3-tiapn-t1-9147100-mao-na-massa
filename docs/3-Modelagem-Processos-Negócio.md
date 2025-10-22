@@ -51,3 +51,13 @@ A qualidade final do serviço ainda depende da atuação do prestador.
 ![4.jpeg](images/4.jpeg)
 
 ![5.jpeg](images/5.jpeg)
+
+
+3.3. Modelagem dos processos
+PROCESSO 1 - Cadastro de Usuários
+
+PROCESSO 2 - Login de Usuários
+
+PROCESSO 3 - Personalização de Perfil
+
+PROCESSO 4 - Envio de Perguntas e Respostas

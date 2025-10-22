@@ -1,22 +1,34 @@
 # 5. Planejamento do Projeto
 
-> Aqui será feito o gerenciamento das tarefas de implementação do projeto.
+> O gerenciamento das tarefas de implementação do projeto "Mão na Massa" será realizado de forma centralizada e ágil. O processo consiste na utilização da plataforma GitHub Projects para organizar o backlog de desenvolvimento, definir sprints e acompanhar o progresso das funcionalidades. A atribuição das tarefas  será baseada nas divisões de papéis da equipe (detalhadas na seção 5.1), garantindo que cada membro tenha clareza sobre suas responsabilidades e permitindo um acompanhamento transparente do progresso de cada entrega..
 
 ## 5.1. Divisão de Papéis
 
-> Apresente a divisão de papéis entre os membros do grupo em cada sprint. O desejável é que, em cada sprint, o aluno assuma papéis diferentes na disciplina. Siga o modelo do exemplo abaixo:
-
 ### Sprint 1
-- _Scrum master_: Glendha
-- Protótipos: Camila
-- Testes: Pry, Davi
-- Documentação: AlunaZ
+- Project Owner: Pricilla Lopes Braga
+- _Scrum master_: Glendha Paulino Caldeira Tolentino
+- Protótipos: Camila Moreira Pessoa e Davi Alves Silveira
+- Testes: Bruno César Lima Araújo
+- Documentação: Glendha Paulino Caldeira Tolentino
 
 ### Sprint 2
-- _Scrum master_: Glendha
-- Desenvolvedor _front-end_: Bruno
-- Desenvolvedor _back-end_: Camila
-- Testes: Pry
+- Project Owner: Pricilla Lopes Braga
+- _Scrum master_: Glendha Paulino Caldeira Tolentino 
+- Modelagem de Processo: Davi Alves Silveira
+- Modelo Entidade-Relaciomento: Todos
+- Desenvolvedor front-end:Camila Moreira Pessoa 
+- Desenvolvedor back-end: Bruno César Lima Araújo
+- Testes: Pricilla Lopes Braga, Glendha Paulino Caldeira Tolentino
+
+### Sprint 3
+- Project Owner: Pricilla Lopes Braga
+- _Scrum master_: Glendha Paulino Caldeira Tolentino 
+- Modelagem de Processos (2, 3, 4): Davi Alves Silveira
+- Wireframes (Processos 2, 3, 4): Camila Moreira Pessoa
+- Campos e Comandos: Glendha Paulino Caldeira Tolentino
+- Front-end do Processo 3: Bruno César Lima Araújo
+- Correção da Modelagem do Processo 1: Pricilla Lopes Braga, Glendha Paulino Caldeira Tolentino
+
 
 ## 5.1. Quadro de tarefas
 
@@ -24,26 +36,26 @@
 
 ## Sprint 1
 
-Atualizado em: 21/04/2024
+Atualizado em: 22/10/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Introdução | 01/02/2024     | 07/02/2024 | ✔️    | 05/01/2005      |
-| AlunaZ        | Objetivos    | 03/02/2024     | 10/02/2024 | 📝    |                 |
-| AlunoY        | Histórias de usuário  | 01/01/2024     | 07/01/2005 | ⌛     |                 |
-| AlunoK        | Personas 1  |    01/01/2024        | 12/02/2005 | ❌    |       |
+| Glendha Paulino Caldeira Tolentino        | Introdução | 01/09/2025     | 05/09/2025 | ✔️    | 05/09/2025      |
+| Glendha Paulino Caldeira Tolentino        | Objetivos    | 01/09/2025     | 05/09/2025 | ✔️    |                 |
+| Pricilla Lopes Braga        | Histórias de usuário  | 05/09/2025     | 01/09/2025 | ✔️     |                 |
+| Pricilla Lopes Braga        | Personas 1  |    01/09/2025        | 05/09/2025 | ✔️    |       |
 
 ## Sprint 2
 
-Atualizado em: 21/04/2024
+Atualizado em: 22/10/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Home-Page        | 01/02/2024     | 07/03/2024 | ✔️    | 05/01/2005      |
-| AlunaZ        | CSS Unificado    | 03/02/2024     | 10/03/2024 | 📝    |                 |
-| AlunoY        | Página de login  | 01/02/2024     | 07/03/2024 | ⌛     |                 |
-| AlunoK        | Script de login  |  01/01/2024    | 12/03/2024 | ❌    |       |
-
+| Bruno         | Home-Page        | 10/09/2025     | 12/09/2025 | ✔️    | 05/01/2005      |
+| Camila        | CSS Unificado    | 15/09/2025     | 12/03/2025 | ✔️    |                 |
+| Bruno         | Página de login  | 12/09/2025     | 07/03/2025 | ✔️    |                 |
+| Camila        | Script de login  | 14/09/2025     | 12/03/2024 | ✔️    |       |
+0
 
 Legenda:
 - ✔️: terminado

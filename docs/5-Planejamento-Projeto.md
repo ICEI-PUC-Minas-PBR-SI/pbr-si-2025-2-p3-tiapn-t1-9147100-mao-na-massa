@@ -71,16 +71,18 @@ Atualizado em: 10/10/2025
 | Davi Alves Silveira         | Modelagem do processo 3, 4 em BPMN  |    06/09/2025        | 15/09/2025 | ✔️    |  15/09/2025     |
 | Camila Moreira Pessoa       |  Wireframes do processo 3, 4 |    06/09/2025        | 15/09/2025 | ✔️    |  15/09/2025     |
 
+## Sprint 4
+
+Atualizado em: 12/10/2025
+
+| Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
+| :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
+| Bruno César Lima Araújo       | Implementação do back-end do processo 1 (Banco de Dados) | 01/10/2025     | 10/10/2025 | 📝    | 10/10/2025      |
+
 Legenda:
 - ✔️: terminado
 - 📝: em execução
 - ⌛: atrasado
 - ❌: não iniciado
-
-
-
-## Links Úteis
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
 
 

@@ -1,23 +1,15 @@
 ### 3.3.1 Processo 1 – CADASTRO DE USUÁRIO
 
-Processo 1 – Cadastro de usuário
-Início
-O usuário acessa a plataforma e preenche seus dados pessoais: Nome, CPF, e-mail e telefone.
-Após o preenchimento,, os dados são enviados à plataforma, que valida as informações fornecidas.
-Se a validação dos campos for bem sucedida, a plataforma envia um código de validação para o usuário, tal código pode ser enviado via e-mail ou SMS.
-O usuário então, insere esse código na plataforma. Se ele estiver correto, o processo segue para o próximo passo. Se não, o usuário pode solicitar o reenvio do código.
-Após a validação do código, o usuário deve escolher o tipo de conta que pretende criar (cliente ou prestador). De acordo com a decisão do usuário, essa etapa do processo se encerra com a criação da conta correspondente.
-Caso o usuário tenha escolhido criar um perfil de cliente, deverá complementá-lo adicionando endereço, CEP, telefone e preferências de serviço.
-Em seguida, se desejar o cliente também pode inserir uma foto de perfil.
-Após isso, o usuário deve aceitar os termos de uso e a política de privacidade.
-Depois, a plataforma deve validar as informações fornecidas. Se tudo estiver correto, a plataforma cria o perfil do cliente no banco de dados. Por fim, ela envia uma confirmação para o cliente, encerrando o processo.
-Caso o usuário tenha criado uma conta de prestador, deverá complementar seu perfil profissional, informando qual sua área de atuação, descrição, experiência e cidade de atuação.
-Se desejar, o usuário poderá inserir uma foto de perfil.
-Após isso, o usuário deverá enviar documentação (RG, CPF/CNPJ, comprovante de residência, certificados técnicos).
-O usuário então, deve aceitar a política de privacidade e os termos de uso. 
-Após isso, a plataforma deve validar as informações e documentos fornecidos.
-Se não for possível validar os documentos automaticamente, a plataforma pode solicitar ao usuário o reenvio dos mesmos ou notificar a administração para análise manual.
-Se sim, a plataforma cria o perfil do prestador no banco de dados e em seguida, envia a ele uma confirmação, encerrando o processo.
+O processo de "Cadastro de Usuário" tem como objetivo registrar novos usuários na plataforma, validando sua identidade inicial e, em seguida, segmentando-os em dois perfis distintos: Cliente ou Prestador. Durante o cadastro, o usuário acessa a plataforma e fornece seus dados pessoais (Nome, CPF, e-mail, telefone). A plataforma realiza uma validação inicial desses campos. Se os dados forem válidos, um código de verificação é enviado ao usuário (via e-mail ou SMS) para confirmar o canal de contato. O usuário deve inserir o código recebido. Caso o código esteja incorreto ou não seja recebido, o usuário pode solicitar o reenvio. Após a validação do código, o sistema direciona o usuário para a escolha do tipo de conta.
+Se a conta for "Cliente": O usuário preenche informações adicionais (endereço, preferências), aceita os termos e, após validação da plataforma, seu perfil é criado.
+Se a conta for "Prestador": O usuário preenche dados profissionais (área de atuação, experiência), envia documentação (RG, CPF/CNPJ, certificados) e aceita os termos. A plataforma realiza a validação dos dados e documentos (que pode incluir análise manual). Se aprovado, o perfil é criado.
+O processo se encerra com a criação do perfil correspondente no banco de dados e o envio de uma confirmação ao usuário.
+
+Oportunidades de melhoria:
+Fluxo de Reenvio de Código: O diagrama BPMN e o texto divergem ligeiramente. O diagrama sugere um loop de falha ("Confirma? -> Não"), enquanto o texto sugere uma ação iniciada pelo usuário ("pode solicitar o reenvio"). Recomenda-se implementar o reenvio como uma ação explícita (ex: um botão "Não recebi o código") para evitar confusão.
+Validação de Prestador: A validação de documentos do prestador pode ser demorada, especialmente se exigir análise manual. Seria ideal implementar um "status de conta" (ex: "Pendente de Aprovação"), permitindo que o prestador acesse a plataforma com limitações enquanto aguarda a aprovação, em vez de bloquear a conclusão do cadastro.
+Experiência em Erros: Implementar mensagens de validação claras e imediatas para o usuário, tanto na etapa de "Validar Campos" (ex: "CPF já cadastrado", "E-mail inválido") quanto na etapa de upload de documentos do prestador (ex: "Formato de arquivo não suportado").
+Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Comprovante de Residência), é crucial garantir o armazenamento seguro (criptografia) e o tratamento desses dados em conformidade com a LGPD.
 
 ![Exemplo de um Modelo BPMN do PROCESSO 1](../images/process.png "Modelo BPMN do Processo 1.")
 

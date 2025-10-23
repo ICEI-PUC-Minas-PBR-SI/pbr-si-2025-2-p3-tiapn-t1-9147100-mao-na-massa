@@ -17,31 +17,29 @@ Se sim, o processo é concluído com sucesso. Se não, o cliente é notificado s
 _Descreva aqui cada uma das propriedades das atividades do processo 2. 
 Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
-_Os tipos de dados a serem utilizados são:_
+### Tela: Nossos Serviços
 
-_* **Área de texto** - campo texto de múltiplas linhas_
+* **Área de texto** - Descrição da Página ("Oferecemos uma ampla gama...")
+* **Área de texto** - Descrição do Serviço (Limpeza Residencial)
+* **Área de texto** - Descrição do Serviço (Manutenção e Reparos)
+* **Área de texto** - Descrição do Serviço (Jardinagem)
+* **Área de texto** - Texto (Outros serviços - "Precisa de outros serviços?...")
+* **Imagem** - Logo (Mão na Massa)
+* **Imagem** - Imagem do Serviço (Limpeza Residencial)
+* **Imagem** - Imagem do Serviço (Manutenção e Reparos)
+* **Imagem** - Imagem do Serviço (Jardinagem)
+* **Link** - Início
+* **Link** - Serviços
+* **Link** - Depoimentos
+* **Link** - Contato
+* **Link** - Sobre
+* **Link** - Solicitar orçamento (no topo)
+* **Link** - Solicitar orçamento (card Limpeza Residencial)
+* **Link** - Solicitar orçamento (card Manutenção e Reparos)
+* **Link** - Solicitar orçamento (card Jardinagem)
+* **Link** - Ver Todos os Serviços
 
-_* **Caixa de texto** - campo texto de uma linha_
 
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
 
 **1-Preencher Requisitos**
 

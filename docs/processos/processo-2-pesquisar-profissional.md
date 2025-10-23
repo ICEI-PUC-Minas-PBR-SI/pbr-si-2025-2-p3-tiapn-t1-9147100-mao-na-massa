@@ -81,3 +81,16 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | ---                  | ---                            | ---               |
 | Selecionar | Gateway "Profissional atende aos critérios?"  | default |
 | Voltar | Atividade "Preencher Requisitos"  | cancel |
+
+**4-Notificação de profissional indisponível**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
+| ---             | ---              | ---            | ---               |
+| Ícone de Alerta | Imagem  |  N/A    |    Valor default               |
+| Texto da Notificação | Apenas texto informativo  |  N/A    |    Valor default               |
+
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| OK  | Atividade "Refazer Pesquisa" | default |
+

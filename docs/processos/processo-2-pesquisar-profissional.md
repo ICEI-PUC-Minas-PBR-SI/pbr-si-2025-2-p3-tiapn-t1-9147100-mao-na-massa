@@ -55,7 +55,7 @@ _* **Tabela** - campo formado por uma matriz de valores_
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Buscar Profissionais |   | default  |     
+| Buscar Profissionais | Evento de Início  | default  |     
 | Cancelar | Gateway "Requisitos válidos?"  | cancel |                |
 
 **Nome da atividade 2**

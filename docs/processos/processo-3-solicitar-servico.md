@@ -58,10 +58,33 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | ---             | ---              | ---            | ---               |
 | (Dados da Solicitação) | (Texto informativo)  |  N/A   |   Valor default       |
 
-
-
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Aceitar | Evento "Confirmar Solicitação"  | default  |     
 | Recusar (ou Cancelar) | Evento "Recusar solicitação" | cancel |                |
 
+
+**3-Solicitação Concluída**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
+| ---             | ---              | ---            | ---               |
+| (Mensagem de Sucesso) | (Texto informativo)  |  N/A   |   Valor default       |
+| (Ícone de Sucesso) | Imagem  |  N/A   |   Valor default       |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| OK | Evento de Fim  | default  |     
+| Abrir Chat | Atividade "Criar canal de comunicação" | cancel |                |
+
+
+**3-Solicitação Concluída**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
+| ---             | ---              | ---            | ---               |
+| (Mensagem de Erro) | (Texto informativo)  |  N/A   |   Valor default       |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Tentar Novamente | Atividade "Inserir detalhes do serviço"  | default  |   
+| Buscar Outro Profissional | Atividade "Retomar processo de pesquisa"  | default  |  
+| Cancelar | Evento de Fim | cancel |                |

@@ -1,6 +1,5 @@
 m## 3. Modelagem dos Processos de Negócio
 
-![1.jpeg](images/1.jpeg)
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 Atualmente, a contratação de serviços manuais (como pintura, elétrica ou hidráulica) ocorre de forma informal e descentralizada. Clientes recorrem a grupos de WhatsApp, redes sociais, anúncios de internet ou indicações de conhecidos para encontrar prestadores de serviço. Esse processo traz diversos problemas: insegurança, falta de garantias e dificuldade de verificar a qualidade do profissional.
 Exemplo de como o processo acontece hoje:
@@ -11,7 +10,6 @@ Exemplo de como o processo acontece hoje:
 5.	O serviço é executado, mas sem garantia formal ou registro de avaliação.
 Esse fluxo é manual, ineficiente e sem padrão, gerando riscos como golpes, serviços mal executados e falta de transparência. Os profissionais também sofrem, já que trabalham de forma informal e com baixa visibilidade.
 
-![2.jpeg](images/2.jpeg) 
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
@@ -31,16 +29,8 @@ Processo 4 – Pagamento do serviço: Esse processo garante a segurança finance
 Processo 5 – Avaliação: Este processo finaliza o ciclo do serviço e alimenta o sistema de reputação da plataforma. Após a confirmação do pagamento, o sistema solicita que ambas as partes realizem uma avaliação mútua. O Contratante avalia o Prestador (atribuindo nota e comentário sobre a qualidade, pontualidade, etc.), e o Prestador também pode avaliar o Contratante (sobre a clareza da solicitação, condições de trabalho, etc.). Esse processo é fundamental para construir a confiabilidade da plataforma, pois as notas dos prestadores impactam diretamente sua visibilidade no "Processo 2 – Pesquisar Profissional".
 Assim, espera-se que o "Mão na Massa" preencha uma lacuna de mercado, reduzindo os impactos da informalidade e oferecendo conveniência e segurança aos contratantes. Ao mesmo tempo, o projeto visa ampliar a visibilidade e as oportunidades de trabalho para profissionais autônomos, promovendo a profissionalização e a inclusão digital em um setor essencial para a economia.
 
-![3.jpeg](images/3.jpeg)
  
 ### 3.3. Modelagem dos processos
-
-![4.jpeg](images/4.jpeg)
-
-![5.jpeg](images/5.jpeg)
-
-
-3.3. Modelagem dos processos
 
 <ol>
 <li><a href="processos/processo-1-cadastro-de-usuario.md">PROCESSO 1 - Cadastro de Usuários</a></li>

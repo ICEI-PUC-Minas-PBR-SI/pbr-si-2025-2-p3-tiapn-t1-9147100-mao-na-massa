@@ -112,15 +112,17 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | Próximo | Tela "Complementar Perfil Prestador (Parte 2)"  | default |
 | Voltar | Tela "Escolher tipo de conta"  | cancel |
 
-**5-Complementar Perfil Prestador (Parte 2: Documentos)**
+**6-Complementar Perfil Prestador (Parte 2: Documentos)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| Área de Atuação | Caixa de Seleção  |   Obrigatório     |     Valor default       |
-| Descrição (Profissional) | Área de Texto  |  Obrigatório    |     Valor default       |
-| Experiência | Caixa de Texto  |   Caixa de Texto / Seleção    |     Valor default       |
-| Cidade de Atuação | Caixa de Texto / Seleção / Tags  |   Caixa de Texto / Seleção     |     Valor default       |
-| Foto de Perfil | Upload de Imagem  |   Opcional (ex: .jpg, .png)     |     Valor default       |
+| RG | Upload de Arquivo  |   Obrigatório (ex: .pdf, .jpg)     |     Valor default       |
+| CPF / CNPJ (Profissional) | Upload de Arquivo  |  Obrigatório (ex: .pdf, .jpg)    |     Valor default       |
+| Comprovante de Residência |  | Upload de Arquivo  | Obrigatório (ex: .pdf, .jpg)    |     Valor default       |
+| Certificados Técnicos | Upload de Arquivo (múltiplo)   |   Opcional     |     Valor default       |
+| Aceitar Termos de Uso | Caixa de Seleção  |   Obrigatório (deve ser True)     |    False       |
+| Aceitar Política de Privacidade | Caixa de Seleção  |   Obrigatório (deve ser True)     |    False       |
+
 
 
 | **Comandos**         |  **Destino**                   | **Tipo** |

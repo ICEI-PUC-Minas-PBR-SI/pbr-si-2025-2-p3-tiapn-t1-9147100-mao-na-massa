@@ -48,28 +48,34 @@ _Os tipos de dados a serem utilizados são:_
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| Data do Serviço | Data  |  Obrigatório, data futura   |   Valor default       |
-| Horário (preferencial) | Hora  |   Obrigatório    |   Valor default       |
-| Endereço do Serviço | Caixa de Texto  |   Obrigatório   |   Valor default       |
-| Descrição do Serviço | Área de texto  |  Obrigatório, (ex: min 20 caracteres)  |   Valor default       |
-| (Perfil do Profissional) |  (Informativo) |  Obrigatório, data futura   |   (Dados do profissional são exibidos)       |
-
+| Menu "Início" | Link  |  N/A  |   N/A       |
+| Menu "Serviços" | Link  |  N/A  |   N/A       |
+| Menu "Depoimentos | Link  |  N/A  |   N/A       |
+| Menu "Contato" | Link  |  N/A  |   N/A       |
+| Menu "Sobre" | Link  |  N/A  |   N/A       |
+| Botão Tema (Sol/Lua) | Link  |  N/A  |   Valor default      |
+| Botão "Seja um contribuidor" | Link  |  N/A  |   N/A       |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Enviar Solicitação | Gateway "Dados completos?"  | default  |     
-| Voltar (ou Cancelar) | Evento de Início | cancel |                |
+| Clicar em Link do Menu | Tela Correspondente (Início, Serviços, etc.)  | navigation  |     
+| Clicar "Solicitar orçamento" | Tela "Orçamento" | default |                |
+| Clicar "Seja um contribuidor" | TAtividade "Criar Conta de Contribuidor" | default | 
 
-**2-Analisar Solicitação de Serviço**
 
+**2-Controle de Acesso (Entrar / Criar Conta)**
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| (Dados da Solicitação) | (Texto informativo)  |  N/A   |   Valor default       |
+| Título "Mão na Massa" | Área de texto  |  N/A   |   Valor default       |
+| Subtítulo "Serviços..." | Área de texto  |  N/A   |   Valor default       |
+| Aba/Botão "Entrar" | Link |  N/A   |   N/A        |
+| Aba/Botão "Criar Conta" | Link  |  N/A   |  N/A       |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Aceitar | Evento "Confirmar Solicitação"  | default  |     
-| Recusar (ou Cancelar) | Evento "Recusar solicitação" | cancel |                |
+| Clicar em "Entrar" | Clicar em "Entrar"  | default  |     
+| Clicar em "Criar Conta" | Evento "Recusar solicitação" | cancel |                |
 
 
 **3-Solicitação Concluída**

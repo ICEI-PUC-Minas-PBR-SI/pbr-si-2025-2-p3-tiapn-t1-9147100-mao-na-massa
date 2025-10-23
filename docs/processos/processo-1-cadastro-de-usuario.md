@@ -47,7 +47,7 @@ _* **Tabela** - campo formado por uma matriz de valores_
 
 **1- Preencher dados Pessoais (Usuário)**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
 | Nome | [Caixa de Texto]  |   Obrigatório        |     Valor default       |
 | E-mail | [Caixa de Texto]  |   Obrigatório, formato de e-mail        |     Valor default       |
@@ -63,14 +63,14 @@ _* **Tabela** - campo formado por uma matriz de valores_
 
 **2- Inserir código de validação**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
 | Confirmar | Gateway "Confirma?"  | default |
 | Reenviar código | Atividade "Reenviar código" (Plataforma)  | default |
 
 **3- Escolher tipo de conta**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
 | Tipo de Conta | Seleção (Radio Button)  |   Obrigatório, Opções: "Cliente" ou "Prestador"        |     Valor default       |
 
@@ -81,7 +81,7 @@ _* **Tabela** - campo formado por uma matriz de valores_
 
 **4- Complementar Perfil Cliente**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
 | Endereço | Caixa de Texto  |   Obrigatório     |     Valor default       |
 | CEP | Caixa de Texto  |  Obrigatório, formato CEP    |     Valor default       |
@@ -96,9 +96,9 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | Criar Conta | Atividade "Validar Informações Cliente" (Plataforma)  | default |
 | Voltar | Tela "Escolher tipo de conta"  | cancel |
 
-**Complementar Perfil Prestador (Parte 1: Perfil)**
+**5-Complementar Perfil Prestador (Parte 1: Perfil)**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
 | Área de Atuação | Caixa de Seleção  |   Obrigatório     |     Valor default       |
 | Descrição (Profissional) | Área de Texto  |  Obrigatório    |     Valor default       |

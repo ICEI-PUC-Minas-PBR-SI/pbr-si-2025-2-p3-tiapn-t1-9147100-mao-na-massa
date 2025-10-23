@@ -1,4 +1,4 @@
-### 3.3.4 Processo 4 – Pagamento do serviço
+### 3.3.4 Processo 4 – Como Criar sua conta como Contribuidor 
 
 O processo de pagamento do serviço se inicia quando o cliente acessa a aba de pagamento na plataforma. Em seguida, o cliente seleciona a forma de pagamento desejada, confirma os dados do serviço e o valor a pagar. Após essas confirmações, o cliente envia a solicitação de pagamento.
 A plataforma então, recebe a solicitação de pagamento e valida os dados da transação. Se ocorrer algum erro durante a validação, a plataforma notifica o cliente para que ele corrija as informações e repita o processo.

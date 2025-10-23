@@ -39,7 +39,7 @@ Assim, espera-se que o "Mão na Massa" preencha uma lacuna de mercado, reduzindo
 
 <li><a href="processos/processo-3-solicitar-servico.md">PROCESSO 3 - Solicitar Serviço</a></li>
 
-<li><a href="processos/processo-4-pagamento-do-servico.md">PROCESSO 4 - Pagamento do Serviço</a></li>
+<li><a href="processos/processo-4-pagamento-do-servico.md">PROCESSO 4 - Como Criar sua conta como Contribuidor</a></li>
 
 <li><a href="processos/processo-5-avaliacao-de-servico.md">PROCESSO 5 - Avaliação de Serviço</a></li>
 </ol>

@@ -43,22 +43,20 @@ _* **Link** - campo que armazena uma URL_
 
 _* **Tabela** - campo formado por uma matriz de valores_
 
-**Nome da atividade 1**
+**1-Preencher Requisitos**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| Serviço | Caixa de texto (ou Seleção)  |   Obrigatório    |   Valor default       |
+| Local (Endereço/CEP) | Caixa de texto  |   Obrigatório    |   Valor default       |
+| Data (do serviço) | Data (ou Seleção)  |   Obrigatório, data futura    |   Valor default       |
+| Orçamento (Valor Máx.) | Número  |   Opcional    |   Valor default       |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
-
+| Buscar Profissionais |   | default  |     
+| Cancelar | Gateway "Requisitos válidos?"  | cancel |                |
 
 **Nome da atividade 2**
 

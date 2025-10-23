@@ -77,7 +77,7 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | Abrir Chat | Atividade "Criar canal de comunicação" | cancel |                |
 
 
-**3-Solicitação Concluída**
+**4-Solicitação Concluída**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |

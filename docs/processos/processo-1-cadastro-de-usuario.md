@@ -18,12 +18,20 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 _Os tipos de dados a serem utilizados são:_
 
 ### Atividade 1: Criar Conta
-* **Caixa de texto** - Nome, E-mail, Senha, Confirmação de senha
-* **Link** - Login Google, Login Facebook
+* **Caixa de texto** - Nome
+* **Caixa de texto** - E-mail
+* **Caixa de texto** - Senha
+* **Caixa de texto** - Confirmação de senha
+* **Link** - Login Google
+* **Link** - Login Facebook
 
 ### Atividade 2: Cadastro de Colaborador
-* **Caixa de texto** - Nome, E-mail, Telefone, Senha
-* **Link** - Login Google, Login Facebook
+* **Caixa de texto** - Nome
+* **Caixa de texto** - E-mail
+* **Caixa de texto** - Telefone
+* **Caixa de texto** - Senha
+* **Link** - Login Google
+* **Link** - Login Facebook
 
 ### Atividade 3: Localização
 * **Caixa de texto** - Onde você vai?

@@ -1,4 +1,4 @@
-m## 3. Modelagem dos Processos de Negócio
+### 3. Modelagem dos Processos de Negócio
 
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 Atualmente, a contratação de serviços manuais (como pintura, elétrica ou hidráulica) ocorre de forma informal e descentralizada. Clientes recorrem a grupos de WhatsApp, redes sociais, anúncios de internet ou indicações de conhecidos para encontrar prestadores de serviço. Esse processo traz diversos problemas: insegurança, falta de garantias e dificuldade de verificar a qualidade do profissional.

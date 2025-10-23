@@ -94,3 +94,15 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | ---                  | ---                            | ---               |
 | OK  | Atividade "Refazer Pesquisa" | default |
 
+**5-Refazer Pesquisa**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
+| ---             | ---              | ---            | ---               |
+| (Apenas texto informativo) | N/A  |  N/A    |    Valor default               |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| Refazer Pesquisa | Atividade "Preencher Requisitos" | default |
+| Sair | Evento de Fim | cancel |
+
+

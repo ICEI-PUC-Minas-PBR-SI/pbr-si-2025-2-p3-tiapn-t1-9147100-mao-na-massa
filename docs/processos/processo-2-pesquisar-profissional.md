@@ -74,10 +74,10 @@ _* **Tabela** - campo formado por uma matriz de valores_
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| Observações Adicionais | Área de texto  |     Opcional           |    Valor default               |
+| Lista de Profissionais | Seleção única (Radio button ou Tabela)  |     Obrigatório          |    Valor default               |
 
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| Confirmar Solicitação | Atividade "Receber dados" (Plataforma)  | default |
-| Editar (Voltar) | Atividade "Preencher Requisitos"  | cancel |
+| Selecionar | Gateway "Profissional atende aos critérios?"  | default |
+| Voltar | Atividade "Preencher Requisitos"  | cancel |

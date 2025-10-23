@@ -78,3 +78,36 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | ---                  | ---                            | ---               |
 | Concluir | Gateway "Tipo de conta"  | default |
 | Voltar | Tela "Inserir código de validação"  | cancel |
+
+**4- Complementar Perfil Cliente**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Endereço | Caixa de Texto  |   Obrigatório     |     Valor default       |
+| CEP | Caixa de Texto  |  Obrigatório, formato CEP    |     Valor default       |
+| Telefone | Caixa de Texto  |   Obrigatório (o texto menciona "telefone")    |     Valor default       |
+| Preferências de Serviço | Área de Texto / Tags  |   Opcional     |     Valor default       |
+| Foto de Perfil | Upload de Imagem  |   Opcional (ex: .jpg, .png)     |     Valor default       |
+| Aceitar Termos de Uso | Caixa de Seleção  |   Obrigatório (deve ser True)     |    False      |
+| Aceitar Política de Privacidade | Caixa de Seleção  |   Obrigatório (deve ser True)     |    False      |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Criar Conta | Atividade "Validar Informações Cliente" (Plataforma)  | default |
+| Voltar | Tela "Escolher tipo de conta"  | cancel |
+
+**Complementar Perfil Prestador (Parte 1: Perfil)**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Área de Atuação | Caixa de Seleção  |   Obrigatório     |     Valor default       |
+| Descrição (Profissional) | Área de Texto  |  Obrigatório    |     Valor default       |
+| Experiência | Caixa de Texto  |   Caixa de Texto / Seleção    |     Valor default       |
+| Cidade de Atuação | Caixa de Texto / Seleção / Tags  |   Caixa de Texto / Seleção     |     Valor default       |
+| Foto de Perfil | Upload de Imagem  |   Opcional (ex: .jpg, .png)     |     Valor default       |
+
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Próximo | Tela "Complementar Perfil Prestador (Parte 2)"  | default |
+| Voltar | Tela "Escolher tipo de conta"  | cancel |

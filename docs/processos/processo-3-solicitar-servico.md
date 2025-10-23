@@ -35,6 +35,7 @@ _* **Link** - campo que armazena uma URL_
 
 _* **Tabela** - campo formado por uma matriz de valores_
 
+
 **1-Inserir Detalhes do Serviço**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
@@ -50,4 +51,17 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | ---                  | ---                            | ---               |
 | Enviar Solicitação | Gateway "Dados completos?"  | default  |     
 | Voltar (ou Cancelar) | Evento de Início | cancel |                |
+
+**2-Analisar Solicitação de Serviço**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
+| ---             | ---              | ---            | ---               |
+| (Dados da Solicitação) | (Texto informativo)  |  N/A   |   Valor default       |
+
+
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Aceitar | Evento "Confirmar Solicitação"  | default  |     
+| Recusar (ou Cancelar) | Evento "Recusar solicitação" | cancel |                |
 

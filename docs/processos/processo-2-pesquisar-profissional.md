@@ -69,3 +69,15 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | ---                  | ---                            | ---               |
 | Confirmar Solicitação | Atividade "Receber dados" (Plataforma)  | default |
 | Editar (Voltar) | Atividade "Preencher Requisitos"  | cancel |
+
+**3-Escolher profissional**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
+| ---             | ---              | ---            | ---               |
+| Observações Adicionais | Área de texto  |     Opcional           |    Valor default               |
+
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| Confirmar Solicitação | Atividade "Receber dados" (Plataforma)  | default |
+| Editar (Voltar) | Atividade "Preencher Requisitos"  | cancel |

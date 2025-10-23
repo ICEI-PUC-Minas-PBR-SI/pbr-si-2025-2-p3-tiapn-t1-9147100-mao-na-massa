@@ -58,14 +58,14 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | Buscar Profissionais | Evento de Início  | default  |     
 | Cancelar | Gateway "Requisitos válidos?"  | cancel |                |
 
-**Nome da atividade 2**
+**2-Enviar solicitação**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| Observações Adicionais | Área de texto  |     Opcional           |    Valor default               |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| Confirmar Solicitação | Atividade "Receber dados" (Plataforma)  | default |
+| Editar (Voltar) | Atividade "Preencher Requisitos"  | cancel |

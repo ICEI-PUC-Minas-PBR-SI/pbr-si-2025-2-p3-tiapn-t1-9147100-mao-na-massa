@@ -12,6 +12,8 @@ Por fim, o cliente recebe a confirmação de que sua avaliação foi registrada,
 _Descreva aqui cada uma das propriedades das atividades do processo 2. 
 Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
+![1.png](feedbacks.png) 
+
 _Os tipos de dados a serem utilizados são:_
 
 _* **Área de texto** - campo texto de múltiplas linhas_

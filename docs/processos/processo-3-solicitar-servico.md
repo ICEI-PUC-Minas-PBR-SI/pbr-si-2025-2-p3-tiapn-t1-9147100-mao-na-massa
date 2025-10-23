@@ -9,6 +9,8 @@ Caso o profissional aceite o serviço, a plataforma confirma a solicitação, cr
 _Descreva aqui cada uma das propriedades das atividades do processo 2. 
 Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
+![1.png](nossosservicos.png)
+
 _Os tipos de dados a serem utilizados são:_
 
 _* **Área de texto** - campo texto de múltiplas linhas_

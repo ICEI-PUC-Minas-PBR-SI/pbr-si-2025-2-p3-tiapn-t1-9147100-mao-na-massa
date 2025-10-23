@@ -45,7 +45,7 @@ _* **Link** - campo que armazena uma URL_
 _* **Tabela** - campo formado por uma matriz de valores_
 
 
-**Preencher dados Pessoais (Usuário)**
+**1- Preencher dados Pessoais (Usuário)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -61,9 +61,20 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | Cancelar | Evento de Início (ou tela de Login)  | cancel |
 
 
-**Inserir código de validação**
+**2- Inserir código de validação**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
 | Confirmar | Gateway "Confirma?"  | default |
 | Reenviar código | Atividade "Reenviar código" (Plataforma)  | default |
+
+**3- Escolher tipo de conta**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Tipo de Conta | Seleção (Radio Button)  |   Obrigatório, Opções: "Cliente" ou "Prestador"        |     Valor default       |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Concluir | Gateway "Tipo de conta"  | default |
+| Voltar | Tela "Inserir código de validação"  | cancel |

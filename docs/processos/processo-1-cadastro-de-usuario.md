@@ -11,7 +11,7 @@ Validação de Prestador: A validação de documentos do prestador pode ser demo
 Experiência em Erros: Implementar mensagens de validação claras e imediatas para o usuário, tanto na etapa de "Validar Campos" (ex: "CPF já cadastrado", "E-mail inválido") quanto na etapa de upload de documentos do prestador (ex: "Formato de arquivo não suportado").
 Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Comprovante de Residência), é crucial garantir o armazenamento seguro (criptografia) e o tratamento desses dados em conformidade com a LGPD.
 
-![Exemplo de um Modelo BPMN do PROCESSO 1] ![1.jpeg](images/1.jpeg)
+![1.jpeg](images/1.jpeg)
 
 #### Detalhamento das atividades
 

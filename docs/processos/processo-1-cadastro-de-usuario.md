@@ -45,6 +45,43 @@ _* **Link** - campo que armazena uma URL_
 _* **Tabela** - campo formado por uma matriz de valores_
 
 
+Atividade 1: Criar Conta
+Esta atividade permite ao usuário criar um novo registro básico na plataforma.
+
+Nome: Caixa de texto
+
+E-mail: Caixa de texto
+
+Senha: Caixa de texto
+
+Confirmação de senha: Caixa de texto
+
+Login Google: Link
+
+Login Facebook: Link
+
+Atividade 2: Cadastro de Colaborador
+Esta atividade parece ser um fluxo de cadastro alternativo (ou um segundo passo) focado em "Colaboradores", solicitando um telefone.
+
+Nome: Caixa de texto
+
+E-mail: Caixa de texto
+
+Telefone: Caixa de texto
+
+Senha: Caixa de texto
+
+Login Google: Link
+
+Login Facebook: Link
+
+Atividade 3: Localização
+Esta atividade solicita a localização do usuário ou de um serviço.
+
+Onde você vai?: Caixa de texto (campo de busca)
+
+(Detalhes da Localização): Área de texto (referente à caixa grande abaixo do campo de busca)
+
 **1- Preencher dados Pessoais (Usuário)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |

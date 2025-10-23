@@ -32,6 +32,7 @@ _Os tipos de dados a serem utilizados são:_
 ### Atividade 4: Cadastro Finalizado
 * **Imagem** - (Ícone de Perfil)
 
+
 **1- Preencher dados Pessoais (Usuário)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |

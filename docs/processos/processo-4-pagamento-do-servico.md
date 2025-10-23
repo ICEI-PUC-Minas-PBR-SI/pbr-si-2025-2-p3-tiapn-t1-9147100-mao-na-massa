@@ -1,11 +1,15 @@
 ### 3.3.4 Processo 4 – Como Criar sua conta como Contribuidor 
 
-O processo de pagamento do serviço se inicia quando o cliente acessa a aba de pagamento na plataforma. Em seguida, o cliente seleciona a forma de pagamento desejada, confirma os dados do serviço e o valor a pagar. Após essas confirmações, o cliente envia a solicitação de pagamento.
-A plataforma então, recebe a solicitação de pagamento e valida os dados da transação. Se ocorrer algum erro durante a validação, a plataforma notifica o cliente para que ele corrija as informações e repita o processo.
-Se a validação for bem sucedida, a plataforma processa o pagamento, encaminha uma confirmação de recebimento ao cliente e verifica o status do pagamento. Quando o pagamento é confirmado, a plataforma atualiza o status do serviço para pago.
-Em seguida, a plataforma gera a nota fiscal, acessando a base de dados, e envia a nota fiscal ao cliente. Ao mesmo tempo, envia o pagamento ao prestador do serviço.
-Após essa etapa, a plataforma notifica o prestador sobre o recebimento do pagamento. O prestador então, deve confirmar o recebimento desse pagamento.
-Em seguida, há uma verificação: caso o pagamento de fato tenha sido recebido, o prestador confirma novamente o recebimento, encerrando essa etapa do processo. Se houver algum erro, ou seja, se o pagamento não foi identificado, o prestador notifica a plataforma sobre a situação. Após essa notificação, o processo segue para interações posteriores, que podem envolver a instituição financeira.
+O processo de criação de conta de contribuidor se inicia quando o novo usuário seleciona a opção "Criar Conta" e acessa a tela "Criar sua conta como Contribuidor". Em seguida, o usuário preenche suas informações de perfil, adicionando sua foto e informando seu nome.
+
+Após essa etapa inicial, o contribuidor deve especificar os detalhes de seu serviço. Primeiramente, ele seleciona o "tipo de serviço" que oferece, utilizando o botão de filtro. Na sequência, o contribuidor indica as "Localizações que atende", definindo assim sua área de atuação geográfica.
+
+Para completar o cadastro do perfil, o usuário deve adicionar fotos que comprovem seu trabalho, permitindo que futuros clientes possam avaliar seus serviços.
+
+Uma vez que todas as informações são fornecidas, o contribuidor envia seu cadastro para a plataforma. A plataforma, então, recebe a solicitação e realiza a validação dos dados preenchidos. Se for identificado algum erro ou informação faltante, a plataforma notifica o usuário para que ele corrija os dados e envie novamente.
+
+Se a validação for bem-sucedida, a plataforma processa o cadastro e cria o novo perfil de contribuidor. Uma confirmação de conta criada é enviada ao usuário, e seu perfil é ativado na plataforma, ficando visível para clientes e pronto para, futuramente, receber "Comentários dos Clientes".
+
 
 #### Detalhamento das atividades
 
@@ -14,29 +18,30 @@ Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
 _Os tipos de dados a serem utilizados são:_
 
-_* **Área de texto** - campo texto de múltiplas linhas_
-
-_* **Caixa de texto** - campo texto de uma linha_
-
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
+### Tela Principal - Mão na Massa
+* **Imagem** - Logo "Mão na Massa"
+* **Link** - Menu "Início"
+* **Link** - Menu "Serviços"
+* **Link** - Menu "Depoimentos"
+* **Link** - Menu "Contato"
+* **Link** - Menu "Sobre"
+* **Seleção única** - Botão de tema (ícone sol/lua)
+* **Link** - Botão "Solicitar orçamento"
+* **Área de texto** - Título "Mão na Massa"
+* **Área de texto** - Subtítulo "Serviços domésticos de qualidade"
+* **Link** - Botão "Seja um contribuidor"
+* **Link** - Botão/Aba "Entrar"
+* **Link** - Botão/Aba "Criar Conta"
+* **Área de texto** - Título do formulário "Criar sua conta como Contribuidor"
+* **Arquivo** - Upload de foto de perfil (ícone de usuário)
+* **Caixa de texto** - "Seu Nome"
+* **Área de texto** - Label "Qual seu tipo de serviço?"
+* **Seleção múltipla** - Botão "filtro com os serviços"
+* **Área de texto** - Label "Localizações que atende"
+* **Imagem** - Ícone de localização
+* **Área de texto** - Label "Adicione fotos para que os clientes vejam seu trabalho"
+* **Arquivo** - Botão "Adicione fotos" (ícone de imagem com "+")
+* **Área de texto** - Área "Comentários dos Clientes futuros"
 
 
 **1-Inserir Detalhes do Serviço**

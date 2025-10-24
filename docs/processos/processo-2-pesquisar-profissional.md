@@ -55,66 +55,48 @@ Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
 
 
-**1-Preencher Requisitos**
+**1-Cabeçalho da Página (Informativo)**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
-| ---             | ---              | ---            | ---               |
-| Serviço | Caixa de texto (ou Seleção)  |   Obrigatório    |   Valor default       |
-| Local (Endereço/CEP) | Caixa de texto  |   Obrigatório    |   Valor default       |
-| Data (do serviço) | Data (ou Seleção)  |   Obrigatório, data futura    |   Valor default       |
-| Orçamento (Valor Máx.) | Número  |   Opcional    |   Valor default       |
+| **Campo** | **Tipo** | **Restrições** | **Valor** |
+| :--- | :--- | :--- | :--- |
+| Título "Entre em Contato" | Área de texto | N/A | Valor default (fixo) |
+| Subtítulo "Pronto para..." | Área de texto | N/A | Valor default (fixo) |
 
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| (Nenhum) | N/A | N/A |
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Buscar Profissionais | Evento de Início  | default  |     
-| Cancelar | Gateway "Requisitos válidos?"  | cancel |                |
+---
 
-**2-Enviar solicitação**
+**2-Formulário "Solicitar Orçamento"**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
-| ---             | ---              | ---            | ---               |
-| Observações Adicionais | Área de texto  |     Opcional           |    Valor default               |
+| **Campo** | **Tipo** | **Restrições** | **Valor** |
+| :--- | :--- | :--- | :--- |
+| Nome Completo | Caixa de texto | Obrigatório | Valor default ("Seu nome") |
+| Telefone | Caixa de texto | Obrigatório, (formato (XX) XXXX-XXXX) | Valor default ("(11) 9999-9999") |
+| Email | Caixa de texto | Obrigatório, (formato email válido) | Valor default ("seu@email.com") |
+| Serviço Desejado | Seleção única | Obrigatório | Valor default ("Selecione um serviço") |
+| Endereço | Caixa de texto | Obrigatório | Valor default ("Rua, número, bairro") |
+| Detalhes do Serviço | Área de texto | Obrigatório, (ex: min 20 caracteres) | Valor default ("Descreva o que...") |
+| (Nota de Rodapé) | Área de texto | N/A | "Entraremos em contato..." |
 
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Enviar Solicitação | Gateway "Dados completos?" | default |
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Confirmar Solicitação | Atividade "Receber dados" (Plataforma)  | default |
-| Editar (Voltar) | Atividade "Preencher Requisitos"  | cancel |
+---
 
-**3-Escolher profissional**
+**3-Bloco "Informações de Contato"**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
-| ---             | ---              | ---            | ---               |
-| Lista de Profissionais | Seleção única (Radio button ou Tabela)  |     Obrigatório          |    Valor default               |
+| **Campo** | **Tipo** | **Restrições** | **Valor** |
+| :--- | :--- | :--- | :--- |
+| (Info Telefone) | (Texto informativo) | N/A | (Valor fixo "(11) 9999-9999", "Seg a Sex...") |
+| (Info Email) | (Texto informativo) | N/A | (Valor fixo "contato@casaservicos.com"...) |
+| (Info Área de Atendimento) | (Texto informativo) | N/A | (Valor fixo "São Paulo e Região"...) |
+| (Info Horário) | (Texto informativo) | N/A | (Valor fixo "Segunda a Sábado", "8h às 18h") |
 
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Selecionar | Gateway "Profissional atende aos critérios?"  | default |
-| Voltar | Atividade "Preencher Requisitos"  | cancel |
-
-**4-Notificação de profissional indisponível**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
-| ---             | ---              | ---            | ---               |
-| Ícone de Alerta | Imagem  |  N/A    |    Valor default               |
-| Texto da Notificação | Apenas texto informativo  |  N/A    |    Valor default               |
-
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| OK  | Atividade "Refazer Pesquisa" | default |
-
-**5-Refazer Pesquisa**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
-| ---             | ---              | ---            | ---               |
-| (Apenas texto informativo) | N/A  |  N/A    |    Valor default               |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Refazer Pesquisa | Atividade "Preencher Requisitos" | default |
-| Sair | Evento de Fim | cancel |
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Perguntas Frequentes | Tela "FAQ" (ou âncora) | navigation |
 
 

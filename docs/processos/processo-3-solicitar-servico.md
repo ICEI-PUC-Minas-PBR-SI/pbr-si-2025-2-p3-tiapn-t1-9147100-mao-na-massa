@@ -8,7 +8,7 @@ Imagem : DAVI
 
 #### Detalhamento das atividades
 
-![1.png](nossosservicos.png)
+![1.png](pesquisarservicos.png)
 
 _Os tipos de dados a serem utilizados são:_
 

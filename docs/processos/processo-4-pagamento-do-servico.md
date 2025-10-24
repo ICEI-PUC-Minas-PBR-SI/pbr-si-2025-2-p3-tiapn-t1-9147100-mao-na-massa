@@ -18,7 +18,7 @@ Imagem : DAVI
 
 #### Detalhamento das atividades
 
-![1.png](criarcontacontribuidor.png)
+![1.png](pagamentoeorcamento.png)
 
 ### Tela Principal - Mão na Massa
 * **Imagem** - Logo "Mão na Massa"

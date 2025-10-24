@@ -100,31 +100,48 @@ CREATE TABLE Paciente (
 );
 
 -- Criação da tabela Consulta
-CREATE TABLE Consulta (
-    ConCodigo INTEGER PRIMARY KEY,
-    MedCodigo INTEGER,
-    PacCodigo INTEGER,
-    Data DATE,
-    FOREIGN KEY (MedCodigo) REFERENCES Medico(MedCodigo),
-    FOREIGN KEY (PacCodigo) REFERENCES Paciente(PacCodigo)
+CREATE TABLE Consulta 
+  -- Tabela para armazenar dados cadastrais de todas as pessoas (clientes e prestadores).
+CREATE TABLE Pessoas (
+    -- CPF da pessoa, chave primária que a identifica unicamente.
+    CPF CHAR(11) PRIMARY KEY,
+    -- Nome completo, campo obrigatório.
+    Nome VARCHAR(100) NOT NULL,
+    -- Email para contato.
+    Email VARCHAR(100),
+    -- Telefone para contato.
+    Telefone VARCHAR(15),
+    -- CEP do endereço.
+    CEP CHAR(8),
+    -- Número do endereço.
+    Numero VARCHAR(10),
+    -- Complemento do endereço (ex: Apto 101, Bloco B).
+    Complemento VARCHAR(100)
 );
 
--- Criação da tabela Medicamento
-CREATE TABLE Medicamento (
-    MdcCodigo INTEGER PRIMARY KEY,
-    MdcNome VARCHAR(100)
+-- Tabela para catalogar os tipos de serviços oferecidos.
+CREATE TABLE Servicos (
+    -- Código numérico único para cada serviço, gerado automaticamente.
+    Codigo INT AUTO_INCREMENT PRIMARY KEY,
+    -- Nome do serviço (ex: 'Desenvolvimento de Website', 'Consultoria Financeira').
+    Nome VARCHAR(100) NOT NULL,
+    -- Breve descrição do que o serviço inclui.
+    Descricao VARCHAR(255)
 );
 
--- Criação da tabela Prescricao
-CREATE TABLE Prescricao (
-    ConCodigo INTEGER,
-    MdcCodigo INTEGER,
-    Posologia VARCHAR(200),
-    PRIMARY KEY (ConCodigo, MdcCodigo),
-    FOREIGN KEY (ConCodigo) REFERENCES Consulta(ConCodigo),
-    FOREIGN KEY (MdcCodigo) REFERENCES Medicamento(MdcCodigo)
+-- Tabela para vincular uma pessoa a um serviço que ela presta.
+CREATE TABLE Prestadores (
+    -- ID numérico único para cada registro de prestador, gerado automaticamente.
+    Cod_Prestador INT AUTO_INCREMENT PRIMARY KEY,
+    -- CPF da pessoa que oferece o serviço, vindo da tabela Pessoas.
+    CPF_Pessoa CHAR(11),
+    -- Código do serviço oferecido, vindo da tabela Servicos.
+    Codigo_Servico INT,
+    -- Preço cobrado pelo serviço. O formato DECIMAL(12,2) suporta até 12 dígitos, com 2 casas decimais.
+    Preco DECIMAL(12,2),
+    -- Condições específicas do serviço (ex: 'Pagamento 50% adiantado', 'Disponível apenas aos finais de semana').
+    Condicao VARCHAR(500),
 );
-
 </code>
 
 Este script deverá ser incluído em um arquivo .sql na pasta src\bd.

@@ -141,16 +141,30 @@ Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
 
 
 ### 4.4. Tecnologias
-
-_Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas._
-
+Dimensão,Tecnologia,Descrição e Finalidade
+SGBD,MySQL,"Sistema de Gerenciamento de Banco de Dados relacional para armazenar de forma persistente e segura todas as informações da aplicação, como dados de pessoas, serviços e prestadores."
+Front-end,"HTML5, CSS3, JavaScript (ES6+)","Tecnologias padrão da web. HTML para estruturar o conteúdo das páginas, CSS para estilização e design responsivo, e JavaScript para criar a interatividade, manipular eventos e se comunicar com o back-end."
+,(Biblioteca Opcional: React ou Vue.js),"Para facilitar a criação de interfaces complexas e reativas, poderíamos adotar uma biblioteca como o React. Isso simplificaria a manipulação do estado da aplicação e a atualização da interface com base nos dados recebidos do back-end."
+,(Framework CSS: Bootstrap),"Utilizaremos o Bootstrap para acelerar o desenvolvimento do design, garantindo que a aplicação seja responsiva (funcione bem em desktops, tablets e celulares) e tenha um visual moderno e consistente sem a necessidade de escrever todo o CSS do zero."
+Back-end,Java (versão 17 ou superior),"Linguagem de programação robusta, segura e de alta performance que servirá como base para toda a lógica de negócio da aplicação."
+,Spring Boot,"Framework que acelera o desenvolvimento de aplicações Java. Ele será usado para criar uma API RESTful, que são os ""caminhos"" (endpoints) que o front-end irá chamar para buscar, salvar, atualizar ou deletar dados no banco de dados."
+,Spring Data JPA & Hibernate,"Módulos do Spring que facilitam enormemente a comunicação com o banco de dados MySQL. Eles permitem mapear as tabelas do banco para objetos Java, abstraindo a maior parte do código SQL."
+,Maven,"Ferramenta de automação de compilação e gerenciamento de dependências. Será usada para gerenciar todas as bibliotecas do projeto Java (Spring, Hibernate, etc.)."
+Ferramentas de Desenvolvimento,Visual Studio Code (VS Code),"IDE (Ambiente de Desenvolvimento Integrado) leve e versátil. Será usado para o desenvolvimento do front-end (HTML, CSS, JS)."
+,IntelliJ IDEA Community/Ultimate,"IDE poderosa e especializada para o desenvolvimento back-end com Java e Spring Boot, oferecendo recursos avançados de depuração e produtividade."
+,Git & GitHub,Sistema de controle de versão para gerenciar o histórico do código-fonte e plataforma de hospedagem de repositórios para colaboração e backup do projeto.
+,Postman / Insomnia,"Ferramentas para testar a API RESTful do back-end de forma isolada, garantindo que ela funcione corretamente antes de integrá-la com o front-end."
+,MySQL Workbench,"Ferramenta visual para modelar, administrar e interagir com o banco de dados MySQL."
 Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
 
 
-| **Dimensão**   | **Tecnologia**  |
-| ---            | ---             |
-| SGBD           | MySQL           |
-| Front end      | HTML+CSS+JS     |
-| Back end       | Java SpringBoot |
-| Deploy         | Github Pages    |
+
++----------------+      1. Requisição HTTP      +----------------------+      4. Chamada da API      +-----------------------------+      5. Consulta SQL      +-----------------+
+|                | ---------------------------> |                      | -------------------------> |                             | -------------------------> |                 |
+|     Usuário    |                              |  Front-end (Navegador)|                            | Back-end API (Servidor Java)|                            | Banco de Dados  |
+|   (Navegador)  |      (Renderiza HTML/CSS)    | (Hospedado no GitHub Pages) |     (Hospedado no Heroku)    |    (Hospedado no Heroku/AWS)|      (MySQL)      |
+|                |                              |                      |                            |                             |                            |                 |
+|                | <--------------------------- |                      | <------------------------- |                             | <------------------------- |                 |
++----------------+     12. Resposta Visual     +----------------------+     10. Resposta JSON      +-----------------------------+     8. Retorno dos Dados    +-----------------+
+                         (DOM é atualizado)                                   (Dados)
 

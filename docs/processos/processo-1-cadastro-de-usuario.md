@@ -9,15 +9,19 @@ Validação de Prestador: A validação de documentos do prestador pode ser demo
 Experiência em Erros: Implementar mensagens de validação claras e imediatas para o usuário, tanto na etapa de "Validar Campos" (ex: "CPF já cadastrado", "E-mail inválido") quanto na etapa de upload de documentos do prestador (ex: "Formato de arquivo não suportado").
 Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Comprovante de Residência), é crucial garantir o armazenamento seguro (criptografia) e o tratamento desses dados em conformidade com a LGPD.
 
-![1.png](cadastrocliente.png)
 
-![1.png](criarcontacontribuidor.png)
+
+![1.png](processo1.png)
 
 Imagem - CADASTRO DE USUÁRIO: DAVI
 
 #### Detalhamento das atividades
 
 Imagem - TELA: CAMILLA
+
+![1.png](cadastrocliente.png)
+
+![1.png](criarcontacontribuidor.png)
 
 ### Atividade 1: Criar Conta
 * **Caixa de texto** - Nome

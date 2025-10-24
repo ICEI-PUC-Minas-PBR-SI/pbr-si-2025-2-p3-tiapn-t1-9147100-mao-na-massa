@@ -137,9 +137,6 @@ CREATE TABLE Prestadores (
 
 Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
 
-
-
-
 ### 4.4. Tecnologias
 Dimensão,Tecnologia,Descrição e Finalidade
 SGBD,MySQL,"Sistema de Gerenciamento de Banco de Dados relacional para armazenar de forma persistente e segura todas as informações da aplicação, como dados de pessoas, serviços e prestadores."

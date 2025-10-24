@@ -49,7 +49,7 @@ _Os tipos de dados a serem utilizados são:_
 * **Arquivo** - Botão "Adicione fotos" (ícone de imagem com "+")
 * **Área de texto** - Área "Comentários dos Clientes futuros"
 
-
+![1.png](solicitacaoepagamento.png)
 
 **1-Inserir Detalhes do Serviço**
 

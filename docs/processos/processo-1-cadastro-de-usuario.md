@@ -12,6 +12,7 @@ Experiência em Erros: Implementar mensagens de validação claras e imediatas p
 Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Comprovante de Residência), é crucial garantir o armazenamento seguro (criptografia) e o tratamento desses dados em conformidade com a LGPD.
 ![1.png](cadastrocliente.png)
 
+![1.png](criarcontacontribuidor.png)
 
 #### Detalhamento das atividades
 

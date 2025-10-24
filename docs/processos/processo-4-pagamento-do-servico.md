@@ -18,7 +18,7 @@ Imagem : DAVI
 
 #### Detalhamento das atividades
 
-![1.png](pagamentoeorcamento.png)
+![1.jpeg](processo4.jpeg)
 
 ### Tela Principal - Mão na Massa
 * **Imagem** - Logo "Mão na Massa"

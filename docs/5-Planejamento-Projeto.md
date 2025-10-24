@@ -85,7 +85,7 @@ Atualizado em: 12/10/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| Bruno César Lima Araújo       | Implementação do back-end do processo 1 (Banco de Dados) | 01/10/2025     | 10/10/2025 | 📝    | 10/10/2025      |
+| Bruno César Lima Araújo       | Implementação do back-end do processo 1 (Banco de Dados) | 01/10/2025     | 10/10/2025 | ✔️  | 10/10/2025      |
 
 Legenda:
 - ✔️: terminado

@@ -1052,3 +1052,38 @@ p {
         padding: 1.5rem;
     }
 }
+/* debug — remover depois */
+button.auth-tab{
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 9999 !important;
+  color: initial !important;
+  background: initial !important;
+  border: 1px solid currentColor !important;
+}
+/* Garantir que o modal fique por cima de tudo */
+.auth-modal {
+    z-index: 99999 !important;
+}
+
+/* Corrigir visibilidade dos botões de aba */
+.auth-tab {
+    display: inline-block;
+    color: var(--text-secondary);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.auth-tab.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Garantir contraste suficiente nos temas */
+.dark .auth-tab.active {
+    color: var(--primary-hover);
+    border-bottom-color: var(--primary-hover);
+}

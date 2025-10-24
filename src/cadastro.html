@@ -2,25 +2,97 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuário</title>
+  <link rel="stylesheet" href="styles/cadastro.css">
 </head>
 
 <body>
-    <!-- Register Form -->
-    <form id="registerForm" class="auth-form" >
-        <div class="form-row">
-            <input type="text" placeholder="Nome" required>
-        </div>
-        <input type="text" placeholder="CPF" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="Telefone" required>
-        <input type="password" placeholder="Senha" required>
-        <input type="password" placeholder="Confirmar senha" required>
-        <button type="submit" class="btn btn-primary btn-full">Verificar informações</button>
-    </form>
+  <h1>Cadastro de Usuário</h1>
+  <div class="progresso">
+    <div id="progresso-barra" class="progresso-barra"></div>
+  </div>
 
+  <!-- Etapa 1: Dados Pessoais -->
+  <div id="etapa1" class="etapa ativa">
+    <h2>1. Dados Pessoais</h2>
+    <input type="text" placeholder="Nome" required>
+    <input type="text" placeholder="CPF" required>
+    <input type="email" placeholder="E-mail" required>
+    <input type="tel" placeholder="Telefone" required>
+    <input type="password" placeholder="Senha" required>
+    <input type="password" placeholder="Confirmar Senha" required>
+    <div class="botoes">
+      <button onclick="proximaEtapa(2)">Verificar informações</button>
+    </div>
+  </div>
+
+  <!-- Etapa 2: Verificação de Código -->
+  <div id="etapa2" class="etapa">
+    <h2>2. Verificação de Código</h2>
+    <p>Um código de verificação foi enviado ao seu e-mail ou telefone.</p>
+    <input type="text" placeholder="Digite o código recebido" required>
+    <div class="botoes">
+      <button onclick="voltarEtapa(1)">Voltar</button>
+      <button onclick="proximaEtapa(3)">Confirmar código</button>
+    </div>
+  </div>
+
+  <!-- Etapa 3: Tipo de Conta -->
+  <div id="etapa3" class="etapa">
+    <h2>3. Tipo de Conta</h2>
+    <label><input type="radio" name="tipo" value="cliente"> Cliente</label><br>
+    <label><input type="radio" name="tipo" value="prestador"> Prestador</label>
+    <div class="botoes">
+      <button onclick="voltarEtapa(2)">Voltar</button>
+      <button onclick="escolherTipo()">Avançar</button>
+    </div>
+  </div>
+
+  <!-- Etapa 4: Dados Cliente -->
+  <div id="etapa4_cliente" class="etapa">
+    <h2>4. Informações do Cliente</h2>
+    <input type="text" placeholder="Endereço" required>
+    <input type="text" placeholder="CEP" required>
+    <input type="tel" placeholder="Telefone" required>
+    <textarea placeholder="Preferências de serviço (opcional)"></textarea>
+    <label>Foto de perfil (opcional): <input type="file" accept="image/*"></label>
+    <div class="botoes">
+      <button onclick="voltarEtapa(3)">Voltar</button>
+      <button onclick="proximaEtapa(5)">Finalizar</button>
+    </div>
+  </div>
+
+  <!-- Etapa 4: Dados Prestador -->
+  <div id="etapa4_prestador" class="etapa">
+    <h2>4. Informações do Prestador</h2>
+    <input type="text" placeholder="Área de atuação" required>
+    <textarea placeholder="Descrição profissional" required></textarea>
+    <input type="text" placeholder="Experiência" required>
+    <input type="text" placeholder="Cidade de atuação" required>
+    <label>Foto de perfil (opcional): <input type="file" accept="image/*"></label>
+
+    <h3>Documentação</h3>
+    <label>RG: <input type="file" accept=".pdf,.jpg,.png" required></label>
+    <label>CPF/CNPJ: <input type="file" accept=".pdf,.jpg,.png" required></label>
+    <label>Comprovante de residência: <input type="file" accept=".pdf,.jpg,.png" required></label>
+    <label>Certificados técnicos (opcional): <input type="file" multiple accept=".pdf,.jpg,.png"></label>
+
+    <div class="botoes">
+      <button onclick="voltarEtapa(3)">Voltar</button>
+      <button onclick="proximaEtapa(5)">Finalizar</button>
+    </div>
+  </div>
+
+  <!-- Etapa 5: Finalização -->
+  <div id="etapa5" class="etapa">
+    <h2>5. Cadastro Concluído</h2>
+    <p>Parabéns! 🎉 Seu cadastro foi concluído com sucesso.</p>
+    <button onclick="voltarEtapa(1)">Fazer novo cadastro</button>
+  </div>
+
+  <script src="scripts/cadastro.js"></script>
 </body>
 
 </html>

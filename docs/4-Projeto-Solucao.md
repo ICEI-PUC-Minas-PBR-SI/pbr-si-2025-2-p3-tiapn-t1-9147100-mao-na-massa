@@ -86,22 +86,7 @@ Veja um exemplo:
 
 <code>
 
- -- Criação da tabela Médico
-CREATE TABLE Medico (
-    MedCodigo INTEGER PRIMARY KEY,
-    MedNome VARCHAR(100)
-);
-
-
--- Criação da tabela Paciente
-CREATE TABLE Paciente (
-    PacCodigo INTEGER PRIMARY KEY,
-    PacNome VARCHAR(100)
-);
-
--- Criação da tabela Consulta
-CREATE TABLE Consulta 
-  -- Tabela para armazenar dados cadastrais de todas as pessoas (clientes e prestadores).
+-- Tabela para armazenar dados cadastrais de todas as pessoas (clientes e prestadores).
 CREATE TABLE Pessoas (
     -- CPF da pessoa, chave primária que a identifica unicamente.
     CPF CHAR(11) PRIMARY KEY,
@@ -141,7 +126,13 @@ CREATE TABLE Prestadores (
     Preco DECIMAL(12,2),
     -- Condições específicas do serviço (ex: 'Pagamento 50% adiantado', 'Disponível apenas aos finais de semana').
     Condicao VARCHAR(500),
+    
+    -- Define a ligação com a tabela de Pessoas.
+    FOREIGN KEY (CPF_Pessoa) REFERENCES Pessoas(CPF),
+    -- Define a ligação com a tabela de Serviços.
+    FOREIGN KEY (Codigo_Servico) REFERENCES Servicos(Codigo)
 );
+
 </code>
 
 Este script deverá ser incluído em um arquivo .sql na pasta src\bd.

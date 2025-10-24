@@ -11,12 +11,16 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 
 
 
-
+#### Detalhamento das atividades
 Imagem - CADASTRO DE USUÁRIO: DAVI
 
 ![1.jpeg](processo1.jpeg)
 
+#### Detalhamento das atividades
+
 ![1.jpeg](subprocesso1.jpeg)
+
+#### Detalhamento das atividades
 
 ![1.jpeg](subprocesso1.1.jpeg)
 
@@ -26,6 +30,8 @@ Imagem - CADASTRO DE USUÁRIO: DAVI
 Imagem - TELA: CAMILLA
 
 ![1.png](cadastrocliente.png)
+
+#### Detalhamento das atividades
 
 ![1.png](criarcontacontribuidor.png)
 

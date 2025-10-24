@@ -45,6 +45,8 @@ Imagem : DAVI
 * **Arquivo** - Botão "Adicione fotos" (ícone de imagem com "+")
 * **Área de texto** - Área "Comentários dos Clientes futuros"
 
+### Tela: Solicitação de Pagamento
+
 ![1.png](solicitacaoepagamento.png)
 
 **1-Inserir Detalhes do Serviço**

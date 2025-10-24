@@ -10,6 +10,7 @@ Imagem : DAVI
 
 ![1.jpeg](solicitarservico.jpeg)
 
+#### Detalhamento das atividades
 
 ![1.png](pesquisarservicos.png)
 

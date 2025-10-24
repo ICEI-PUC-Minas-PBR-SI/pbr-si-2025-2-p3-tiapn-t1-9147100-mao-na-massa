@@ -4,22 +4,17 @@ O processo de "Cadastro de Usuário" tem como objetivo registrar novos usuários
 Se a conta for "Cliente": O usuário preenche informações adicionais (endereço, preferências), aceita os termos e, após validação da plataforma, seu perfil é criado.
 Se a conta for "Prestador": O usuário preenche dados profissionais (área de atuação, experiência), envia documentação (RG, CPF/CNPJ, certificados) e aceita os termos. A plataforma realiza a validação dos dados e documentos (que pode incluir análise manual). Se aprovado, o perfil é criado.
 O processo se encerra com a criação do perfil correspondente no banco de dados e o envio de uma confirmação ao usuário.
-
-Oportunidades de melhoria:
-Fluxo de Reenvio de Código: O diagrama BPMN e o texto divergem ligeiramente. O diagrama sugere um loop de falha ("Confirma? -> Não"), enquanto o texto sugere uma ação iniciada pelo usuário ("pode solicitar o reenvio"). Recomenda-se implementar o reenvio como uma ação explícita (ex: um botão "Não recebi o código") para evitar confusão.
+Oportunidades de melhoria: Fluxo de Reenvio de Código: O diagrama BPMN e o texto divergem ligeiramente. O diagrama sugere um loop de falha ("Confirma? -> Não"), enquanto o texto sugere uma ação iniciada pelo usuário ("pode solicitar o reenvio"). Recomenda-se implementar o reenvio como uma ação explícita (ex: um botão "Não recebi o código") para evitar confusão.
 Validação de Prestador: A validação de documentos do prestador pode ser demorada, especialmente se exigir análise manual. Seria ideal implementar um "status de conta" (ex: "Pendente de Aprovação"), permitindo que o prestador acesse a plataforma com limitações enquanto aguarda a aprovação, em vez de bloquear a conclusão do cadastro.
 Experiência em Erros: Implementar mensagens de validação claras e imediatas para o usuário, tanto na etapa de "Validar Campos" (ex: "CPF já cadastrado", "E-mail inválido") quanto na etapa de upload de documentos do prestador (ex: "Formato de arquivo não suportado").
 Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Comprovante de Residência), é crucial garantir o armazenamento seguro (criptografia) e o tratamento desses dados em conformidade com a LGPD.
-![1.png](cadastrocliente.png)
 
-<<<<<<< HEAD
-![1.jpeg](../images/1.jpeg);
-=======
 
->>>>>>> e5872f21056ec00f9ddf3214805a063985fb3f20
+Imagem - CADASTRO DE USUÁRIO
+
 #### Detalhamento das atividades
 
-_Os tipos de dados a serem utilizados são:_
+Imagem - TELA
 
 ### Atividade 1: Criar Conta
 * **Caixa de texto** - Nome
@@ -144,6 +139,7 @@ Uma vez que todas as informações são fornecidas, o contribuidor envia seu cad
 
 Se a validação for bem-sucedida, a plataforma processa o cadastro e cria o novo perfil de contribuidor. Uma confirmação de conta criada é enviada ao usuário, e seu perfil é ativado na plataforma, ficando visível para clientes e pronto para, futuramente, receber "Comentários dos Clientes".
 
+Imagem - CADASTRO DE CONTRIBUIDOR
 
 
 #### Detalhamento das atividades
@@ -151,7 +147,7 @@ Se a validação for bem-sucedida, a plataforma processa o cadastro e cria o nov
 _Descreva aqui cada uma das propriedades das atividades do processo 2. 
 Devem estar relacionadas com o modelo de processo apresentado anteriormente.
 
-![1.png](criarcontacontribuidor.png)
+Imagem - TELA
 
 _Os tipos de dados a serem utilizados são:_
 

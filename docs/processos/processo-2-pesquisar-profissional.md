@@ -11,6 +11,8 @@ Se sim, o processo é concluído com sucesso. Se não, o cliente é notificado s
 
 Imagem : DAVI
 
+![1.jpeg](processo2.jpeg)
+
 
 #### Detalhamento das atividades
 

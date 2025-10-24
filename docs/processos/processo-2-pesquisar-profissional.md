@@ -19,25 +19,39 @@ Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
 ### Tela: Nossos Serviços
 
-* **Área de texto** - Descrição da Página ("Oferecemos uma ampla gama...")
-* **Área de texto** - Descrição do Serviço (Limpeza Residencial)
-* **Área de texto** - Descrição do Serviço (Manutenção e Reparos)
-* **Área de texto** - Descrição do Serviço (Jardinagem)
-* **Área de texto** - Texto (Outros serviços - "Precisa de outros serviços?...")
-* **Imagem** - Logo (Mão na Massa)
-* **Imagem** - Imagem do Serviço (Limpeza Residencial)
-* **Imagem** - Imagem do Serviço (Manutenção e Reparos)
-* **Imagem** - Imagem do Serviço (Jardinagem)
-* **Link** - Início
-* **Link** - Serviços
-* **Link** - Depoimentos
-* **Link** - Contato
-* **Link** - Sobre
-* **Link** - Solicitar orçamento (no topo)
-* **Link** - Solicitar orçamento (card Limpeza Residencial)
-* **Link** - Solicitar orçamento (card Manutenção e Reparos)
-* **Link** - Solicitar orçamento (card Jardinagem)
-* **Link** - Ver Todos os Serviços
+### Tela "Entre em Contato"
+* **Área de texto** - Título "Entre em Contato"
+* **Área de texto** - Subtítulo "Pronto para transformar sua casa?..."
+* **Imagem** - Ícone "Solicitar Orçamento"
+* **Área de texto** - Título do formulário "Solicitar Orçamento"
+* **Caixa de texto** - Nome Completo ("Seu nome")
+* **Caixa de texto** - Telefone ("(11) 9999-9999")
+* **Caixa de texto** - Email ("seu@email.com")
+* **Seleção única** - Serviço Desejado ("Selecione um serviço")
+* **Caixa de texto** - Endereço ("Rua, número, bairro")
+* **Área de texto** - Detalhes do Serviço ("Descreva o que você precisa...")
+* **Link** - Botão "Enviar Solicitação"
+* **Área de texto** - Nota de rodapé do formulário ("Entraremos em contato...")
+* **Área de texto** - Título da seção "Informações de Contato"
+* **Imagem** - Ícone "Telefone"
+* **Área de texto** - Label "Telefone"
+* **Área de texto** - Valor "(11) 9999-9999"
+* **Área de texto** - Info "Seg a Sex, 8h às 18h"
+* **Imagem** - Ícone "Email"
+* **Área de texto** - Label "Email"
+* **Área de texto** - Valor "contato@casaservicos.com"
+* **Área de texto** - Info "Respondemos em até 2h"
+* **Imagem** - Ícone "Área de Atendimento"
+* **Área de texto** - Label "Área de Atendimento"
+* **Área de texto** - Valor "São Paulo e Região"
+* **Área de texto** - Info "Zona Sul, Oeste e Centro"
+* **Imagem** - Ícone "Horário de Funcionamento"
+* **Área de texto** - Label "Horário de Funcionamento"
+* **Área de texto** - Valor "Segunda a Sábado"
+* **Área de texto** - Info "8h às 18h"
+* **Link** - "Perguntas Frequentes"
+* **Link** - Botão flutuante "WhatsApp" (Ícone verde)
+* **Link** - Botão flutuante "Chat" (Ícone escuro)
 
 
 

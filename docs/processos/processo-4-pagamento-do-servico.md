@@ -44,6 +44,7 @@ _Os tipos de dados a serem utilizados são:_
 * **Área de texto** - Área "Comentários dos Clientes futuros"
 
 
+
 **1-Inserir Detalhes do Serviço**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
@@ -78,27 +79,22 @@ _Os tipos de dados a serem utilizados são:_
 | Clicar em "Criar Conta" | Evento "Recusar solicitação" | cancel |                |
 
 
-**3-Solicitação Concluída**
+**3-Formulário "Criar sua conta como Contribuidor**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| (Mensagem de Sucesso) | (Texto informativo)  |  N/A   |   Valor default       |
-| (Ícone de Sucesso) | Imagem  |  N/A   |   Valor default       |
+| Título do formulário | Área de texto  |  N/A   |  "Criar sua conta como Contribuidor"     |
+| Foto de Perfil | Arquivo  | Obrigatório   |   Valor default (label)       |
+| Seu Nome | Caixa de texto  | Obrigatório   |  Valor default (vazio)       |
+| "Qual seu tipo de serviço?" | Seleção múltipla  | N/A   |  Valor default (label)   |
+| "Localizações que atende | Área de texto  | N/A   |  Valor default (label)   |
+| Ícone de Localização | Imagem  | N/A   |  Valor default  |
+| "Adicione fotos..." | Área de texto  | N/A   |  Valor default (label)  |
+| Botão "Adicione fotos" | Arquivo | Opcional (recomendado)   | Valor default (ícone)  |
+| "Comentários dos Clientes..." | Área de texto  | N/A   |  Valor default (informativo)  |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| OK | Evento de Fim  | default  |     
-| Abrir Chat | Atividade "Criar canal de comunicação" | cancel |                |
-
-
-**4-Solicitação Concluída**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
-| ---             | ---              | ---            | ---               |
-| (Mensagem de Erro) | (Texto informativo)  |  N/A   |   Valor default       |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Tentar Novamente | Atividade "Inserir detalhes do serviço"  | default  |   
-| Buscar Outro Profissional | Atividade "Retomar processo de pesquisa"  | default  |  
-| Cancelar | Evento de Fim | cancel |                |
+| ---                 Valor default (informativo) | ---                            | ---               |
+| (Botão Criar Conta) | Gateway "Dados completos?" | default  |     
+| (Clicar na aba "Entrar") | Evento "Exibir formulário de Login" | cancel |                |

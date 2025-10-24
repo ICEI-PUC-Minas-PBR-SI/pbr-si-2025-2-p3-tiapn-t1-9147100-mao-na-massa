@@ -101,8 +101,8 @@ Atualizado em: 23/10/2025
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
 | Camila Moreira Pessoa     | Relatório – seção “Modelagem de dados” (versão atualizada) | 15/10/2025     | 31/10/2025 | 📝  |31/10/2025      |
 | Camila Moreira Pessoa     | Implementação completa do processo 1 | 15/10/2025     | 31/10/2025 | 📝  | 31/10/2025      |
-| Davi Alves Silveira   | Implementação do processo 1     | 31/10/2025 | 📝  |15/10/2025      |
-| Pricilla Lopes Braga   | Implementação completa de duas atividades do processo 2    | 31/10/2025 | 📝  |31/10/2025      |
+| Davi Alves Silveira   | Implementação do processo 1     | 15/10/2025 | 📝  | 31/10/2025      | | 31/10/2025      |
+| Pricilla Lopes Braga   | Implementação completa de duas atividades do processo 2    | 15/10/2025 | 📝  | 31/10/2025      |  31/10/2025      |
 
 
 Legenda:

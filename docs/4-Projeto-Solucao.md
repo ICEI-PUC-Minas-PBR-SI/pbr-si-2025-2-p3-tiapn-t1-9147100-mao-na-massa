@@ -36,21 +36,7 @@ Tela FeedBack dos Clientes
 ![Exemplo de Wireframe](images/feedback.png)
 ## Diagrama de Classes
 
-O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
-
-> - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
-> - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
-
-## Modelo ER
-
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
-
+<img src="images/dc.jpg" >
 
 ### 4.3. Modelo de dados
 
@@ -80,9 +66,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 
 #### 4.3.3 Modelo Físico
 
-Insira aqui o script de criação das tabelas do banco de dados.
-
-Veja um exemplo:
+script de criação das tabelas do banco de dados.
 
 <code>
 

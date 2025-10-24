@@ -40,8 +40,12 @@ Tela FeedBack dos Clientes
 
 ### 4.3. Modelo de dados
 
-O desenvolvimento da solução proposta requer a existência de bases de dados que permitam efetuar os cadastros de dados e controles associados aos processos identificados, assim como recuperações.
-Utilizando a notação do DER (Diagrama Entidade e Relacionamento), elaborem um modelo, na ferramenta visual indicada na disciplina, que contemple todas as entidades e atributos associados às atividades dos processos identificados. Deve ser gerado um único DER que suporte todos os processos escolhidos, visando, assim, uma base de dados integrada. O modelo deve contemplar, também, o controle de acesso de usuários (partes interessadas dos processos) de acordo com os papéis definidos nos modelos do processo de negócio.
+Entidades identificadas: Contratado (forte), Gerente (forte), Contrato (forte), Contratante (fraca)
+R1: Contratado — Gerente (Tipo: Forte) : Um gerente pode ser responsável por um contratado
+R2: Contratado — Contrato (Tipo: Forte) : Um contratado participa de um contrato
+R3: Contrato — Contratante (Tipo: Fraco) : A existência de um contrato depende de uma contratante associada
+R4: Gerencia — Contratante (Tipo: Forte) : A entidade Gerencia (forte) se relaciona com a Contratante para definir quem administra a relação contratual
+Relacionamento N-ário ( relacionamento geral )
 
 #### 4.3.1 Modelo ER
 

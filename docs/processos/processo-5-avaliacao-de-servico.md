@@ -1,4 +1,4 @@
-### 3.3.5 Processo 5 – Avaliação de serviço
+### 3.3.5 Processo 4 – Avaliação de serviço
 
 O processo de avaliação se inicia quando o cliente acessa a área de avaliação na plataforma.
 O cliente então, deve informar uma nota e comentário e em seguida confirmar o envio da avaliação.
@@ -7,14 +7,12 @@ Se os dados estiverem preenchidos corretamente, registra a avaliação no banco 
 Depois disso, a plataforma confirma o registro da avaliação e notifica o prestador sobre o novo feedback. Ao receber essa notificação, p prestador pode visualizar a avaliação e tem a opção de responder ou agradecer ao cliente.
 Por fim, o cliente recebe a confirmação de que sua avaliação foi registrada, encerrando assim o processo.
 
+Imagem : DAVI
+
+
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
-
 ![1.png](feedbacks.png) 
-
-_Os tipos de dados a serem utilizados são:_
 
 ### Tela: Depoimentos
 * **Imagem** - Logo (Mão na Massa)

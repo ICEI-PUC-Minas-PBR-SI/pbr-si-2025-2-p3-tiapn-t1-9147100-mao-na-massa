@@ -1,4 +1,4 @@
-### 3. Modelagem dos Processos de Negócio
+### 3.Modelagem dos Processos de Negócio 
 
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 Atualmente, a contratação de serviços manuais (como pintura, elétrica ou hidráulica) ocorre de forma informal e descentralizada. Clientes recorrem a grupos de WhatsApp, redes sociais, anúncios de internet ou indicações de conhecidos para encontrar prestadores de serviço. Esse processo traz diversos problemas: insegurança, falta de garantias e dificuldade de verificar a qualidade do profissional.
@@ -33,13 +33,11 @@ Assim, espera-se que o "Mão na Massa" preencha uma lacuna de mercado, reduzindo
 ### 3.3. Modelagem dos processos
 
 <ol>
-<li><a href="processos/processo-1-cadastro-de-usuario.md">PROCESSO 1 - Cadastro de Usuários</a></li>
+<li><a href="processos/processo-1-cadastro-de-usuario.md">PROCESSO 1 - Cadastro de Usuários e cadastro de contribuidor</a></li>
 
 <li><a href="processos/processo-2-pesquisar-profissional.md">PROCESSO 2 - Pesquisar profissional</a></li>
 
 <li><a href="processos/processo-3-solicitar-servico.md">PROCESSO 3 - Solicitar Serviço</a></li>
 
-<li><a href="processos/processo-4-pagamento-do-servico.md">PROCESSO 4 - Como Criar sua conta como Contribuidor</a></li>
-
-<li><a href="processos/processo-5-avaliacao-de-servico.md">PROCESSO 5 - Avaliação de Serviço</a></li>
+<li><a href="processos/processo-4-avaliacao-de-servico.md">PROCESSO 5 - Avaliação de Serviço</a></li>
 </ol>

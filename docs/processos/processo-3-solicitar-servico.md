@@ -4,10 +4,9 @@ O processo de solicitação de serviço inicia-se com o cliente acessando a plat
 Com os dados completos, a plataforma encaminha a solicitação ao profissional, que analisa o tipo de serviço solicitado e decide se deseja aceitar ou não. Caso o profissional recuse a solicitação, o cliente é notificado e pode optar por procurar outro profissional ou refazer a pesquisa.
 Caso o profissional aceite o serviço, a plataforma confirma a solicitação, cria um canal de comunicação entre as partes e notifica  o cliente. A confirmação da aceitação encerra o processo de solicitação de serviço, concluindo a etapa na plataforma.
 
-#### Detalhamento das atividades
+Imagem : DAVI
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+#### Detalhamento das atividades
 
 ![1.png](nossosservicos.png)
 

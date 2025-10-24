@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 ### 3.3.4 Processo 4 – Cadastro Do Contribuidor 
-=======
+
 ### 3.3.4 Processo 4 – Como Criar sua conta como Contribuidor 
 
 O processo de criação de conta de contribuidor se inicia quando o novo usuário seleciona a opção "Criar Conta" e acessa a tela "Criar sua conta como Contribuidor". Em seguida, o usuário preenche suas informações de perfil, adicionando sua foto e informando seu nome.
@@ -12,17 +12,13 @@ Para completar o cadastro do perfil, o usuário deve adicionar fotos que comprov
 Uma vez que todas as informações são fornecidas, o contribuidor envia seu cadastro para a plataforma. A plataforma, então, recebe a solicitação e realiza a validação dos dados preenchidos. Se for identificado algum erro ou informação faltante, a plataforma notifica o usuário para que ele corrija os dados e envie novamente.
 
 Se a validação for bem-sucedida, a plataforma processa o cadastro e cria o novo perfil de contribuidor. Uma confirmação de conta criada é enviada ao usuário, e seu perfil é ativado na plataforma, ficando visível para clientes e pronto para, futuramente, receber "Comentários dos Clientes".
->>>>>>> 75119902dbd231ba1176f0a7773dc56e73f0c77c
+
+Imagem : DAVI
 
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente.
-
 ![1.png](criarcontacontribuidor.png)
-
-_Os tipos de dados a serem utilizados são:_
 
 ### Tela Principal - Mão na Massa
 * **Imagem** - Logo "Mão na Massa"

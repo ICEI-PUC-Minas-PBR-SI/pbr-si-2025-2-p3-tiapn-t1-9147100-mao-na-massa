@@ -9,7 +9,7 @@ Se sim, apresenta ao cliente uma lista para que ele escolha o profissional ideal
 O cliente então, escolhe o profissional e verifica se ele realmente atende a todos os critérios.
 Se sim, o processo é concluído com sucesso. Se não, o cliente é notificado sobre a indisponibilidade de profissionais e pode refazer a pesquisa.
 
-![Exemplo de um Modelo BPMN do PROCESSO 2](nossosservicos.png "Modelo BPMN do Processo 2.")
+![Exemplo de um Modelo BPMN do PROCESSO 2](entreemcontato.png "Modelo BPMN do Processo 2.")
 
 
 #### Detalhamento das atividades

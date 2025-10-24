@@ -10,11 +10,11 @@ Experiência em Erros: Implementar mensagens de validação claras e imediatas p
 Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Comprovante de Residência), é crucial garantir o armazenamento seguro (criptografia) e o tratamento desses dados em conformidade com a LGPD.
 
 
-Imagem - CADASTRO DE USUÁRIO
+Imagem - CADASTRO DE USUÁRIO: DAVI
 
 #### Detalhamento das atividades
 
-Imagem - TELA
+Imagem - TELA: CAMILLA
 
 ### Atividade 1: Criar Conta
 * **Caixa de texto** - Nome
@@ -139,7 +139,7 @@ Uma vez que todas as informações são fornecidas, o contribuidor envia seu cad
 
 Se a validação for bem-sucedida, a plataforma processa o cadastro e cria o novo perfil de contribuidor. Uma confirmação de conta criada é enviada ao usuário, e seu perfil é ativado na plataforma, ficando visível para clientes e pronto para, futuramente, receber "Comentários dos Clientes".
 
-Imagem - CADASTRO DE CONTRIBUIDOR
+Imagem - CADASTRO DE CONTRIBUIDOR: DAVI
 
 
 #### Detalhamento das atividades
@@ -147,7 +147,7 @@ Imagem - CADASTRO DE CONTRIBUIDOR
 _Descreva aqui cada uma das propriedades das atividades do processo 2. 
 Devem estar relacionadas com o modelo de processo apresentado anteriormente.
 
-Imagem - TELA
+Imagem - TELA: CAMILLA
 
 _Os tipos de dados a serem utilizados são:_
 

@@ -13,16 +13,12 @@ Uma vez que todas as informações são fornecidas, o contribuidor envia seu cad
 
 Se a validação for bem-sucedida, a plataforma processa o cadastro e cria o novo perfil de contribuidor. Uma confirmação de conta criada é enviada ao usuário, e seu perfil é ativado na plataforma, ficando visível para clientes e pronto para, futuramente, receber "Comentários dos Clientes".
 
+Imagem : DAVI
 
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente.
-
 ![1.png](criarcontacontribuidor.png)
-
-_Os tipos de dados a serem utilizados são:_
 
 ### Tela Principal - Mão na Massa
 * **Imagem** - Logo "Mão na Massa"

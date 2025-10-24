@@ -93,8 +93,7 @@ _Os tipos de dados a serem utilizados são:_
 | Botão "Adicione fotos" | Arquivo | Opcional (recomendado)   | Valor default (ícone)  |
 | "Comentários dos Clientes..." | Área de texto  | N/A   |  Valor default (informativo)  |
 
-
 | **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                 Valor default (informativo) | ---                            | ---               |
-| (Botão Criar Conta) | Gateway "Dados completos?" | default  |     
-| (Clicar na aba "Entrar") | Evento "Exibir formulário de Login" | cancel |                |
+| ---                  | ---                            | ---               |
+| Clicar em "Entrar" | Clicar em "Entrar"  | default  |     
+| Clicar em "Criar Conta" | Evento "Recusar solicitação" | cancel |                |

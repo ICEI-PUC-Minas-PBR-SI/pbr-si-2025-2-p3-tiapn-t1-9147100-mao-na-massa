@@ -38,7 +38,15 @@
 - Relatórios: Pricilla Braga Lopes
 - Planejamento da Sprint 5: Glendha Paulino Caldeira Tolentino
 
-
+### Sprint 5
+- Project Owner: Pricilla Lopes Braga
+- _Scrum master_: Glendha Paulino Caldeira Tolentino 
+- Modelagem dos Processos (atualização): Davi Alves Silveira
+- Implementações do processos:Camila Moreira Pessoa
+- Relatórios: Pricilla Braga Lopes
+- Implementação completa: Bruno César Lima Araújo
+- Planejamento da Sprint 6: Glendha Paulino Caldeira Tolentino
+ 
 
 
 

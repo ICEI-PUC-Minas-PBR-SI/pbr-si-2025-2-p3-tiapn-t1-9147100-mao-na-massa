@@ -65,6 +65,7 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | Confirmar | Gateway "Confirma?"  | default |
 | Reenviar código | Atividade "Reenviar código" (Plataforma)  | default |
 
+
 **3- Escolher tipo de conta**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
@@ -76,6 +77,7 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | Concluir | Gateway "Tipo de conta"  | default |
 | Voltar | Tela "Inserir código de validação"  | cancel |
 
+
 **4- Complementar Perfil Cliente**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
@@ -85,13 +87,14 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | Telefone | Caixa de Texto  |   Obrigatório (o texto menciona "telefone")    |     Valor default       |
 | Preferências de Serviço | Área de Texto / Tags  |   Opcional     |     Valor default       |
 | Foto de Perfil | Upload de Imagem  |   Opcional (ex: .jpg, .png)     |     Valor default       |
-| Aceitar Termos de Uso | Caixa de Seleção  |   Obrigatório (deve ser True)     |    False      |
-| Aceitar Política de Privacidade | Caixa de Seleção  |   Obrigatório (deve ser True)     |    False      |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Criar Conta | Atividade "Validar Informações Cliente" (Plataforma)  | default |
 | Voltar | Tela "Escolher tipo de conta"  | cancel |
+| Aceitar Termos de Uso | Campo "Aceitar Termos de Uso"   | cancel |
+| Aceitar Política de Privacidade | Campo "Política de Privacidade"  | cancel |
+
 
 **5-Complementar Perfil Prestador (Parte 1: Perfil)**
 
@@ -103,11 +106,11 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | Cidade de Atuação | Caixa de Texto / Seleção / Tags  |   Caixa de Texto / Seleção     |     Valor default       |
 | Foto de Perfil | Upload de Imagem  |   Opcional (ex: .jpg, .png)     |     Valor default       |
 
-
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Próximo | Tela "Complementar Perfil Prestador (Parte 2)"  | default |
 | Voltar | Tela "Escolher tipo de conta"  | cancel |
+
 
 **6-Complementar Perfil Prestador (Parte 2: Documentos)**
 
@@ -117,12 +120,10 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | CPF / CNPJ (Profissional) | Upload de Arquivo  |  Obrigatório (ex: .pdf, .jpg)    |     Valor default       |
 | Comprovante de Residência |  | Upload de Arquivo  | Obrigatório (ex: .pdf, .jpg)    |     Valor default       |
 | Certificados Técnicos | Upload de Arquivo (múltiplo)   |   Opcional     |     Valor default       |
-| Aceitar Termos de Uso | Caixa de Seleção  |   Obrigatório (deve ser True)     |    False       |
-| Aceitar Política de Privacidade | Caixa de Seleção  |   Obrigatório (deve ser True)     |    False       |
-
-
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Enviar para Análise | Atividade "Validar Informações Prestador" (Plataforma)  | default |
 | Voltar | Tela "Complementar Perfil Prestador (Parte 1)"  | cancel |
+| Aceitar Termos de Uso | Campo "Aceitar Termos de Uso"  | False |
+| Aceitar Política de Privacidade | Campo "Política de Privacidade  | False |

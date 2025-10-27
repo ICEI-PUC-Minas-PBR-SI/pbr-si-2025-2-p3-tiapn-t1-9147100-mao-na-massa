@@ -33,7 +33,7 @@ Assim, espera-se que o "Mão na Massa" preencha uma lacuna de mercado, reduzindo
 ### 3.3. Modelagem dos processos
 
 <ol>
-<li><a href="processos/processo-1-cadastro-de-usuario.md">PROCESSO 1 - Cadastro de Usuários e cadastro de contribuidor</a></li>
+<li><a href="processos/processo-1-cadastro-de-usuario.md">PROCESSO 1 - Cadastro de Usuários</a></li>
 
 <li><a href="processos/processo-2-pesquisar-profissional.md">PROCESSO 2 - Pesquisar profissional</a></li>
 

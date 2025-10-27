@@ -9,16 +9,11 @@ Se sim, apresenta ao cliente uma lista para que ele escolha o profissional ideal
 O cliente então, escolhe o profissional e verifica se ele realmente atende a todos os critérios.
 Se sim, o processo é concluído com sucesso. Se não, o cliente é notificado sobre a indisponibilidade de profissionais e pode refazer a pesquisa.
 
-Imagem : DAVI
 
 ### Tela: processo 2
 
 ![1.jpeg](processo2.jpeg)
 
-
-#### Detalhamento das atividades
-
-Imagem - TELA: CAMILLA
 
 ### Tela: Nossos Serviços
 

@@ -57,6 +57,7 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | Avançar | Atividade "Validar Campos" (Plataforma)  | default |
 | Cancelar | Evento de Início (ou tela de Login)  | cancel |
 
+--- 
 
 **2- Inserir código de validação**
 
@@ -65,6 +66,7 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | Confirmar | Gateway "Confirma?"  | default |
 | Reenviar código | Atividade "Reenviar código" (Plataforma)  | default |
 
+---
 
 **3- Escolher tipo de conta**
 
@@ -77,6 +79,7 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | Concluir | Gateway "Tipo de conta"  | default |
 | Voltar | Tela "Inserir código de validação"  | cancel |
 
+---
 
 **4- Complementar Perfil Cliente**
 
@@ -95,6 +98,7 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | Aceitar Termos de Uso | Campo "Aceitar Termos de Uso"   | cancel |
 | Aceitar Política de Privacidade | Campo "Política de Privacidade"  | cancel |
 
+---
 
 **5-Complementar Perfil Prestador (Parte 1: Perfil)**
 
@@ -111,6 +115,7 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | Próximo | Tela "Complementar Perfil Prestador (Parte 2)"  | default |
 | Voltar | Tela "Escolher tipo de conta"  | cancel |
 
+---
 
 **6-Complementar Perfil Prestador (Parte 2: Documentos)**
 

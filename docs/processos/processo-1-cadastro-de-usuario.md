@@ -13,8 +13,6 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 
 ![1.jpeg](subprocesso1.jpeg)
 
-![1.jpeg](subprocesso1.1.jpeg)
-
 
 #### Detalhamento das atividades
 

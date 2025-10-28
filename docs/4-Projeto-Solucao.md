@@ -56,58 +56,98 @@ Relacionamento N-ário ( relacionamento geral )
 <img src="images/ER.jpeg" >
 
 #### 4.3.3 Modelo Físico
+Abaixo está o script SQL completo para a criação do banco de dados mão na massa, com todas as tabelas necessárias para suportar os processos de negócio definidos.
 
+Configuração Inicial do Banco de Dados:
+-- Apaga o banco de dados existente, se houver, para evitar erros e garantir a nova estrutura.
+DROP DATABASE IF EXISTS mao_na_massa;
 
-<code>
+-- Cria o novo banco de dados.
+CREATE DATABASE mao_na_massa;
 
--- Tabela para armazenar dados cadastrais de todas as pessoas (clientes e prestadores).
+-- Seleciona o banco de dados para os comandos seguintes.
+USE mao_na_massa;
+
+-- Tabela central para armazenar dados de TODOS os usuários.
 CREATE TABLE Pessoas (
-    -- CPF da pessoa, chave primária que a identifica unicamente.
     CPF CHAR(11) PRIMARY KEY,
-    -- Nome completo, campo obrigatório.
     Nome VARCHAR(100) NOT NULL,
-    -- Email para contato.
-    Email VARCHAR(100),
-    -- Telefone para contato.
-    Telefone VARCHAR(15),
-    -- CEP do endereço.
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Senha VARCHAR(255) NOT NULL, -- Senha deve ser armazenada como hash
+    Telefone VARCHAR(15) NOT NULL,
     CEP CHAR(8),
-    -- Número do endereço.
-    Numero VARCHAR(10),
-    -- Complemento do endereço (ex: Apto 101, Bloco B).
-    Complemento VARCHAR(100)
+    Logradouro VARCHAR(255),
+    Numero VARCHAR(20),
+    URL_Foto_Perfil VARCHAR(255),
+    Status_Conta ENUM('Ativo', 'Pendente', 'Bloqueado') NOT NULL DEFAULT 'Ativo',
+    Data_Cadastro DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
--- Tabela para catalogar os tipos de serviços oferecidos.
+-- Tabela para catalogar os tipos de serviços oferecidos na plataforma.
 CREATE TABLE Servicos (
-    -- Código numérico único para cada serviço, gerado automaticamente.
-    Codigo INT AUTO_INCREMENT PRIMARY KEY,
-    -- Nome do serviço (ex: 'Desenvolvimento de Website', 'Consultoria Financeira').
-    Nome VARCHAR(100) NOT NULL,
-    -- Breve descrição do que o serviço inclui.
-    Descricao VARCHAR(255)
+    ID_Servico INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL UNIQUE,
+    Descricao TEXT
 );
 
--- Tabela para vincular uma pessoa a um serviço que ela presta.
+-- Tabela que define quais PESSOAS podem atuar como PRESTADORES.
 CREATE TABLE Prestadores (
-    -- ID numérico único para cada registro de prestador, gerado automaticamente.
-    Cod_Prestador INT AUTO_INCREMENT PRIMARY KEY,
-    -- CPF da pessoa que oferece o serviço, vindo da tabela Pessoas.
-    CPF_Pessoa CHAR(11),
-    -- Código do serviço oferecido, vindo da tabela Servicos.
-    Codigo_Servico INT,
-    -- Preço cobrado pelo serviço. O formato DECIMAL(12,2) suporta até 12 dígitos, com 2 casas decimais.
-    Preco DECIMAL(12,2),
-    -- Condições específicas do serviço (ex: 'Pagamento 50% adiantado', 'Disponível apenas aos finais de semana').
-    Condicao VARCHAR(500),
+    ID_Prestador INT AUTO_INCREMENT PRIMARY KEY,
+    CPF_Pessoa CHAR(11) NOT NULL,
+    ID_Servico INT NOT NULL,
+    Descricao_Propria_Servico TEXT,
+    Status_Verificacao ENUM('Pendente', 'Aprovado', 'Reprovado') NOT NULL DEFAULT 'Pendente',
     
-    -- Define a ligação com a tabela de Pessoas.
     FOREIGN KEY (CPF_Pessoa) REFERENCES Pessoas(CPF),
-    -- Define a ligação com a tabela de Serviços.
-    FOREIGN KEY (Codigo_Servico) REFERENCES Servicos(Codigo)
+    FOREIGN KEY (ID_Servico) REFERENCES Servicos(ID_Servico),
+    UNIQUE(CPF_Pessoa, ID_Servico) -- Garante que um prestador não cadastre o mesmo serviço duas vezes.
 );
 
-</code>
+-- Tabela principal para gerenciar cada CONTRATAÇÃO de serviço.
+CREATE TABLE Solicitacoes (
+    ID_Solicitacao INT AUTO_INCREMENT PRIMARY KEY,
+    CPF_Contratante CHAR(11) NOT NULL,
+    ID_Prestador INT NOT NULL,
+    Descricao_Problema TEXT NOT NULL,
+    Status_Solicitacao ENUM('Pendente', 'Aceita', 'Recusada', 'Em_Andamento', 'Concluida_Prestador', 'Finalizada', 'Cancelada') NOT NULL DEFAULT 'Pendente',
+    Valor_Negociado DECIMAL(10, 2),
+    Data_Criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Data_Agendamento DATETIME,
+    Data_Conclusao DATETIME,
+    
+    FOREIGN KEY (CPF_Contratante) REFERENCES Pessoas(CPF),
+    FOREIGN KEY (ID_Prestador) REFERENCES Prestadores(ID_Prestador)
+);
+
+-- Tabela para gerenciar os pagamentos com sistema de retenção (escrow).
+CREATE TABLE Pagamentos (
+    ID_Pagamento INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Solicitacao INT NOT NULL,
+    Valor DECIMAL(10, 2) NOT NULL,
+    -- ATUALIZADO: O método de pagamento agora está fixado como PIX.
+    Metodo_Pagamento ENUM('PIX') NOT NULL DEFAULT 'PIX',
+    -- ATUALIZADO: Status 'Nao_Gerenciado' removido.
+    Status_Pagamento ENUM('Pendente', 'Retido', 'Liberado', 'Reembolsado', 'Falhou') NOT NULL DEFAULT 'Pendente',
+    Data_Pagamento DATETIME,
+    Data_Liberacao DATETIME,
+    
+    FOREIGN KEY (ID_Solicitacao) REFERENCES Solicitacoes(ID_Solicitacao)
+);
+
+-- Tabela para o sistema de avaliação mútua.
+CREATE TABLE Avaliacoes (
+    ID_Avaliacao INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Solicitacao INT NOT NULL,
+    CPF_Avaliador CHAR(11) NOT NULL,
+    CPF_Avaliado CHAR(11) NOT NULL,
+    Nota INT NOT NULL, -- Nota de 1 a 5
+    Comentario TEXT,
+    Data_Avaliacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (ID_Solicitacao) REFERENCES Solicitacoes(ID_Solicitacao),
+    FOREIGN KEY (CPF_Avaliador) REFERENCES Pessoas(CPF),
+    FOREIGN KEY (CPF_Avaliado) REFERENCES Pessoas(CPF)
+);
 
 Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
 

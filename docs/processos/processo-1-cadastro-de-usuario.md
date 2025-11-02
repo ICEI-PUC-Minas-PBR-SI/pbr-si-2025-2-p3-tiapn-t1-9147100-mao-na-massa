@@ -50,7 +50,8 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | E-mail | [Caixa de Texto]  |   Obrigatório, formato de e-mail        |     Valor default       |
 | CPF | [Caixa de Texto]  |   Obrigatório, 11 dígitos, formato de CPF        |     Valor default       |
 | Telefone | [Caixa de Texto]  |  Obrigatório, formato de telefone (com DDD)        |     Valor default       |
-
+| Senha | [Caixa de Texto]  |  Obrigatório, 8 dígitos minimo         |     Valor default       |
+| Confirmar Senha | [Caixa de Texto]  |  Obrigatório, 8 dígitos minimo         |     Valor default       |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |

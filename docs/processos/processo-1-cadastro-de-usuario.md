@@ -132,3 +132,9 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 | Voltar | Tela "Complementar Perfil Prestador (Parte 1)"  | cancel |
 | Aceitar Termos de Uso | Campo "Aceitar Termos de Uso"  | False |
 | Aceitar Política de Privacidade | Campo "Política de Privacidade  | False |
+
+**7-Cadastro de Usuario**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Fazer novo cadastro | Iniciar novo cadastro (Plataforma)  | default |

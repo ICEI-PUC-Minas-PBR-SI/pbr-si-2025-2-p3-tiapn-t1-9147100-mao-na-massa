@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Profissional</title>
+    <link rel="stylesheet" href="styles/pesquisarProfissional.css">
+</head>
+<body>
+    <h1>Pesquisar Profissional</h1>
+
+    <!-- Etapa 1 -->
+    <section id="etapa1" class="etapa ativa">
+        <h2>Preencha os requisitos</h2>
+        <select id="servico" required>
+            <option value="">Selecione o serviço</option>
+            <option value="Limpeza">Limpeza residencial</option>
+            <option value="manutencao">Manutenção e reparos</option>
+            <option value="Jardinagem">Jardinagem</option>
+            <option value="Pintura">Pintura</option>
+            <option value="eletrica">Elétrica</option>
+            <option value="encanamento">Encanamento</option>
+        </select>
+        <input type="text" id="local" placeholder="Local do serviço" required>
+        <input type="date" id="data" required>
+        <input type="number" id="orcamento" placeholder="Orçamento estimado" required>
+        <button id="btnEnviar">Enviar Solicitação</button>
+    </section>
+
+    <!-- Etapa 2 -->
+    <section id="etapa2" class="etapa">
+        <h2>Profissionais compatíveis</h2>
+        <div id="lista-profissionais"></div>
+        <div class="botoes">
+            <button id="btnRefazer">Refazer pesquisa</button>
+        </div>
+    </section>
+
+    <!-- Etapa 3 -->
+    <section id="etapa3" class="etapa">
+        <h2>Confirmar Profissional</h2>
+        <p id="detalhes-profissional"></p>
+        <div class="botoes">
+            <button id="btnConfirmar">Confirmar e finalizar</button>
+            <button id="btnVoltarLista">Escolher outro</button>
+        </div>
+    </section>
+
+    <!-- Etapa 4 -->
+    <section id="etapa4" class="etapa">
+        <h2>Processo concluído</h2>
+        <p>Profissional selecionado com sucesso!</p>
+        <button id="btnNovo">Nova pesquisa</button>
+    </section>
+
+    <script src="scripts/pesquisarProfissional.js"></script>
+</body>
+</html>

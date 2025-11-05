@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const servico = document.getElementById("servico").value;
         const local = document.getElementById("local").value.trim();
         const data = document.getElementById("data").value;
-        const orc = document.getElementById("orcamento").value.trim();
+        const detalhes = document.getElementById("pesquisarDetalhes").value.trim();
 
-        if (!servico || !local || !data || !orc) {
+        if (!servico || !local || !data || !detalhes) {
             alert("Preencha todos os campos antes de enviar.");
             return;
         }

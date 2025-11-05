@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesquisar Profissional</title>
+    <title>Solicitar orçamento</title>
     <link rel="stylesheet" href="styles/pesquisarProfissional.css">
 </head>
 <body>
-    <h1>Pesquisar Profissional</h1>
+    <h1>Entre em contato</h1>
+    <h2>Pronto para transformar sua casa?</h2>
 
     <!-- Etapa 1 -->
     <section id="etapa1" class="etapa ativa">
         <h2>Preencha os requisitos</h2>
         <select id="servico" required>
-            <option value="">Selecione o serviço</option>
+            <option value="">Selecione um serviço</option>
             <option value="Limpeza">Limpeza residencial</option>
             <option value="manutencao">Manutenção e reparos</option>
             <option value="Jardinagem">Jardinagem</option>
@@ -21,9 +22,9 @@
             <option value="eletrica">Elétrica</option>
             <option value="encanamento">Encanamento</option>
         </select>
-        <input type="text" id="local" placeholder="Local do serviço" required>
+        <input type="text" id="local" placeholder="Endereço (rua, número, bairro)" required>
         <input type="date" id="data" required>
-        <input type="number" id="orcamento" placeholder="Orçamento estimado" required>
+        <textarea id="pesquisarDetalhes" placeholder="Descreva o que você precisa..." required></textarea>
         <button id="btnEnviar">Enviar Solicitação</button>
     </section>
 
@@ -52,6 +53,7 @@
         <p>Profissional selecionado com sucesso!</p>
         <button id="btnNovo">Nova pesquisa</button>
     </section>
+    <footer>Entraremos em contato...</footer>
 
     <script src="scripts/pesquisarProfissional.js"></script>
 </body>

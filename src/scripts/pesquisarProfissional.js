@@ -9,51 +9,76 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnVoltarLista = document.getElementById("btnVoltarLista");
     const btnNovo = document.getElementById("btnNovo");
 
+    let profissionaisEncontrados = []; // Para guardar os profissionais da busca
     let profissionalSelecionado = null;
 
-    // Função pra alternar etapas
     function mostrarEtapa(num) {
         etapas.forEach((e, i) => e.classList.toggle("ativa", i === num - 1));
     }
 
     // Etapa 1 - Enviar solicitação
-    btnEnviar.addEventListener("click", () => {
-        const servico = document.getElementById("servico").value;
+    btnEnviar.addEventListener("click", async () => { // Adicionamos 'async'
+
+        const servicoId = document.getElementById("servico").value; // Agora pega o ID
         const local = document.getElementById("local").value.trim();
         const data = document.getElementById("data").value;
-        const detalhes = document.getElementById("pesquisarDetalhes").value.trim();
+        const detalhesPesquisa = document.getElementById("pesquisarDetalhes").value.trim();
 
-        if (!servico || !local || !data || !detalhes) {
+        if (!servicoId || !local || !data || !detalhesPesquisa) {
             alert("Preencha todos os campos antes de enviar.");
             return;
         }
 
-        // Simulação da busca de profissionais
-        const profissionais = [
-            { nome: "João da Silva", avaliacao: 4.8, cidade: "Betim" },
-            { nome: "Maria Souza", avaliacao: 4.6, cidade: "Contagem" },
-            { nome: "Carlos Lima", avaliacao: 4.9, cidade: "Belo Horizonte" },
-        ];
+        // ----- INÍCIO DA MUDANÇA (ADEUS SIMULAÇÃO) -----
+        try {
+            // 1. Chamar nosso Backend em http://localhost:3000/api/profissionais
+            const response = await fetch('http://localhost:3000/api/profissionais', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ idServico: servicoId }) // Envia o ID do serviço
+            });
 
-        lista.innerHTML = profissionais.map((p, i) => `
-      <div>
-        <strong>${p.nome}</strong><br>
-        Avaliação: ${p.avaliacao}<br>
-        Cidade: ${p.cidade}<br>
-        <button data-index="${i}" class="btnSelecionar">Selecionar</button>
-      </div>
-    `).join("");
+            if (!response.ok) {
+                throw new Error('Erro ao buscar profissionais no servidor.');
+            }
 
-        // Adiciona evento aos botões de seleção
+            // 2. Receber os profissionais REAIS do banco de dados
+            profissionaisEncontrados = await response.json();
+
+            if (profissionaisEncontrados.length === 0) {
+                lista.innerHTML = '<p>Nenhum profissional encontrado para este serviço.</p>';
+            } else {
+                // 3. Mostrar os profissionais na tela
+                lista.innerHTML = profissionaisEncontrados.map((p, i) => `
+                    <div class="card-profissional">
+                        <strong>${p.Nome}</strong><br>
+                        Serviço: ${p.NomeServico}<br>
+                        Avaliação: ${p.Avaliacao} ⭐<br>
+                        <p>"${p.Descricao_Propria_Servico}"</p>
+                        <button data-index="${i}" class="btnSelecionar">Selecionar</button>
+                    </div>
+                `).join("");
+            }
+
+        } catch (error) {
+            console.error('Erro no fetch:', error);
+            alert('Não foi possível conectar ao servidor. Verifique o console.');
+            return;
+        }
+        // ----- FIM DA MUDANÇA -----
+
+        // Adiciona evento aos botões de seleção (SEU CÓDIGO ORIGINAL)
         document.querySelectorAll(".btnSelecionar").forEach(btn => {
             btn.addEventListener("click", e => {
                 const index = e.target.dataset.index;
-                profissionalSelecionado = profissionais[index];
+                profissionalSelecionado = profissionaisEncontrados[index];
                 detalhes.innerHTML = `
-          <strong>${profissionalSelecionado.nome}</strong><br>
-          Avaliação: ${profissionalSelecionado.avaliacao}<br>
-          Cidade: ${profissionalSelecionado.cidade}
-        `;
+                    <strong>${profissionalSelecionado.Nome}</strong><br>
+                    Avaliação: ${profissionalSelecionado.Avaliacao} ⭐<br>
+                    Serviço: ${profissionalSelecionado.NomeServico}
+                `;
                 mostrarEtapa(3);
             });
         });
@@ -65,7 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
     btnRefazer.addEventListener("click", () => mostrarEtapa(1));
 
     // Etapa 3 → Confirmar profissional
-    btnConfirmar.addEventListener("click", () => mostrarEtapa(4));
+    btnConfirmar.addEventListener("click", () => {
+        // TODO: Aqui você enviaria a confirmação para o backend
+        // para criar uma "Solicitação" no banco.
+        alert(`Profissional ${profissionalSelecionado.Nome} confirmado!`);
+        mostrarEtapa(4);
+    });
     btnVoltarLista.addEventListener("click", () => mostrarEtapa(2));
 
     // Etapa 4 → Nova pesquisa

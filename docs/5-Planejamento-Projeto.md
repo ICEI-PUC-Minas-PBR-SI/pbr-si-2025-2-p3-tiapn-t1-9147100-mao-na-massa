@@ -47,6 +47,16 @@
 - Implementação completa: Bruno César Lima Araújo
 - Planejamento da Sprint 6: Glendha Paulino Caldeira Tolentino
  
+ ### Sprint 6
+- Project Owner: Pricilla Lopes Braga
+- _Scrum master_: Glendha Paulino Caldeira Tolentino 
+- Implementações do processo 3: Bruno César Lima Araújo
+- Implementações do processo 2: Davi
+- Implementações do processo 1:  Glendha Paulino Caldeira Tolentino
+- Relatórios: Pricilla Braga Lopes
+- Implementação completa: Bruno César Lima Araújo
+- Planejamento da Sprint 7: Glendha Paulino Caldeira Tolentino
+ 
 
 
 

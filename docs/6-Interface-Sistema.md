@@ -34,3 +34,24 @@ _Descrição da tela relativa à atividade 2._
 [`Tela da atividade 2`](images/)
 
 
+## 6.3. Telas do processo 3
+
+_Descrição da tela relativa à atividade 1._
+
+[`Tela da atividade 1`](images/)
+
+_Descrição da tela relativa à atividade 2._
+
+[`Tela da atividade 2`](images/)
+
+
+## 6.3. Telas do processo 4
+
+_Descrição da tela relativa à atividade 1._
+
+[`Tela da atividade 1`](images/)
+
+_Descrição da tela relativa à atividade 2._
+
+[`Tela da atividade 2`](images/)
+

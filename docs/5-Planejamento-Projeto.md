@@ -55,7 +55,7 @@
 - Implementações do processo 1:  Glendha Paulino Caldeira Tolentino
 - Relatórios: Pricilla Braga Lopes
 - Implementação completa: Bruno César Lima Araújo
-- Planejamento da Sprint 7: Glendha Paulino Caldeira Tolentino
+
  
 
 

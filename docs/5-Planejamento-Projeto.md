@@ -146,7 +146,6 @@ Atualizado em: 23/10/2025
 | Bruno César Lima Araújo   | Planejamento da Sprint 6    | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
 | Camila Moreira Pessoa   | Implementação do processo 2   | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
 
-
 Legenda:
 - ✔️: terminado
 - 📝: em execução

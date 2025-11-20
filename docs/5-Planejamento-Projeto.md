@@ -143,8 +143,8 @@ Atualizado em: 23/10/2025
 | Bruno César Lima Araújo   | Relatório – seção “Modelagem dos processos - Processos 1 e 2” (versão atualizada)    | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
 | Glendha Paulino Caldeira Tolentino   | Relatório – seção “Modelagem de dados” (versão atualizada)    | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
 | Davi Alves Silveira  | Implementação do processo 1    | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
-| Bruno César Lima Araújo   | Planejamento da Sprint 6    | 15/10/2025 | 📝  | 31/10/2025      |  31/10/2025      |
-| Camila Moreira Pessoa   | Implementação do processo 2   | 15/10/2025 | 📝  | 31/10/2025      |  31/10/2025      |
+| Bruno César Lima Araújo   | Planejamento da Sprint 6    | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
+| Camila Moreira Pessoa   | Implementação do processo 2   | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
 
 
 Legenda:

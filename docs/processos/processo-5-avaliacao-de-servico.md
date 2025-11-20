@@ -1,4 +1,4 @@
-### 3.3.5 Processo 4 – Avaliação de serviço
+### 3.3.4 Processo 4 – Avaliação de serviço
 
 O processo de avaliação se inicia quando o cliente acessa a área de avaliação na plataforma.
 O cliente então, deve informar uma nota e comentário e em seguida confirmar o envio da avaliação.

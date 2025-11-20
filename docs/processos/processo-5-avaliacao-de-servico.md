@@ -7,8 +7,6 @@ Se os dados estiverem preenchidos corretamente, registra a avaliação no banco 
 Depois disso, a plataforma confirma o registro da avaliação e notifica o prestador sobre o novo feedback. Ao receber essa notificação, p prestador pode visualizar a avaliação e tem a opção de responder ou agradecer ao cliente.
 Por fim, o cliente recebe a confirmação de que sua avaliação foi registrada, encerrando assim o processo.
 
-Imagem : DAVI
-
 
 #### Detalhamento das atividades
 

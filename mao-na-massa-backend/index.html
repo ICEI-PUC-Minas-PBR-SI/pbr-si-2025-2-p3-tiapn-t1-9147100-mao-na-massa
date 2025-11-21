@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mão na Massa - Serviços Domésticos</title>
+    <!-- Carrega o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega a fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define a fonte Inter como padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Transições suaves para tema escuro */
+        body, header, footer, section, div, button, input, select, textarea {
+            transition-property: color, background-color, border-color;
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Animação suave para o modal */
+        #authModal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        /* Classe para esconder o modal */
+        #authModal.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+    <script>
+        // Configuração do Tailwind para o modo escuro
+        tailwind.config = {
+            darkMode: 'class', // Ativa o modo escuro baseado em classe
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <h2 class="text-2xl font-bold text-blue-600 dark:text-blue-500">Mão na Massa</h2>
+                </div>
+                
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500">Início</a>
+                    <a href="#filtro" class="font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500">Buscar</a>
+                    <a href="#servicos" class="font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500">Serviços</a>
+                    <a href="#sobre" class="font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500">Sobre</a>
+                    <a href="#depoimentos" class="font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500">Depoimentos</a>
+                </nav>
+                
+                <!-- Ações do Header -->
+                <div class="flex items-center space-x-4">
+                    <button class="theme-toggle p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" id="themeToggle">
+                        <svg id="themeIconSun" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg id="themeIconMoon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <button class="btn btn-primary px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" onclick="goToAuth()">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-20 pb-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="hero-text">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
+                        Serviços domésticos de <span class="text-blue-600 dark:text-blue-500">qualidade</span> para sua casa
+                    </h1>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                        Conectamos você aos melhores profissionais para cuidar da sua casa. Limpeza, manutenção, jardinagem e muito mais.
+                    </p>
+                    
+                    <div class="benefits mt-6 space-y-2">
+                        <div class="benefit-item flex items-center text-gray-700 dark:text-gray-300">
+                            <span class="check-icon text-green-500 mr-2">✓</span>
+                            <span>Profissionais verificados e qualificados</span>
+                        </div>
+                        <div class="benefit-item flex items-center text-gray-700 dark:text-gray-300">
+                            <span class="check-icon text-green-500 mr-2">✓</span>
+                            <span>Orçamento gratuito e sem compromisso</span>
+                        </div>
+                        <div class="benefit-item flex items-center text-gray-700 dark:text-gray-300">
+                            <span class="check-icon text-green-500 mr-2">✓</span>
+                            <span>Garantia de satisfação</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white rounded-md font-semibold text-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" onclick="goToSearch()">Solicitar Orçamento</button>
+                        <a href="#servicos" class="w-full sm:w-auto inline-block text-center px-6 py-3 bg-gray-200 text-gray-800 rounded-md font-semibold text-lg hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600">Ver Serviços</a>
+                    </div>
+                </div>
+                <div class="hero-image relative hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGZhbWlseSUyMGhvbWV8ZW58MXx8fHwxNzU4MzkxNDQzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Família feliz em casa" class="rounded-lg shadow-xl">
+                    <div class="floating-card absolute -bottom-8 -left-8 bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg flex items-center space-x-3">
+                        <div class="card-icon text-2xl">✓</div>
+                        <div class="card-text">
+                            <p class="text-sm text-gray-600 dark:text-gray-300">+500 famílias atendidas</p>
+                            <strong class="text-gray-900 dark:text-white">98% de satisfação</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Region Filter Section -->
+    <section id="filtro" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white">Encontre serviços na sua região</h2>
+            <p class="mt-2 text-lg text-center text-gray-600 dark:text-gray-300">Selecione sua cidade e tipo de serviço para encontrar os melhores profissionais</p>
+            
+            <div class="filter-form mt-8 max-w-4xl mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="form-group">
+                        <label for="city" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Cidade</label>
+                        <select id="city" class="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Selecione sua cidade</option>
+                            <option value="belo-horizonte">Belo Horizonte - MG</option>
+                            <option value="sao-paulo">São Paulo - SP</option>
+                            <option value="rio-janeiro">Rio de Janeiro - RJ</option>
+                            <!-- Adicionar mais cidades -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service-type" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Tipo de Serviço</label>
+                        <select id="service-type" class="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Todos os serviços</option>
+                            <option value="limpeza">Limpeza Residencial</option>
+                            <option value="manutencao">Manutenção e Reparos</option>
+                            <option value="jardinagem">Jardinagem</option>
+                            <option value="eletrica">Elétrica</option>
+                            <option value="encanamento">Encanamento</option>
+                        </select>
+                    </div>
+                    
+                    <button class="md:mt-6 w-full h-12 px-6 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 flex items-center justify-center space-x-2" onclick="goToSearch()">
+                        <span class="text-xl">🔍</span>
+                        <span>Buscar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Nossos Serviços</h2>
+                <p class="mt-2 text-lg text-gray-600 dark:text-gray-300">Oferecemos uma ampla gama de serviços domésticos para manter sua casa sempre limpa, organizada e bem cuidada.</p>
+            </div>
+
+            <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <!-- Service 1 -->
+                <div class="service-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden border-2 border-blue-600 dark:border-blue-500 relative">
+                    <div class="popular-badge absolute top-0 right-0 bg-blue-600 dark:bg-blue-500 text-white px-3 py-1 text-sm font-semibold rounded-bl-lg">Mais Popular</div>
+                    <div class="service-image h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581578949510-fa7315c4c350?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3VzZSUyMGNsZWFuaW5nJTIwc2VydmljZSUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NTg0NjI3ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Limpeza Residencial" class="w-full h-full object-cover">
+                    </div>
+                    <div class="service-content p-6">
+                        <div class="service-header flex justify-between items-start">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Limpeza Residencial</h3>
+                            <span class="price text-lg font-bold text-blue-600 dark:text-blue-400">R$ 80+</span>
+                        </div>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">Faxina geral, limpeza pesada e manutenção regular.</p>
+                        <div class="service-features mt-4 space-y-1">
+                            <div class="feature flex items-center text-sm text-gray-700 dark:text-gray-300"><span class="text-green-500 mr-2">✓</span><span>Produtos inclusos</span></div>
+                            <div class="feature flex items-center text-sm text-gray-700 dark:text-gray-300"><span class="text-green-500 mr-2">✓</span><span>Profissionais treinados</span></div>
+                        </div>
+                        <div class="service-rating flex justify-between items-center mt-4 text-sm text-gray-600 dark:text-gray-400">
+                            <div class="rating flex items-center"><span class="text-yellow-500 mr-1">⭐</span><span>4.9 (120+)</span></div>
+                            <div class="duration flex items-center"><span class="mr-1">🕒</span><span>2-4h</span></div>
+                        </div>
+                        <button class="mt-6 w-full px-4 py-2 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" onclick="goToSearch()">Solicitar Orçamento</button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <div class="service-image h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1608752503578-52f35965e3d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob21lJTIwbWFpbnRlbmFuY2UlMjByZXBhaXIlMjB0b29sc3xlbnwxfHx8fDE3NTg0ODA4ODh8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Manutenção e Reparos" class="w-full h-full object-cover">
+                    </div>
+                    <div class="service-content p-6">
+                        <div class="service-header flex justify-between items-start">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Manutenção e Reparos</h3>
+                            <span class="price text-lg font-bold text-blue-600 dark:text-blue-400">R$ 60+</span>
+                        </div>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">Reparos diversos para manter sua casa em perfeito estado.</p>
+                        <div class="service-features mt-4 space-y-1">
+                            <div class="feature flex items-center text-sm text-gray-700 dark:text-gray-300"><span class="text-green-500 mr-2">✓</span><span>Diagnóstico gratuito</span></div>
+                            <div class="feature flex items-center text-sm text-gray-700 dark:text-gray-300"><span class="text-green-500 mr-2">✓</span><span>Garantia de 6 meses</span></div>
+                        </div>
+                        <div class="service-rating flex justify-between items-center mt-4 text-sm text-gray-600 dark:text-gray-400">
+                            <div class="rating flex items-center"><span class="text-yellow-500 mr-1">⭐</span><span>4.8 (90+)</span></div>
+                            <div class="duration flex items-center"><span class="mr-1">🕒</span><span>1-3h</span></div>
+                        </div>
+                        <button class="mt-6 w-full px-4 py-2 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" onclick="goToSearch()">Solicitar Orçamento</button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+                    <div class="service-image h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1729526368510-6a220407f287?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYXJkZW4lMjBsYW5kc2NhcGluZyUyMHNlcnZpY2VzfGVufDF8fHx8MTc1ODQ4MzAzMXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Jardinagem" class="w-full h-full object-cover">
+                    </div>
+                    <div class="service-content p-6">
+                        <div class="service-header flex justify-between items-start">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Jardinagem</h3>
+                            <span class="price text-lg font-bold text-blue-600 dark:text-blue-400">R$ 90+</span>
+                        </div>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">Cuidados para seu jardim, poda, plantio e paisagismo.</p>
+                        <div class="service-features mt-4 space-y-1">
+                            <div class="feature flex items-center text-sm text-gray-700 dark:text-gray-300"><span class="text-green-500 mr-2">✓</span><span>Projeto personalizado</span></div>
+                            <div class="feature flex items-center text-sm text-gray-700 dark:text-gray-300"><span class="text-green-500 mr-2">✓</span><span>Manutenção mensal</span></div>
+                        </div>
+                        <div class="service-rating flex justify-between items-center mt-4 text-sm text-gray-600 dark:text-gray-400">
+                            <div class="rating flex items-center"><span class="text-yellow-500 mr-1">⭐</span><span>4.9 (75+)</span></div>
+                            <div class="duration flex items-center"><span class="mr-1">🕒</span><span>3-5h</span></div>
+                        </div>
+                        <button class="mt-6 w-full px-4 py-2 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600" onclick="goToSearch()">Solicitar Orçamento</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="more-services text-center mt-12">
+                <p class="text-gray-600 dark:text-gray-300">Precisa de outros serviços? Temos profissionais para pintura, elétrica, encanamento e muito mais.</p>
+                <button class="mt-4 px-6 py-3 bg-gray-200 text-gray-800 rounded-md font-semibold hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600" onclick="goToSearch()">Ver Todos os Serviços</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="about-text">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Por que escolher a Mão na Massa?</h2>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">Somos uma plataforma que conecta você aos melhores profissionais de serviços domésticos da sua região. Nossa missão é facilitar sua vida, oferecendo qualidade e confiança em cada serviço.</p>
+                    
+                    <div class="about-stats grid grid-cols-3 gap-4 mt-8">
+                        <div class="stat text-center">
+                            <h3 class="text-3xl font-bold text-blue-600 dark:text-blue-500">500+</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Famílias atendidas</p>
+                        </div>
+                        <div class="stat text-center">
+                            <h3 class="text-3xl font-bold text-blue-600 dark:text-blue-500">98%</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Satisfação</p>
+                        </div>
+                        <div class="stat text-center">
+                            <h3 class="text-3xl font-bold text-blue-600 dark:text-blue-500">50+</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Profissionais</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwd29ya2luZyUyMHRvZ2V0aGVyJTIwb2ZmaWNlfGVufDF8fHx8MTc1ODU2NzY5N3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Nossa equipe" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white">O que nossos clientes dizem</h2>
+                <p class="mt-2 text-lg text-gray-600 dark:text-gray-300">Veja os depoimentos de quem já confia nos nossos serviços</p>
+            </div>
+
+            <div class="testimonials-grid grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="testimonial bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <div class="rating text-yellow-500 text-xl">⭐⭐⭐⭐⭐</div>
+                    <p class="mt-4 text-gray-700 dark:text-gray-300">"Excelente serviço! A equipe de limpeza foi muito profissional e deixou minha casa impecável. Recomendo!"</p>
+                    <div class="testimonial-author flex items-center mt-6">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNtaWxpbmclMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTg1NjkwMjl8MA&ixlib=rb-4.1.0&q=80&w=100" alt="Ana Silva" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <strong class="text-gray-900 dark:text-white">Ana Silva</strong>
+                            <span class="block text-sm text-gray-500 dark:text-gray-400">São Paulo, SP</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Outros depoimentos... -->
+                <div class="testimonial bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <div class="rating text-yellow-500 text-xl">⭐⭐⭐⭐⭐</div>
+                    <p class="mt-4 text-gray-700 dark:text-gray-300">"Precisava de manutenção urgente e eles atenderam no mesmo dia. Trabalho de qualidade e preço justo!"</p>
+                    <div class="testimonial-author flex items-center mt-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW4lMjBzbWlsaW5nJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzU4NTY5MDc0fDA&ixlib=rb-4.1.0&q=80&w=100" alt="Carlos Santos" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <strong class="text-gray-900 dark:text-white">Carlos Santos</strong>
+                            <span class="block text-sm text-gray-500 dark:text-gray-400">Rio de Janeiro, RJ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <div class="rating text-yellow-500 text-xl">⭐⭐⭐⭐⭐</div>
+                    <p class="mt-4 text-gray-700 dark:text-gray-300">"O serviço de jardinagem transformou meu quintal! Profissionais muito capacitados e atenciosos."</p>
+                    <div class="testimonial-author flex items-center mt-6">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhhcHB5JTIwcG9ydHJhaXR8ZW58MXx8fHwxNzU4NTY5MTE5fDA&ixlib=rb-4.1.0&q=80&w=100" alt="Maria Oliveira" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <strong class="text-gray-900 dark:text-white">Maria Oliveira</strong>
+                            <span class="block text-sm text-gray-500 dark:text-gray-400">Belo Horizonte, MG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="footer-section">
+                    <h3 class="text-xl font-bold text-white">Mão na Massa</h3>
+                    <p class="mt-4 text-gray-400">Conectando você aos melhores profissionais de serviços domésticos.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="text-lg font-semibold text-white">Serviços</h4>
+                    <nav class="mt-4 space-y-2">
+                        <a href="#servicos" class="text-gray-400 hover:text-white">Limpeza Residencial</a>
+                        <a href="#servicos" class="text-gray-400 hover:text-white">Manutenção</a>
+                        <a href="#servicos" class="text-gray-400 hover:text-white">Jardinagem</a>
+                        <a href="#servicos" class="text-gray-400 hover:text-white">Pintura</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="text-lg font-semibold text-white">Empresa</h4>
+                    <nav class="mt-4 space-y-2">
+                        <a href="#sobre" class="text-gray-400 hover:text-white">Sobre Nós</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Política de Privacidade</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Termos de Uso</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="text-lg font-semibold text-white">Contato</h4>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li>📧 contato@maonamassa.com.br</li>
+                        <li>📱 (31) 99999-9999</li>
+                        <li>🕒 Seg-Sáb: 8h às 18h</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom border-t border-gray-700 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 Mão na Massa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 p-4 hidden">
+        <div class="auth-content bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-md relative">
+            <button class="close-btn absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200" onclick="closeAuth()">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="p-8">
+                <div class="auth-header text-center">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Login</h2>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Acesse sua conta para continuar</p>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form mt-6 space-y-4">
+                    <div>
+                        <label for="login-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                        <input id="login-email" type="email" placeholder="seuemail@dominio.com" required class="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="login-pass" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Senha</label>
+                        <input id="login-pass" type="password" placeholder="Sua senha" required class="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <button type="submit" class="w-full px-4 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">Entrar</button>
+                    <div class="text-center">
+                        <a href="#" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">Esqueci minha senha</a>
+                    </div>
+                </form>
+
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600 dark:text-gray-300">Não tem uma conta?</p>
+                    <button class="mt-2 w-full px-4 py-3 bg-gray-200 text-gray-800 rounded-md font-semibold hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600" onclick="goToRegister()">
+                        Criar conta de Cliente ou Prestador
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Incorporado -->
+    <script>
+        // --- Lógica do Modal de Autenticação ---
+        const authModal = document.getElementById('authModal');
+        const loginForm = document.getElementById('loginForm');
+
+        function goToAuth() {
+            authModal.classList.remove('hidden');
+        }
+
+        function closeAuth() {
+            authModal.classList.add('hidden');
+        }
+
+        function goToRegister() {
+            // Redireciona para a página de cadastro completa
+            window.location.href = 'cadastro.html';
+        }
+
+        function goToSearch() {
+            // Redireciona para a página de busca
+            window.location.href = 'pesquisarProfissional.html';
+        }
+
+        // Fecha o modal se clicar fora do conteúdo
+        authModal.addEventListener('click', (event) => {
+            if (event.target === authModal) {
+                closeAuth();
+            }
+        });
+
+        // Lógica de login (simulação)
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Impede o recarregamento da página
+            alert('Login simulado com sucesso! (Em breve, conectado ao back-end)');
+            closeAuth();
+        });
+
+
+        // --- Lógica do Tema Escuro (Dark Mode) ---
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIconSun = document.getElementById('themeIconSun');
+        const themeIconMoon = document.getElementById('themeIconMoon');
+        const htmlElement = document.documentElement;
+
+        // Verifica o tema salvo no localStorage
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+            themeIconSun.classList.remove('hidden');
+            themeIconMoon.classList.add('hidden');
+        } else {
+            htmlElement.classList.remove('dark');
+            themeIconSun.classList.add('hidden');
+            themeIconMoon.classList.remove('hidden');
+        }
+
+        // Adiciona o evento de clique ao botão
+        themeToggle.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                // Mudar para Light Mode
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIconSun.classList.add('hidden');
+                themeIconMoon.classList.remove('hidden');
+            } else {
+                // Mudar para Dark Mode
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIconSun.classList.remove('hidden');
+                themeIconMoon.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

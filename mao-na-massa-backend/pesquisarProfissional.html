@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Orçamento - Mão na Massa</title>
+    <!-- Carrega o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega a fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Garante que o mapa tenha uma altura definida */
+        #map {
+            height: 250px;
+        }
+    </style>
+    <!-- 
+      !! IMPORTANTE !!
+      Substitua 'SUA_CHAVE_API_AQUI' pela sua chave de API do Google Maps.
+      O 'callback=initMap' no final é essencial para iniciar o mapa.
+    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIzuOB_vVzYOdRqFjV8lFMB3uOyuSBDUU&libraries=places&callback=initMap" async defer></script>
+    
+    <!-- ADICIONADO: Variável para verificar a chave da API -->
+    <script>
+      // Esta variável é usada para verificar se a chave foi alterada.
+      // Substitua 'SUA_CHAVE_API_AQUI' aqui também, ou (melhor) apenas no script src acima.
+      // Por segurança, vamos verificar a string do script src.
+      const GOOGLE_MAPS_API_KEY = "AIzaSyDIzuOB_vVzYOdRqFjV8lFMB3uOyuSBDUU";
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen">
+    
+    <!-- Header Simples -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-500">Solicitar Orçamento</h1>
+            <a href="index.html" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500">
+                &larr; Voltar para a Página Inicial
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl space-y-6">
+
+            <!-- ADICIONADO: Aviso de Chave de API Inválida -->
+            <div id="apiKeyWarning" class="hidden p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-100 dark:bg-gray-800 dark:text-red-400 border border-red-300 dark:border-red-800" role="alert">
+                <span class="font-medium">Erro de Configuração!</span> A Chave da API do Google Maps não foi definida. O mapa não funcionará corretamente. Por favor, substitua <strong>'SUA_CHAVE_API_AQUI'</strong> no arquivo HTML pela sua chave de API válida.
+            </div>
+
+            <!-- Etapa 1: Solicitação -->
+            <section id="etapa1" class="etapa space-y-4">
+                <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">1. Descreva sua necessidade</h2>
+                <p class="text-gray-600 dark:text-gray-300">Preencha os detalhes abaixo para encontrarmos os melhores profissionais para você.</p>
+                
+                <div>
+                    <label for="servico" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Selecione um serviço</label>
+                    <select id="servico" required class="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Selecione um serviço</option>
+                        <option value="Limpeza">Limpeza Residencial</option>
+                        <option value="Manutenção">Manutenção e Reparos</option>
+                        <option value="Jardinagem">Jardinagem</option>
+                        <option value="Elétrica">Elétrica</option>
+                        <option value="Encanamento">Encanamento</option>
+                    </select>
+                </div>
+                
+                <!-- CAMPO DE ENDEREÇO MODIFICADO -->
+                <div>
+                    <label for="autocomplete-input" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Endereço (comece a digitar)</label>
+                    <input type="text" id="autocomplete-input" placeholder="Ex: Av. Afonso Pena, 1000, Belo Horizonte" required class="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- MAPA INTERATIVO ADICIONADO -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Ajuste a localização no mapa</label>
+                    <div id="map" class="mt-1 w-full h-64 rounded-md bg-gray-200 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-500 dark:text-gray-400">
+                        <!-- Mensagem de carregamento/erro -->
+                        Carregando mapa...
+                    </div>
+                </div>
+
+                <!-- Campos ocultos para armazenar latitude e longitude -->
+                <input type="hidden" id="latitude">
+                <input type="hidden" id="longitude">
+                
+                <div>
+                    <label for="data" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Data desejada</label>
+                    <input type="date" id="data" required class="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                
+                <div>
+                    <label for="pesquisarDetalhes" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Descreva o que você precisa</label>
+                    <textarea id="pesquisarDetalhes" placeholder="Ex: Preciso instalar um chuveiro novo e consertar uma tomada." rows="4" required class="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                
+                <button id="btnEnviar" class="w-full px-4 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+                    Buscar Profissionais
+                </button>
+            </section>
+
+            <!-- Etapa 2: Lista de Profissionais (Simulação) -->
+            <section id="etapa2" class="etapa hidden space-y-4">
+                <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">2. Profissionais encontrados</h2>
+                <p class="text-gray-600 dark:text-gray-300">Encontramos estes profissionais para o serviço de <strong id="servico-selecionado"></strong>.</p>
+                
+                <div id="lista-profissionais" class="space-y-4">
+                    <!-- Cards de profissionais serão inseridos aqui -->
+                </div>
+                
+                <div class="flex justify-between space-x-4">
+                    <button id="btnRefazer" class="w-full px-4 py-3 bg-gray-200 text-gray-800 rounded-md font-semibold hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600">Refazer Pesquisa</button>
+                </div>
+            </section>
+
+            <!-- Etapa 3: Confirmar Profissional -->
+            <section id="etapa3" class="etapa hidden space-y-4">
+                <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">3. Confirmar Solicitação</h2>
+                <p class="text-gray-600 dark:text-gray-300">Você está prestes a enviar sua solicitação para:</p>
+                
+                <div id="detalhes-profissional" class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+                    <!-- Detalhes do profissional selecionado -->
+                </div>
+
+                <p class="text-sm text-gray-500 dark:text-gray-400">O profissional será notificado e entrará em contato para confirmar o agendamento e o valor final.</p>
+                
+                <div class="flex justify-between space-x-4">
+                    <button id="btnVoltarLista" class="w-1/2 px-4 py-3 bg-gray-200 text-gray-800 rounded-md font-semibold hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600">Escolher Outro</button>
+                    <button id="btnConfirmar" class="w-1/2 px-4 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">Confirmar e Enviar</button>
+                </div>
+            </section>
+
+            <!-- Etapa 4: Conclusão -->
+            <section id="etapa4" class="etapa hidden text-center space-y-6">
+                <div class="text-6xl">✅</div>
+                <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Solicitação Enviada!</h2>
+                <p class="text-gray-600 dark:text-gray-300">Seu pedido foi enviado para <strong id="profissional-confirmado"></strong>. Aguarde o contato do profissional para finalizar o agendamento.</p>
+                <button id="btnNovo" class="w-full px-4 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">Fazer Nova Solicitação</button>
+            </section>
+        </div>
+    </main>
+
+    <!-- JavaScript Incorporado -->
+    <script>
+        // --- Dados de Simulação (Mock Data) ---
+        const mockProfissionais = [
+            { id: 1, nome: "José Carlos", servico: "Elétrica", rating: 4.9, avaliacoes: 132, foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxlJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzU4NTY5MDc0fDA&ixlib=rb-4.1.0&q=80&w=100" },
+            { id: 2, nome: "Marcos Silva (Faz-Tudo)", servico: "Manutenção", rating: 4.8, avaliacoes: 98, foto: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxtYWxlJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzU4NTY5MDc0fDA&ixlib=rb-4.1.0&q=80&w=100" },
+            { id: 3, nome: "Ana Pereira", servico: "Limpeza", rating: 4.9, avaliacoes: 210, foto: "https://images.unsplash.com/photo-1494790108755-2616b612b5e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNtaWxpbmclMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTg1NjkwMjl8MA&ixlib=rb-4.1.0&q=80&w=100" },
+            { id: 4, nome: "Carlos Souza", servico: "Jardinagem", rating: 4.7, avaliacoes: 75, foto: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxtYWxlJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzU4NTY5MDc0fDA&ixlib.rb-4.1.0&q=80&w=100" },
+            { id: 5, nome: "Rebeca Lima", servico: "Encanamento", rating: 4.8, avaliacoes: 88, foto: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhhcHB5JTIwcG9ydHJhaXR8ZW58MXx8fHwxNzU4NTY5MTE5fDA&ixlib.rb-4.1.0&q=80&w=100" },
+        ];
+        
+        let profissionalSelecionado = null;
+
+        // --- Variáveis Globais do Mapa ---
+        let map;
+        let marker;
+        let autocomplete;
+
+        // --- Seletores de Elementos ---
+        const etapas = document.querySelectorAll('.etapa');
+        const btnEnviar = document.getElementById('btnEnviar');
+        const btnRefazer = document.getElementById('btnRefazer');
+        const btnVoltarLista = document.getElementById('btnVoltarLista');
+        const btnConfirmar = document.getElementById('btnConfirmar');
+        const btnNovo = document.getElementById('btnNovo');
+        const listaProfissionaisDiv = document.getElementById('lista-profissionais');
+        const inputAutocomplete = document.getElementById('autocomplete-input');
+        const inputLat = document.getElementById('latitude');
+        const inputLng = document.getElementById('longitude');
+        const apiKeyWarning = document.getElementById('apiKeyWarning');
+        const mapDiv = document.getElementById('map');
+
+        // --- Funções de Navegação ---
+        function mostrarEtapa(id) {
+            etapas.forEach(etapa => etapa.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        // --- Lógica do Google Maps ---
+        // Esta função é chamada pelo script da API do Google (callback=initMap)
+        function initMap() {
+            // ADICIONADO: Verifica se a chave é o placeholder
+            if (GOOGLE_MAPS_API_KEY === "SUA_CHAVE_API_AQUI") {
+                apiKeyWarning.classList.remove('hidden');
+                mapDiv.innerHTML = '<p class="text-center p-4 text-red-700 font-medium">O mapa não pode ser carregado.<br>Chave de API inválida (SUA_CHAVE_API_AQUI).</p>';
+                // Desabilita o campo de input para evitar confusão
+                inputAutocomplete.disabled = true;
+                inputAutocomplete.placeholder = "Mapa desabilitado - configure a API Key";
+                return; // Não inicializa o mapa
+            }
+            
+            // Chave parece ser válida, oculta o aviso e inicializa o mapa
+            apiKeyWarning.classList.add('hidden');
+            mapDiv.innerHTML = ''; // Limpa a mensagem de carregamento
+
+            // Localização Padrão (Ex: Belo Horizonte, MG, Brasil)
+            const defaultLocation = { lat: -19.916681, lng: -43.934494 };
+
+            map = new google.maps.Map(mapDiv, {
+                center: defaultLocation,
+                zoom: 15,
+                mapTypeControl: false, // Desativa 'Satélite', 'Terreno'
+                streetViewControl: false // Desativa Street View
+            });
+
+            marker = new google.maps.Marker({
+                position: defaultLocation,
+                map: map,
+                draggable: true, // Permite arrastar o marcador
+                title: "Arraste para ajustar a localização exata"
+            });
+
+            // Atualiza lat/lng quando o marcador é arrastado
+            marker.addListener('dragend', () => {
+                const newPos = marker.getPosition();
+                updateLocation(newPos.lat(), newPos.lng());
+            });
+
+            // Inicializa o Autocomplete
+            autocomplete = new google.maps.places.Autocomplete(inputAutocomplete);
+            autocomplete.bindTo('bounds', map); // Foca a busca na área do mapa
+            autocomplete.setFields(['geometry', 'name']); // Pede apenas a geometria
+
+            // Atualiza o mapa/marcador quando um local é selecionado
+            autocomplete.addListener('place_changed', () => {
+                const place = autocomplete.getPlace();
+                
+                if (!place.geometry || !place.geometry.location) {
+                    // O usuário digitou algo que não é um local válido
+                    window.alert("Localização não encontrada. Por favor, selecione um local da lista.");
+                    return;
+                }
+                
+                // Centraliza o mapa e move o marcador
+                map.setCenter(place.geometry.location);
+                marker.setPosition(place.geometry.location);
+                
+                // Atualiza os campos ocultos
+                updateLocation(place.geometry.location.lat(), place.geometry.location.lng());
+            });
+
+            // Atualiza a localização inicial (campos ocultos)
+            updateLocation(defaultLocation.lat, defaultLocation.lng);
+        }
+
+        // Função auxiliar para atualizar os campos ocultos de latitude e longitude
+        function updateLocation(lat, lng) {
+            inputLat.value = lat;
+            inputLng.value = lng;
+        }
+
+
+        // --- Lógica de Eventos ---
+
+        // Etapa 1 -> Etapa 2: Buscar Profissionais
+        btnEnviar.addEventListener('click', () => {
+            // ADICIONADO: Bloqueia o envio se a API Key for inválida
+            if (GOOGLE_MAPS_API_KEY === "SUA_CHAVE_API_AQUI") {
+                alert('Erro: A Chave da API do Google Maps não foi configurada. Não é possível buscar por localização.');
+                return;
+            }
+
+            const servicoSelect = document.getElementById('servico');
+            const servico = servicoSelect.options[servicoSelect.selectedIndex].text;
+            const servicoValor = servicoSelect.value;
+            
+            // Validação Modificada: Verifica o autocomplete e os campos ocultos
+            if (!servicoValor || !inputAutocomplete.value || !document.getElementById('data').value || !document.getElementById('pesquisarDetalhes').value) {
+                alert('Por favor, preencha todos os campos da solicitação.');
+                return;
+            }
+
+            // Validação extra para garantir que o mapa selecionou um local
+            if (!inputLat.value || !inputLng.value) {
+                alert('Por favor, selecione um endereço válido da lista ou ajuste o marcador no mapa.');
+                return;
+            }
+            
+            document.getElementById('servico-selecionado').textContent = servico.toLowerCase();
+            
+            // Simula a busca e preenche a lista
+            listaProfissionaisDiv.innerHTML = ''; // Limpa a lista
+            const filtrados = mockProfissionais.filter(p => p.servico === servicoValor || servicoValor === 'Manutenção'); // Simulação simples
+            
+            if(filtrados.length === 0) {
+                 listaProfissionaisDiv.innerHTML = `<p class="text-gray-500 dark:text-gray-400">Nenhum profissional encontrado para este serviço no momento.</p>`;
+            } else {
+                filtrados.forEach(prof => {
+                    listaProfissionaisDiv.innerHTML += `
+                        <div class="border dark:border-gray-700 bg-gray-50 dark:bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <img src="${prof.foto}" alt="${prof.nome}" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <h3 class="font-semibold text-lg text-gray-900 dark:text-white">${prof.nome}</h3>
+                                    <div class="text-yellow-500 text-sm mt-1">⭐⭐⭐⭐⭐ (${prof.rating}) <span class="text-gray-500 dark:text-gray-400">(${prof.avaliacoes} aval.)</span></div>
+                                </div>
+                            </div>
+                            <button onclick="selecionarProfissional(${prof.id})" class="px-3 py-2 bg-blue-600 text-white rounded-md font-semibold text-sm hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+                                Selecionar
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+            
+            mostrarEtapa('etapa2');
+        });
+
+        // Etapa 2 -> Etapa 1: Refazer Pesquisa
+        btnRefazer.addEventListener('click', () => mostrarEtapa('etapa1'));
+        
+        // Etapa 2 -> Etapa 3: Selecionar Profissional
+        function selecionarProfissional(id) {
+            profissionalSelecionado = mockProfissionais.find(p => p.id === id);
+            
+            const detalhesDiv = document.getElementById('detalhes-profissional');
+            detalhesDiv.innerHTML = `
+                <div class="flex items-center space-x-4">
+                    <img src="${profissionalSelecionado.foto}" alt="${profissionalSelecionado.nome}" class="w-16 h-16 rounded-full object-cover">
+                    <div>
+                        <h3 class="font-bold text-xl text-gray-900 dark:text-white">${profissionalSelecionado.nome}</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Serviço: ${profissionalSelecionado.servico}</p>
+                        <div class="text-yellow-500 text-lg mt-1">⭐⭐⭐⭐⭐ (${profissionalSelecionado.rating})</div>
+                    </div>
+                </div>
+            `;
+            
+            mostrarEtapa('etapa3');
+        }
+
+        // Etapa 3 -> Etapa 2: Voltar para a Lista
+        btnVoltarLista.addEventListener('click', () => mostrarEtapa('etapa2'));
+        
+        // Etapa 3 -> Etapa 4: Confirmar Solicitação
+        btnConfirmar.addEventListener('click', () => {
+            document.getElementById('profissional-confirmado').textContent = profissionalSelecionado.nome;
+            mostrarEtapa('etapa4');
+        });
+
+        // Etapa 4 -> Etapa 1: Nova Pesquisa
+        btnNovo.addEventListener('click', () => {
+            // Limpa o formulário
+            document.getElementById('servico').value = '';
+            inputAutocomplete.value = ''; // Limpa o novo campo de endereço
+            document.getElementById('data').value = '';
+            document.getElementById('pesquisarDetalhes').value = '';
+            inputLat.value = ''; // Limpa campos ocultos
+            inputLng.value = '';
+            profissionalSelecionado = null;
+            
+            // Reseta o mapa para a posição inicial (se ele foi inicializado)
+            if (map && marker && GOOGLE_MAPS_API_KEY !== "SUA_CHAVE_API_AQUI") {
+                const defaultLocation = { lat: -19.916681, lng: -43.934494 };
+                map.setCenter(defaultLocation);
+                marker.setPosition(defaultLocation);
+                updateLocation(defaultLocation.lat, defaultLocation.lng);
+            }
+            
+            mostrarEtapa('etapa1');
+        });
+
+        // ADICIONADO: Verificador global da Chave de API ao carregar a página
+        // Isso garante que o aviso apareça se a função initMap falhar silenciosamente.
+        window.addEventListener('load', () => {
+            // Damos um pequeno atraso para o script do Google tentar carregar
+            setTimeout(() => {
+                // Se a variável 'google' não foi definida E a chave é o placeholder, mostre o aviso.
+                if (typeof google === 'undefined' && GOOGLE_MAPS_API_KEY === "SUA_CHAVE_API_AQUI") {
+                    apiKeyWarning.classList.remove('hidden');
+                    mapDiv.innerHTML = '<p class="text-center p-4 text-red-700 font-medium">O mapa não pode ser carregado.<br>Chave de API inválida (SUA_CHAVE_API_AQUI).</p>';
+                    inputAutocomplete.disabled = true;
+                    inputAutocomplete.placeholder = "Mapa desabilitado - configure a API Key";
+                }
+            }, 1000); // Espera 1 segundo
+        });
+    </script>
+</body>
+</html>

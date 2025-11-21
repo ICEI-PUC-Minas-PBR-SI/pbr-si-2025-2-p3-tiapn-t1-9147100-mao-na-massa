@@ -1,0 +1,42 @@
+package com.maonamassa.api.controller;
+
+import com.maonamassa.api.dto.CadastroRequest;
+import com.maonamassa.api.model.Pessoa;
+import com.maonamassa.api.service.CadastroService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/v1/cadastro")
+public class CadastroController {
+
+    @Autowired
+    private CadastroService cadastroService;
+
+    /**
+     * Endpoint (API) para receber os dados do formulário de cadastro.
+     * O Front-end chamará: POST /api/v1/cadastro
+     *
+     * @RequestBody diz ao Spring: "Pegue o JSON que veio no corpo
+     * da requisição e converta-o para a classe CadastroRequest".
+     */
+    @PostMapping
+    public ResponseEntity<Pessoa> cadastrar(@RequestBody CadastroRequest request) {
+        try {
+            // 1. Chama o Serviço para executar toda a lógica de negócio
+            Pessoa pessoaSalva = cadastroService.cadastrarNovoUsuario(request);
+            
+            // 2. Retorna 201 (Created) com os dados da pessoa salva
+            return ResponseEntity.status(201).body(pessoaSalva);
+
+        } catch (RuntimeException e) {
+            // 3. Se o Serviço lançar uma exceção (ex: CPF duplicado),
+            // retorna 400 (Bad Request) com a mensagem de erro.
+            return ResponseEntity.badRequest().body(null); // Em um projeto real, retornaríamos um DTO de erro
+        }
+    }
+}

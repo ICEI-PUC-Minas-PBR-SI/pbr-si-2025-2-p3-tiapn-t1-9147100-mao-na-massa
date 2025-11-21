@@ -1,0 +1,82 @@
+package com.maonamassa.api.service;
+
+import com.maonamassa.api.dto.CadastroRequest;
+import com.maonamassa.api.model.Pessoa;
+import com.maonamassa.api.model.Prestador;
+import com.maonamassa.api.model.Servico;
+import com.maonamassa.api.repository.PessoaRepository;
+import com.maonamassa.api.repository.PrestadorRepository;
+import com.maonamassa.api.repository.ServicoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service // Marca esta classe como um Serviço (lógica de negócio)
+public class CadastroService {
+
+    // 1. Injeta o Repositório de Pessoas
+    @Autowired
+    private PessoaRepository pessoaRepository;
+
+    // 2. Injeta o Repositório de Prestadores
+    @Autowired
+    private PrestadorRepository prestadorRepository;
+
+    // 3. Injeta o Repositório de Serviços
+    @Autowired
+    private ServicoRepository servicoRepository;
+
+    // 4. Injeta o Criptografador de Senha que criamos
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    /**
+     * Método principal para cadastrar um novo usuário.
+     * @Transactional garante que, se algo der errado (ex: falha ao salvar o prestador),
+     * tudo seja desfeito (o usuário não é salvo). É "tudo ou nada".
+     */
+    @Transactional
+    public Pessoa cadastrarNovoUsuario(CadastroRequest request) {
+
+        // --- Validação (RF-010) ---
+        // 1. Verifica se o CPF já existe
+        if (pessoaRepository.existsById(request.getCpf())) {
+            throw new RuntimeException("Erro: CPF já cadastrado.");
+        }
+        // 2. Verifica se o E-mail já existe
+        if (pessoaRepository.findByEmail(request.getEmail()).isPresent()) {
+            throw new RuntimeException("Erro: E-mail já cadastrado.");
+        }
+
+        // --- Criação da Pessoa ---
+        Pessoa novaPessoa = request.toPessoaEntity();
+        
+        // 3. Criptografa a senha (NUNCA salvar senha em texto puro)
+        String senhaCriptografada = passwordEncoder.encode(request.getSenha());
+        novaPessoa.setSenha(senhaCriptografada);
+
+        // 4. Salva a nova Pessoa no banco de dados
+        Pessoa pessoaSalva = pessoaRepository.save(novaPessoa);
+
+        // --- Criação do Prestador (se aplicável) (RF-013) ---
+        if ("prestador".equalsIgnoreCase(request.getTipoConta())) {
+            
+            // 5. Busca o Serviço (Eletricista, etc.) que o prestador selecionou
+            Servico servico = servicoRepository.findById(request.getIdServico())
+                    .orElseThrow(() -> new RuntimeException("Erro: Serviço não encontrado."));
+
+            // 6. Cria a nova entidade Prestador
+            Prestador novoPrestador = new Prestador();
+            novoPrestador.setPessoa(pessoaSalva); // Associa o Prestador à Pessoa que acabamos de salvar
+            novoPrestador.setServico(servico); // Associa ao Serviço
+            novoPrestador.setDescricaoPropriaServico(request.getDescricaoProfissional());
+            novoPrestador.setStatusVerificacao(Prestador.StatusVerificacao.PENDENTE); // Padrão
+
+            // 7. Salva o Prestador no banco
+            prestadorRepository.save(novoPrestador);
+        }
+
+        return pessoaSalva;
+    }
+}

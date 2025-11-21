@@ -1,0 +1,77 @@
+package com.maonamassa.api.dto;
+
+import com.maonamassa.api.model.Pessoa;
+
+// Esta classe é um "molde" para os dados que vêm do formulário HTML
+// O Spring vai converter o JSON do front-end para esta classe Java.
+public class CadastroRequest {
+
+    // Dados da Etapa 1 (Pessoa)
+    private String nome;
+    private String email;
+    private String cpf;
+    private String telefone;
+    private String senha;
+
+    // Dados da Etapa 3 (Tipo)
+    private String tipoConta; // "cliente" ou "prestador"
+
+    // Dados da Etapa 4 (Cliente)
+    private String cep;
+    private String logradouro;
+    // ... (outros campos do cliente, se houver)
+
+    // Dados da Etapa 4 (Prestador)
+    private Long idServico; // O ID do serviço (Eletricista, Encanador, etc.)
+    private String descricaoProfissional;
+    // ... (outros campos do prestador)
+
+    
+    // --- Getters e Setters (Obrigatórios para o Spring) ---
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+    
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+    
+    public String getCpf() { return cpf; }
+    public void setCpf(String cpf) { this.cpf = cpf; }
+    
+    public String getTelefone() { return telefone; }
+    public void setTelefone(String telefone) { this.telefone = telefone; }
+    
+    public String getSenha() { return senha; }
+    public void setSenha(String senha) { this.senha = senha; }
+    
+    public String getTipoConta() { return tipoConta; }
+    public void setTipoConta(String tipoConta) { this.tipoConta = tipoConta; }
+    
+    public String getCep() { return cep; }
+    public void setCep(String cep) { this.cep = cep; }
+    
+    public String getLogradouro() { return logradouro; }
+    public void setLogradouro(String logradouro) { this.logradouro = logradouro; }
+    
+    public Long getIdServico() { return idServico; }
+    public void setIdServico(Long idServico) { this.idServico = idServico; }
+    
+    public String getDescricaoProfissional() { return descricaoProfissional; }
+    public void setDescricaoProfissional(String descricaoProfissional) { this.descricaoProfissional = descricaoProfissional; }
+
+    /**
+     * Método utilitário para converter os dados do DTO para a Entidade Pessoa.
+     * Isso separa a lógica de conversão.
+     */
+    public Pessoa toPessoaEntity() {
+        Pessoa p = new Pessoa();
+        p.setCpf(this.cpf);
+        p.setNome(this.nome);
+        p.setEmail(this.email);
+        p.setTelefone(this.telefone);
+        p.setCep(this.cep);
+        p.setLogradouro(this.logradouro);
+        // A senha NÃO é definida aqui, pois precisa ser criptografada primeiro.
+        return p;
+    }
+}

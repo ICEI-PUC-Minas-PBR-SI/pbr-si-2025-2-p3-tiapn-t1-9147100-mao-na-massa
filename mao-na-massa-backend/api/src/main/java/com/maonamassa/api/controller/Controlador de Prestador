@@ -1,0 +1,43 @@
+package com.maonamassa.api.controller;
+
+import com.maonamassa.api.dto.PrestadorResponseDTO;
+import com.maonamassa.api.service.PrestadorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/prestadores")
+public class PrestadorController {
+
+    @Autowired
+    private PrestadorService prestadorService;
+
+    /**
+     * Endpoint (API) para buscar profissionais.
+     * O Front-end (pesquisarProfissional.html) chamará:
+     * GET /api/v1/prestadores/buscar?servicoId=1
+     *
+     * @RequestParam pega o 'servicoId' da URL.
+     */
+    @GetMapping("/buscar")
+    public ResponseEntity<List<PrestadorResponseDTO>> buscarPrestadores(
+            @RequestParam(name = "servicoId") Long idServico) {
+        
+        try {
+            List<PrestadorResponseDTO> prestadores = prestadorService.buscarPorServico(idServico);
+            
+            // Retorna 200 (OK) com a lista de prestadores
+            return ResponseEntity.ok(prestadores);
+
+        } catch (RuntimeException e) {
+            // Se o serviçoId não existir, retorna 404 (Not Found)
+            return ResponseEntity.notFound().build();
+        }
+    }
+}

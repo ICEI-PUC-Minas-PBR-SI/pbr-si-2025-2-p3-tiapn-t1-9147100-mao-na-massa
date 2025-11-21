@@ -1,0 +1,48 @@
+package com.maonamassa.api.dto;
+
+import com.maonamassa.api.model.Prestador;
+
+/**
+ * Esta classe é um "molde" para os dados que o back-end enviará
+ * ao front-end (pesquisarProfissional.html) como resposta da busca.
+ * Isso evita expor a entidade completa do banco de dados.
+ */
+public class PrestadorResponseDTO {
+
+    private Long idPrestador;
+    private String nomeCompleto;
+    private String urlFotoPerfil;
+    private String nomeServico;
+    private String descricaoProfissional;
+    // (No futuro, adicionaremos aqui o rating/avaliação média)
+
+    // Construtor que converte a Entidade (do banco) para o DTO (para o front-end)
+    public PrestadorResponseDTO(Prestador prestador) {
+        this.idPrestador = prestador.getId();
+        this.nomeCompleto = prestador.getPessoa().getNome();
+        this.urlFotoPerfil = prestador.getPessoa().getUrlFotoPerfil();
+        this.nomeServico = prestador.getServico().getNome();
+        this.descricaoProfissional = prestador.getDescricaoPropriaServico();
+    }
+
+    // Getters
+    public Long getIdPrestador() {
+        return idPrestador;
+    }
+
+    public String getNomeCompleto() {
+        return nomeCompleto;
+    }
+
+    public String getUrlFotoPerfil() {
+        return urlFotoPerfil;
+    }
+
+    public String getNomeServico() {
+        return nomeServico;
+    }
+
+    public String getDescricaoProfissional() {
+        return descricaoProfissional;
+    }
+}

@@ -1,0 +1,42 @@
+package com.maonamassa.api.service;
+
+import com.maonamassa.api.dto.PrestadorResponseDTO;
+import com.maonamassa.api.model.Prestador;
+import com.maonamassa.api.model.Servico;
+import com.maonamassa.api.repository.PrestadorRepository;
+import com.maonamassa.api.repository.ServicoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class PrestadorService {
+
+    @Autowired
+    private PrestadorRepository prestadorRepository;
+
+    @Autowired
+    private ServicoRepository servicoRepository;
+
+    /**
+     * Busca prestadores com base no ID do serviço (RF-012).
+     */
+    public List<PrestadorResponseDTO> buscarPorServico(Long idServico) {
+        
+        // 1. Busca a entidade Servico pelo ID
+        Servico servico = servicoRepository.findById(idServico)
+                .orElseThrow(() -> new RuntimeException("Serviço não encontrado"));
+
+        // 2. Usa o método do repositório que criamos para buscar os prestadores
+        List<Prestador> prestadores = prestadorRepository.findByServico(servico);
+
+        // 3. Converte a lista de Entidades (Prestador) para uma lista de DTOs (PrestadorResponseDTO)
+        return prestadores.stream()
+                .map(PrestadorResponseDTO::new) // Para cada 'prestador' na lista, chama 'new PrestadorResponseDTO(prestador)'
+                .collect(Collectors.toList());
+    }
+
+    // (No futuro, este método também receberá a latitude e longitude para o RF-014)
+}

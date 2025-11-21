@@ -24,12 +24,12 @@ const pool = mysql.createPool({
 
 // 4. Criar o Endpoint (API) para "Buscar Profissionais"
 app.post('/api/profissionais', async (req, res) => {
-    
+
     // Pega o ID do serviço que o frontend enviou
-    const { idServico } = req.body;
+    const {idServico} = req.body;
 
     if (!idServico) {
-        return res.status(400).json({ error: 'O ID do serviço é obrigatório.' });
+        return res.status(400).json({error: 'O ID do serviço é obrigatório.'});
     }
 
     try {
@@ -37,20 +37,18 @@ app.post('/api/profissionais', async (req, res) => {
         // Ela busca o nome do prestador, a descrição, o nome do serviço
         // e calcula a média de notas das avaliações dele.
         const query = `
-            SELECT 
-                p.Nome, 
-                pr.Descricao_Propria_Servico, 
-                s.Nome AS NomeServico,
-                (
-                    SELECT IFNULL(ROUND(AVG(a.Nota), 1), 0) 
+            SELECT p.Nome,
+                   pr.Descricao_Propria_Servico,
+                   s.Nome                                     AS NomeServico,
+                   (SELECT IFNULL(ROUND(AVG(a.Nota), 1), 0)
                     FROM Avaliacoes a
-                    JOIN Solicitacoes sol ON a.ID_Solicitacao = sol.ID_Solicitacao
-                    WHERE sol.ID_Prestador = pr.ID_Prestador
-                ) AS Avaliacao
+                             JOIN Solicitacoes sol ON a.ID_Solicitacao = sol.ID_Solicitacao
+                    WHERE sol.ID_Prestador = pr.ID_Prestador) AS Avaliacao
             FROM Prestadores pr
-            JOIN Pessoas p ON pr.CPF_Pessoa = p.CPF
-            JOIN Servicos s ON pr.ID_Servico = s.ID_Servico
-            WHERE pr.ID_Servico = ? AND pr.Status_Verificacao = 'Aprovado';
+                     JOIN Pessoas p ON pr.CPF_Pessoa = p.CPF
+                     JOIN Servicos s ON pr.ID_Servico = s.ID_Servico
+            WHERE pr.ID_Servico = ?
+              AND pr.Status_Verificacao = 'Aprovado';
         `;
 
         // Executa a consulta no banco de dados de forma segura
@@ -61,7 +59,7 @@ app.post('/api/profissionais', async (req, res) => {
 
     } catch (error) {
         console.error('Erro ao buscar profissionais:', error);
-        res.status(500).json({ error: 'Erro interno no servidor' });
+        res.status(500).json({error: 'Erro interno no servidor'});
     }
 });
 

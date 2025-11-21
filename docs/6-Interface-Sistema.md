@@ -1,57 +1,32 @@
-
-# 6. Interface do Sistema
+6. Interface do Sistema
 
 <span style="color:red">Pré-requisitos: <a href="4-Projeto-Solucao.md"> Projeto da Solução</a></span>
 
-_Visão geral da interação do usuário por meio das telas do sistema. Apresente as principais interfaces da plataforma._
+A interface do sistema "Mão na Massa" foi projetada com foco na simplicidade e usabilidade, conforme definido nos protótipos de tela (Seção 4.2). O objetivo é guiar o usuário de forma intuitiva através do fluxo de contratação, desde a busca até a avaliação, garantindo uma experiência clara tanto para o Contratante quanto para o Prestador.
 
-## 6.1. Tela principal do sistema
+6.1. Tela Principal (Tela Inicial)
 
-_Descrição da tela principal do sistema._
+A Tela Inicial é o primeiro ponto de contato do usuário com a plataforma. Ela serve como portal de entrada, destacando a proposta de valor do serviço (conectar clientes a profissionais qualificados) e direcionando o usuário para as ações principais: buscar um serviço ou cadastrar-se como profissional. O design é limpo para evitar distrações e focar na conversão.
 
-[`Tela principal do sistema`](images/)
+Tela principal do sistema
 
+6.2. Telas do Processo 1 (Cadastro e Login)
 
-## 6.2. Telas do processo 1
+O Processo 1, "Cadastro de Usuários", é dividido em telas claras de autenticação e registro.
 
-_Descrição da tela relativa à atividade 1._
+Tela de Cadastro: O usuário seleciona seu perfil (Contratante ou Prestador). O formulário de Contratante solicita dados básicos (Nome, Email, Senha, Telefone, CEP). O formulário de Prestador, além dos dados básicos, solicita informações profissionais (Serviços prestados, descrição, documentos), conforme o RF-010 e RF-013.
 
-[`Tela da atividade 1`](images/)
+Tela de Login: Uma tela simples onde o usuário insere seu Email e Senha para acessar a plataforma.
 
-_Descrição da tela relativa à atividade 2._
+Tela de Cadastro/Login (exemplo)
 
-[`Tela da atividade 2`](images/)
+6.3. Telas do Processo 2 (Pesquisa e Solicitação)
 
+O Processo 2, "Pesquisar Profissional", é o coração da experiência do Contratante.
 
-## 6.3. Telas do processo 2
+Tela de Serviços (Busca): O Contratante utiliza filtros (tipo de serviço, localização) para encontrar profissionais (RF-012, RF-014). Os resultados são exibidos em listas ou cartões, mostrando o perfil do prestador.
 
-_Descrição da tela relativa à atividade 1._
+Tela de FeedBack (Perfil do Prestador): Ao selecionar um profissional, o Contratante acessa seu perfil detalhado. Esta tela é crucial, pois contém as avaliações de clientes anteriores (RF-005), o que ajuda a construir a confiança e a tomar a decisão de contratação. A partir daqui, o Contratante pode iniciar o Processo 3 (Solicitar Serviço).
 
-[`Tela da atividade 1`](images/)
-
-_Descrição da tela relativa à atividade 2._
-
-[`Tela da atividade 2`](images/)
-
-
-## 6.3. Telas do processo 3
-
-_Descrição da tela relativa à atividade 1._
-
-[`Tela da atividade 1`](images/)
-
-_Descrição da tela relativa à atividade 2._
-
-[`Tela da atividade 2`](images/)
-
-
-## 6.3. Telas do processo 4
-
-_Descrição da tela relativa à atividade 1._
-
-[`Tela da atividade 1`](images/)
-
-_Descrição da tela relativa à atividade 2._
-
-[`Tela da atividade 2`](images/)
-
+Tela de Serviços
+Tela FeedBack dos Clientes

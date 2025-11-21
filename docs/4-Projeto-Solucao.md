@@ -1,21 +1,34 @@
-## 4. Projeto da Solução
+4. Projeto da Solução
 
 <span style="color:red">Pré-requisitos: <a href="03-Modelagem do Processo de Negocio.md"> Modelagem do Processo de Negocio</a></span>
 
-## 4.1. Arquitetura da solução
+4.1. Arquitetura da solução
 
+A arquitetura da solução "Mão na Massa" é baseada em um modelo de Três Camadas (Three-Tier Architecture), com uma clara separação de responsabilidades entre a apresentação (front-end), a lógica de negócio (back-end) e o armazenamento de dados (banco de dados).
 
-......  COLOQUE AQUI O SEU TEXTO E O DIAGRAMA DE ARQUITETURA .......
+A comunicação entre o front-end e o back-end é realizada através de uma API RESTful, utilizando o formato JSON, o que garante um desacoplamento total entre as camadas.
 
- Inclua um diagrama da solução e descreva os módulos e as tecnologias
- que fazem parte da solução. Discorra sobre o diagrama.
- 
- **Exemplo do diagrama de Arquitetura**:
- 
- ![Exemplo de Arquitetura](./images/arquitetura-exemplo.png)
- 
+Camada de Apresentação (Front-end):
 
-### 4.2. Protótipos de telas
+Tecnologias: HTML5, CSS3, JavaScript (ES6+) e Bootstrap.
+
+Responsabilidade: Esta é a interface com o usuário (UI). É responsável por renderizar todas as telas e protótipos definidos (como cadastro, busca de serviços e feedbacks), capturar as entradas do usuário e realizar requisições HTTP (GET, POST, PUT, DELETE) para a camada de back-end.
+
+Camada de Aplicação (Back-end):
+
+Tecnologias: Java 17, Spring Boot, Spring Data JPA (Hibernate).
+
+Responsabilidade: É o cérebro da aplicação. Expõe a API RESTful que o front-end consome. Toda a lógica de negócio, regras de validação (cadastro, solicitação, pagamento) e orquestração dos processos são gerenciados aqui. O Spring Boot facilita a criação dos endpoints (rotas da API), e o Spring Data JPA gerencia a comunicação com o banco de dados, abstraindo as consultas SQL.
+
+Camada de Dados (Banco de Dados):
+
+Tecnologia: MySQL.
+
+Responsabilidade: Armazenar de forma persistente e segura todas as informações da plataforma, conforme o modelo físico definido (Pessoas, Servicos, Prestadores, Solicitacoes, etc.).
+
+Este design permite que as equipes de front-end e back-end trabalhem de forma independente e facilita a manutenção e escalabilidade futura da aplicação.
+
+4.2. Protótipos de telas
 
 O protótipo desenvolvido apresenta a visão geral da plataforma Mão na Massa, que conecta clientes a profissionais especializados em serviços domésticos. O design das telas foi elaborado para ser simples, direto e responsivo, garantindo facilidade de uso, navegabilidade intuitiva e experiência agradável ao usuário.
 
@@ -25,40 +38,31 @@ Cada interface foi pensada para guiar o usuário em um fluxo claro: conhecer os 
 
 Tela Inicial
 
-![Exemplo de Wireframe](images/inicial.png)
-
 Tela de Serviços
 
-![Exemplo de Wireframe](images/servicos.png)
+Tela FeedBack dos Clientes
 
-Tela FeedBack dos Clientes 
+4.3. Modelo de dados
 
-![Exemplo de Wireframe](images/feedback.png)
-## Diagrama de Classes
+O modelo de dados da solução "Mão na Massa" é centrado na entidade Pessoas, que armazena dados comuns a todos os usuários (Contratantes e Prestadores).
 
-<img src="images/dc.jpeg" >
+Pessoas (Forte): Tabela central que armazena dados de login e perfil (CPF, Nome, Email, Senha, etc.).
 
-### 4.3. Modelo de dados
+Servicos (Forte): Tabela de catálogo que define os tipos de serviços disponíveis na plataforma (ex: "Eletricista", "Encanador").
 
-Entidades identificadas: Contratado (forte), Gerente (forte), Contrato (forte), Contratante (fraca)
-R1: Contratado — Gerente (Tipo: Forte) : Um gerente pode ser responsável por um contratado
-R2: Contratado — Contrato (Tipo: Forte) : Um contratado participa de um contrato
-R3: Contrato — Contratante (Tipo: Fraco) : A existência de um contrato depende de uma contratante associada
-R4: Gerencia — Contratante (Tipo: Forte) : A entidade Gerencia (forte) se relaciona com a Contratante para definir quem administra a relação contratual
-Relacionamento N-ário ( relacionamento geral )
+Prestadores (Forte): Tabela que especializa uma Pessoa como um prestador. Ela faz a ligação entre a Pessoas (quem é o profissional) e Servicos (o que ele faz).
 
-#### 4.3.1 Modelo ER
+Solicitacoes (Forte): Entidade principal que registra a transação. Ela conecta um Contratante (identificado pelo CPF da tabela Pessoas) a um Prestador (identificado pelo ID da tabela Prestadores).
 
-<img src="images/Es relacional.jpeg" >
+Pagamentos (Fraca): Depende diretamente de uma Solicitacao. Armazena o valor e o status do pagamento, que é processado exclusivamente via PIX.
 
-#### 4.3.2 Esquema Relacional
+Avaliacoes (Fraca): Depende de uma Solicitacao concluída e registra a nota e comentário do Avaliador (seja Contratante ou Prestador) para o Avaliado.
 
-<img src="images/ER.jpeg" >
+4.3.3 Modelo Físico
 
-#### 4.3.3 Modelo Físico
 Abaixo está o script SQL completo para a criação do banco de dados mão na massa, com todas as tabelas necessárias para suportar os processos de negócio definidos.
 
-Configuração Inicial do Banco de Dados:
+-- Configuração Inicial do Banco de Dados:
 -- Apaga o banco de dados existente, se houver, para evitar erros e garantir a nova estrutura.
 DROP DATABASE IF EXISTS mao_na_massa;
 
@@ -124,9 +128,8 @@ CREATE TABLE Pagamentos (
     ID_Pagamento INT AUTO_INCREMENT PRIMARY KEY,
     ID_Solicitacao INT NOT NULL,
     Valor DECIMAL(10, 2) NOT NULL,
-    -- ATUALIZADO: O método de pagamento agora está fixado como PIX.
+    -- O método de pagamento está fixado como PIX, conforme definido na Modelagem de Processo.
     Metodo_Pagamento ENUM('PIX') NOT NULL DEFAULT 'PIX',
-    -- ATUALIZADO: Status 'Nao_Gerenciado' removido.
     Status_Pagamento ENUM('Pendente', 'Retido', 'Liberado', 'Reembolsado', 'Falhou') NOT NULL DEFAULT 'Pendente',
     Data_Pagamento DATETIME,
     Data_Liberacao DATETIME,
@@ -149,33 +152,105 @@ CREATE TABLE Avaliacoes (
     FOREIGN KEY (CPF_Avaliado) REFERENCES Pessoas(CPF)
 );
 
-Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
-
-### 4.4. Tecnologias
-Dimensão,Tecnologia,Descrição e Finalidade
-SGBD,MySQL,"Sistema de Gerenciamento de Banco de Dados relacional para armazenar de forma persistente e segura todas as informações da aplicação, como dados de pessoas, serviços e prestadores."
-Front-end,"HTML5, CSS3, JavaScript (ES6+)","Tecnologias padrão da web. HTML para estruturar o conteúdo das páginas, CSS para estilização e design responsivo, e JavaScript para criar a interatividade, manipular eventos e se comunicar com o back-end."
-,(Biblioteca Opcional: React ou Vue.js),"Para facilitar a criação de interfaces complexas e reativas, poderíamos adotar uma biblioteca como o React. Isso simplificaria a manipulação do estado da aplicação e a atualização da interface com base nos dados recebidos do back-end."
-,(Framework CSS: Bootstrap),"Utilizaremos o Bootstrap para acelerar o desenvolvimento do design, garantindo que a aplicação seja responsiva (funcione bem em desktops, tablets e celulares) e tenha um visual moderno e consistente sem a necessidade de escrever todo o CSS do zero."
-Back-end,Java (versão 17 ou superior),"Linguagem de programação robusta, segura e de alta performance que servirá como base para toda a lógica de negócio da aplicação."
-,Spring Boot,"Framework que acelera o desenvolvimento de aplicações Java. Ele será usado para criar uma API RESTful, que são os ""caminhos"" (endpoints) que o front-end irá chamar para buscar, salvar, atualizar ou deletar dados no banco de dados."
-,Spring Data JPA & Hibernate,"Módulos do Spring que facilitam enormemente a comunicação com o banco de dados MySQL. Eles permitem mapear as tabelas do banco para objetos Java, abstraindo a maior parte do código SQL."
-,Maven,"Ferramenta de automação de compilação e gerenciamento de dependências. Será usada para gerenciar todas as bibliotecas do projeto Java (Spring, Hibernate, etc.)."
-Ferramentas de Desenvolvimento,Visual Studio Code (VS Code),"IDE (Ambiente de Desenvolvimento Integrado) leve e versátil. Será usado para o desenvolvimento do front-end (HTML, CSS, JS)."
-,IntelliJ IDEA Community/Ultimate,"IDE poderosa e especializada para o desenvolvimento back-end com Java e Spring Boot, oferecendo recursos avançados de depuração e produtividade."
-,Git & GitHub,Sistema de controle de versão para gerenciar o histórico do código-fonte e plataforma de hospedagem de repositórios para colaboração e backup do projeto.
-,Postman / Insomnia,"Ferramentas para testar a API RESTful do back-end de forma isolada, garantindo que ela funcione corretamente antes de integrá-la com o front-end."
-,MySQL Workbench,"Ferramenta visual para modelar, administrar e interagir com o banco de dados MySQL."
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
 
 
+Este script deverá ser incluído em um arquivo .sql na pasta src/bd.
+
+4.4. Tecnologias
+
+A tabela a seguir detalha as tecnologias selecionadas para a construção da plataforma "Mão na Massa".
+
+Dimensão
+
+Tecnologia
+
+Descrição e Finalidade
+
+SGBD
+
+MySQL
+
+Sistema de Gerenciamento de Banco de Dados relacional para armazenar de forma persistente e segura todas as informações da aplicação, como dados de pessoas, serviços e prestadores.
+
+Front-end
+
+HTML5, CSS3, JavaScript (ES6+)
+
+Tecnologias padrão da web. HTML para estruturar o conteúdo das páginas, CSS para estilização e design responsivo, e JavaScript para criar a interatividade, manipular eventos e se comunicar com o back-end.
+
+(Biblioteca Opcional)
+
+React ou Vue.js
+
+Para facilitar a criação de interfaces complexas e reativas, poderíamos adotar uma biblioteca como o React. Isso simplificaria a manipulação do estado da aplicação e a atualização da interface com base nos dados recebidos do back-end.
+
+(Framework CSS)
+
+Bootstrap
+
+Utilizaremos o Bootstrap para acelerar o desenvolvimento do design, garantindo que a aplicação seja responsiva (funcione bem em desktops, tablets e celulares) e tenha um visual moderno e consistente sem a necessidade de escrever todo o CSS do zero.
+
+Back-end
+
+Java (versão 17 ou superior)
+
+Linguagem de programação robusta, segura e de alta performance que servirá como base para toda a lógica de negócio da aplicação.
+
+(Framework)
+
+Spring Boot
+
+Framework que acelera o desenvolvimento de aplicações Java. Ele será usado para criar uma API RESTful, que são os "caminhos" (endpoints) que o front-end irá chamar para buscar, salvar, atualizar ou deletar dados no banco de dados.
+
+(ORM)
+
+Spring Data JPA & Hibernate
+
+Módulos do Spring que facilitam enormemente a comunicação com o banco de dados MySQL. Eles permitem mapear as tabelas do banco para objetos Java, abstraindo a maior parte do código SQL.
+
+(Build)
+
+Maven
+
+Ferramenta de automação de compilação e gerenciamento de dependências. Será usada para gerenciar todas as bibliotecas do projeto Java (Spring, Hibernate, etc.).
+
+Ferramentas de Dev
+
+Visual Studio Code (VS Code)
+
+IDE (Ambiente de Desenvolvimento Integrado) leve e versátil. Será usado para o desenvolvimento do front-end (HTML, CSS, JS).
+
+(IDE Back-end)
+
+IntelliJ IDEA Community/Ultimate
+
+IDE poderosa e especializada para o desenvolvimento back-end com Java e Spring Boot, oferecendo recursos avançados de depuração e produtividade.
+
+(Controle de Versão)
+
+Git & GitHub
+
+Sistema de controle de versão para gerenciar o histórico do código-fonte e plataforma de hospedagem de repositórios para colaboração e backup do projeto.
+
+(Testes de API)
+
+Postman / Insomnia
+
+Ferramentas para testar a API RESTful do back-end de forma isolada, garantindo que ela funcione corretamente antes de integrá-la com o front-end.
+
+(SGBD GUI)
+
+MySQL Workbench
+
+Ferramenta visual para modelar, administrar e interagir com o banco de dados MySQL.
+
+Fluxo de Interação da Arquitetura:
 
 +----------------+      1. Requisição HTTP      +----------------------+      4. Chamada da API      +-----------------------------+      5. Consulta SQL      +-----------------+
 |                | ---------------------------> |                      | -------------------------> |                             | -------------------------> |                 |
 |     Usuário    |                              |  Front-end (Navegador)|                            | Back-end API (Servidor Java)|                            | Banco de Dados  |
-|   (Navegador)  |      (Renderiza HTML/CSS)    | (Hospedado no GitHub Pages) |     (Hospedado no Heroku)    |    (Hospedado no Heroku/AWS)|      (MySQL)      |
+|   (Navegador)  |      (Renderiza HTML/CSS)    | (Hosp. GitHub Pages) |     (Hosp. no Heroku)    |    (Hosp. Heroku/AWS)       |      (MySQL)      |
 |                |                              |                      |                            |                             |                            |                 |
 |                | <--------------------------- |                      | <------------------------- |                             | <------------------------- |                 |
 +----------------+     12. Resposta Visual     +----------------------+     10. Resposta JSON      +-----------------------------+     8. Retorno dos Dados    +-----------------+
                          (DOM é atualizado)                                   (Dados)
-

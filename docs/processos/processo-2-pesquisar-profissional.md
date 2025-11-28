@@ -62,44 +62,23 @@ Se sim, o processo é concluído com sucesso. Se não, o cliente é notificado s
 
 | **Campo** | **Tipo** | **Restrições** | **Valor** |
 | :--- | :--- | :--- | :--- |
-| Título "Entre em Contato" | Área de texto | N/A | Valor default (fixo) |
-| Subtítulo "Pronto para..." | Área de texto | N/A | Valor default (fixo) |
-
-| **Comandos** | **Destino** | **Tipo** |
-| :--- | :--- | :--- |
-| (Nenhum) | N/A | N/A |
-
+| Título "Encontre serviços na sua região" | Área de texto | N/A | Valor default (fixo) |
+| Subtítulo "Selecione sua cidade.." | Área de texto | N/A | Valor default (fixo) |
 ---
 
 **2-Formulário "Solicitar Orçamento"**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor** |
 | :--- | :--- | :--- | :--- |
-| Nome Completo | Caixa de texto | Obrigatório | Valor default ("Seu nome") |
-| Telefone | Caixa de texto | Obrigatório, (formato (XX) XXXX-XXXX) | Valor default ("(11) 9999-9999") |
-| Email | Caixa de texto | Obrigatório, (formato email válido) | Valor default ("seu@email.com") |
-| Serviço Desejado | Seleção única | Obrigatório | Valor default ("Selecione um serviço") |
-| Endereço | Caixa de texto | Obrigatório | Valor default ("Rua, número, bairro") |
-| Detalhes do Serviço | Área de texto | Obrigatório, (ex: min 20 caracteres) | Valor default ("Descreva o que...") |
-| (Nota de Rodapé) | Área de texto | N/A | "Entraremos em contato..." |
+| Selecione sua cidade | Caixa de Seleção (Checkbox) | Obrigatório | Valor default ("Seu nome") |
+| Todos serviços | Caixa de Seleção (Checkbox) | Obrigatório, (formato (XX) XXXX-XXXX) | Valor default ("(11) 9999-9999") |
+| Buscar | Caixa de texto | Obrigatório, (formato (XX) XXXX-XXXX) | Valor default ("(11) 9999-9999") |
 
 | **Comandos** | **Destino** | **Tipo** |
 | :--- | :--- | :--- |
-| Enviar Solicitação | Gateway "Dados completos?" | default |
+| Buscar | Aparecer mapa com sua localização | default |
+| Enviar solicitação | Gateway "Dados completos?" | default |
 
 ---
-
-**3-Bloco "Informações de Contato"**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor** |
-| :--- | :--- | :--- | :--- |
-| (Info Telefone) | (Texto informativo) | N/A | (Valor fixo "(11) 9999-9999", "Seg a Sex...") |
-| (Info Email) | (Texto informativo) | N/A | (Valor fixo "contato@casaservicos.com"...) |
-| (Info Área de Atendimento) | (Texto informativo) | N/A | (Valor fixo "São Paulo e Região"...) |
-| (Info Horário) | (Texto informativo) | N/A | (Valor fixo "Segunda a Sábado", "8h às 18h") |
-
-| **Comandos** | **Destino** | **Tipo** |
-| :--- | :--- | :--- |
-| Perguntas Frequentes | Tela "FAQ" (ou âncora) | navigation |
 
 

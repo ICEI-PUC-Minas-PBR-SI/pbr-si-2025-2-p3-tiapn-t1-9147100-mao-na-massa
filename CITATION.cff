@@ -1,29 +1,28 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Mão na Massa
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-
+  - family-names: Lima Araújo
+    given-names: Bruno César
+  - family-names: Moreira Pessoa
+    given-names: Camila
+  - family-names: Alves Silveira
+    given-names: Davi
+  - family-names: Paulino Caldeira Tolentino
+    given-names: Glendha
+  - family-names: Lopes Braga
+    given-names: Pricilla
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
-    keywords:
-    - 
-repository-code: 
+    family-names: Gomes Amaral
+    given-names: Cleia Marcia
+keywords:
+  - Plataforma Digital
+  - Prestação de Serviços
+  - Informalidade
+  - Mercado de Trabalho
+  - Impacto Social
+repository-code: https://github.com/ICEI-PUC-Minas-PBR-SI/pbr-si-2025-2-p3-tiapn-t1-9147100-mao-na-massa
 license: CC-BY-4.0
 version: 1.0.0
-date-released:
+date-released: 2025-11-28

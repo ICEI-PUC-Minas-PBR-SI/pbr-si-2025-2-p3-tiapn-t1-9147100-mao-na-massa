@@ -21,26 +21,28 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 ### Atividade 1: Criar Conta
 * **Caixa de texto** - Nome
 * **Caixa de texto** - E-mail
+* **Caixa de texto** - CPF
+* **Caixa de texto** - Telefone
 * **Caixa de texto** - Senha
 * **Caixa de texto** - Confirmação de senha
-* **Link** - Login Google
-* **Link** - Login Facebook
+
 
 ### Atividade 2: Cadastro de Colaborador
 * **Caixa de texto** - Nome
 * **Caixa de texto** - E-mail
+* **Caixa de texto** - CPF
 * **Caixa de texto** - Telefone
 * **Caixa de texto** - Senha
-* **Link** - Login Google
-* **Link** - Login Facebook
+* **Caixa de texto** - Confirmação de senha
 
-### Atividade 3: Localização
-* **Caixa de texto** - Onde você vai?
-* **Área de texto** - (Campo para detalhes/mapa da localização)
 
-### Atividade 4: Cadastro Finalizado
-* **Imagem** - (Ícone de Perfil)
+### Atividade 3: Verificação
+* **Caixa de texto** - Um código de 6 dígitos foi enviado 
 
+
+### Atividade 4: Tipo de Conta
+* **Caixa de texto** - sou cliente( quero contratar serviço) 
+* **Caixa de texto** - sou prestador ( quero oferecer serviço) 
 
 **1- Preencher dados Pessoais (Usuário)**
 
@@ -122,15 +124,19 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| RG | Upload de Arquivo  |   Obrigatório (ex: .pdf, .jpg)     |     Valor default       |
-| CPF / CNPJ (Profissional) | Upload de Arquivo  |  Obrigatório (ex: .pdf, .jpg)    |     Valor default       |
-| Comprovante de Residência |  | Upload de Arquivo  | Obrigatório (ex: .pdf, .jpg)    |     Valor default       |
-| Certificados Técnicos | Upload de Arquivo (múltiplo)   |   Opcional     |     Valor default       |
+|Principal Área de Atuação|	Lista suspensa (select)	Obrigatório; não pode ficar em opção vazia|	Selecionado: "Elétrica", "Encanamento", "Limpeza Residencial", "Manutenção e Reparos" ou "Jardinagem"
+Descrição Profissional|	Área de texto (textarea)Obrigatório; mínimo 20 caracteres recomendado (ex: descreva experiência)	Ex: "Sou eletricista com 10 anos de experiência em residências e comércios…"
+CEP	|Caixa de texto	Obrigatório;| formato numérico (ex: 01234-567)	|Valor digitado (ex: 01234567)
+Foto de Perfil|	Upload de arquivo| Opcional; aceita apenas imagens (image/*)|Arquivo .jpg/.png selecionado ou vazio
+Documento (RG ou CNH)|Upload de arquivo|Obrigatório; aceita .pdf, .jpg, .png (comprovante de identidade)|Arquivo selecionado (ex: RG.pdf)
+Checkbox |Termos de Uso	Checkbox (#termos_prestador)|Obrigatório (deve estar marcado para avançar)|true (aceito) ou false
+Links nos Termo|Link hipertexto|	N/A	|"termos de uso" e "política de privacidade" (href="#")
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
+
+
+ | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Enviar para Análise | Atividade "Validar Informações Prestador" (Plataforma)  | default |
-| Voltar | Tela "Complementar Perfil Prestador (Parte 1)"  | cancel |
 | Aceitar Termos de Uso | Campo "Aceitar Termos de Uso"  | False |
 | Aceitar Política de Privacidade | Campo "Política de Privacidade  | False |
 

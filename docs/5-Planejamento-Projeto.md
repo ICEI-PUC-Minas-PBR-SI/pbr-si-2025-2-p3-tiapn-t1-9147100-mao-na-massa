@@ -111,9 +111,9 @@ Atualizado em: 23/10/2025
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
 | Bruno César Lima Araújo       | Implementação do back-end do processo 1 (Banco de Dados) | 01/10/2025     | 10/10/2025 | ✔️  | 10/10/2025      |
-| Pricilla Lopes Braga       | Relatório – seção “Modelagem dos processos - Processo 1” (versão atualizada) | 01/10/2025     | 24/10/2025 | 📝  |24/10/2025      |
-| Pricilla Lopes Braga     | Relatório – seção “Modelagem de dados” (versão atualizada) | 01/10/2025     | 24/10/2025 | 📝  |24/10/2025      |
-| Camila Moreira Pessoa     | Implementação completa do processo 1 | 01/10/2025     | 24/10/2025 | 📝  |24/10/2025      |
+| Pricilla Lopes Braga       | Relatório – seção “Modelagem dos processos - Processo 1” (versão atualizada) | 01/10/2025     | 24/10/2025 | ✔️  |24/10/2025      |
+| Pricilla Lopes Braga     | Relatório – seção “Modelagem de dados” (versão atualizada) | 01/10/2025     | 24/10/2025 | ✔️  |24/10/2025      |
+| Camila Moreira Pessoa     | Implementação completa do processo 1 | 01/10/2025     | 24/10/2025 | ✔️  |24/10/2025      |
 | Glendha Paulino Caldeira Tolentino    | Planejamento da Sprint 5 | 01/10/2025     | 24/10/2025 | ✔️  |24/10/2025      |
 
 ## Sprint 5
@@ -127,9 +127,9 @@ Atualizado em: 23/10/2025
 | Pricilla Braga Lopes   |  Relatório - seção "Indicadores de desempenho"   | 20/10/2025 | ✔️  | 14/11/2025     | | 14/11/2025      |
 | Pricilla Lopes Braga   | Implementação completa de duas atividades do processo 2    | 15/10/2025 | ✔️  | 14/11/2025      |  14/11/2025      |
 | Bruno César Lima Araújo   | Implementação do processo 3
-    | 20/10/2025 | 📝  | 14/11/2025      |  14/11/2025      |
+    | 20/10/2025 | ✔️  | 14/11/2025      |  14/11/2025      |
 | Davi   | Implementação do processo 3
-    | 20/10/2025 | 📝  | 14/11/2025      |  14/11/2025      |    
+    | 20/10/2025 | ✔️  | 14/11/2025      |  14/11/2025      |    
 | Glendha Paulino Caldeira Tolentino   | Implementação do processo 1    | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
 
 
@@ -144,10 +144,10 @@ Atualizado em: 23/10/2025
 | Davi Alves Silveira   | Implementação do processo 1     | 15/10/2025 | 31/10/2025      | ✔️        |  31/10/2025 
 | Pricilla Lopes Braga   | Implementação completa de duas atividades do processo 2    | 15/10/2025 |31/10/2025      |  ✔️  |  31/10/2025      |
 | Bruno César Lima Araújo   | Relatório – seção “Modelagem dos processos - Processos 1 e 2” (versão atualizada)    | 15/10/2025 |  31/10/2025      | ✔️ | 31/10/2025      |
-| Glendha Paulino Caldeira Tolentino   | Relatório – seção “Modelagem de dados” (versão atualizada)    | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
-| Davi Alves Silveira  | Implementação do processo 1    | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
-| Bruno César Lima Araújo   | Planejamento da Sprint 6    | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
-| Camila Moreira Pessoa   | Implementação do processo 2   | 15/10/2025 | ✔️  | 31/10/2025      |  31/10/2025      |
+| Glendha Paulino Caldeira Tolentino   | Relatório – seção “Modelagem de dados” (versão atualizada)    | 15/10/2025   | 31/10/2025   |  ✔️   |  31/10/2025      |
+| Davi Alves Silveira  | Implementação do processo 1    | 15/10/2025   | 31/10/2025  | ✔️     |  31/10/2025      |
+| Bruno César Lima Araújo   | Planejamento da Sprint 6    | 15/10/2025   | 31/10/2025  | ✔️     |  31/10/2025      |
+| Camila Moreira Pessoa   | Implementação do processo 2   | 15/10/2025   | 31/10/2025   | ✔️    |  31/10/2025      |
 
 Legenda:
 - ✔️: terminado

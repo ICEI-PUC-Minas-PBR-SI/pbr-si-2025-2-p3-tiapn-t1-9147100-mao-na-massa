@@ -49,7 +49,14 @@ _Os tipos de dados a serem utilizados são:_
 | ---             | ---              | ---            | ---               |
 | Instrução| Texto informativo  | N/A  |  Você está prestes a enviar sua solicitação para:"     |
 | Detalhes do Profissional (#detalhes-profissional)| Container dinâmico (HTML gerado via JS)  |  N/A; preenchido pela função selecionarProfissional()  |  Foto, nome, serviço, rating do profissional selecionado     |
-| Nota informativa | Texto informativo|   N/A   |  "O profissional será notificado e entrará em contato para confirmar o agendamento e o valor final."     |
+| Nota informativa | Texto informativo|   N/A   |  "O profissional será notificado e entrará em contato para confirmar o agendamento e o valor final." |
+
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Escolher Outro (#btnVoltarLista) |Retorna à Etapa 2 do Processo 2 (lista de profissionais) | default  |   
+| Confirmar e Enviar (#btnConfirmar) |Gateway "Confirmação válida?" → Etapa 2 deste processo  | default  |  
+
 
 
 

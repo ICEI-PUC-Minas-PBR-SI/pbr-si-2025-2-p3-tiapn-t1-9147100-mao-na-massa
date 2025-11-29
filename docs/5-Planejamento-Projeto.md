@@ -154,9 +154,9 @@ Atualizado em: 28/11/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| Glendha Paulino Caldeira Tolentino     | Correção final | 23/11/2025     | 23/11/2025 | ✔️  |28/11/2025      |
-| Pricilla Lopes Braga     | Correção final | 23/11/2025     | 23/11/2025 | ✔️  |28/11/2025      |
-| Pricilla Lopes Braga     | Video final apresentação | 23/11/2025     | 23/11/2025 | ✔️  |28/11/2025      |
+| Glendha Paulino Caldeira Tolentino     | Correção final | 28/11/2025     | 23/11/2025 | ✔️  |28/11/2025      |
+| Pricilla Lopes Braga     | Correção final | 23/11/2025     | 28/11/2025 | ✔️  |28/11/2025      |
+| Pricilla Lopes Braga     | Video final apresentação | 28/11/2025     | 23/11/2025 | ✔️  |28/11/2025      |
 
 Legenda:
 - ✔️: terminado

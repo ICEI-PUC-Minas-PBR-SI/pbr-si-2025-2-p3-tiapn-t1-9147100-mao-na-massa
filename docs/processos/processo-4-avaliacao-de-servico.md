@@ -1,11 +1,15 @@
 ### 3.3.4 Processo 4 – Avaliação de serviço
 
-O processo de avaliação se inicia quando o cliente acessa a área de avaliação na plataforma.
-O cliente então, deve informar uma nota e comentário e em seguida confirmar o envio da avaliação.
-Após isso, a plataforma valida os dados enviados pelo cliente. Se ocorrer algum erro ou não houver dados suficientes, a plataforma notifica o cliente, que pode refazer a avaliação.
-Se os dados estiverem preenchidos corretamente, registra a avaliação no banco de dados e atualiza o perfil do prestador.
-Depois disso, a plataforma confirma o registro da avaliação e notifica o prestador sobre o novo feedback. Ao receber essa notificação, p prestador pode visualizar a avaliação e tem a opção de responder ou agradecer ao cliente.
-Por fim, o cliente recebe a confirmação de que sua avaliação foi registrada, encerrando assim o processo.
+O processo de avaliação de serviço inicia-se quando o cliente acessa a área de avaliações na plataforma (por exemplo, após a conclusão de um serviço ou pela tela de depoimentos/feedback).
+Nessa área, o cliente informa uma nota para o profissional e um comentário opcional ou obrigatório, e em seguida confirma o envio da avaliação.
+
+Após o envio, a plataforma valida os dados informados. Se ocorrer algum erro (por exemplo, falta de nota, comentário vazio quando obrigatório ou problema de conexão), a plataforma notifica o cliente, que pode corrigir os dados e tentar enviar novamente.
+
+Se os dados estiverem preenchidos corretamente, a plataforma registra a avaliação no banco de dados, atualiza o perfil do prestador (média de notas, quantidade de avaliações, listagem de comentários) e gera uma notificação para o profissional, informando que houve um novo feedback.
+
+O prestador, ao ser notificado, pode acessar a área de avaliações, visualizar o comentário e, se desejar, responder ou registrar um agradecimento ao cliente (caso essa funcionalidade exista na versão final da plataforma).
+
+Por fim, o cliente recebe uma confirmação visual de que sua avaliação foi registrada com sucesso, encerrando o processo de avaliação de serviço.
 
 
 #### Detalhamento das atividades

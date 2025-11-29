@@ -12,7 +12,7 @@ Se sim, o processo é concluído com sucesso. Se não, o cliente é notificado s
 
 ### Tela: processo 2
 
-![1.jpeg](processo2.jpeg)
+![1.jpeg](processo 2 - modelagem nova.jppg)
 
 
 ### Tela: Nossos Serviços

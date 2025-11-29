@@ -41,21 +41,35 @@ Por fim, o cliente recebe uma confirmação visual de que sua avaliação foi re
 Esses elementos representam avaliações já registradas (depoimentos públicos). A seguir, detalhamos o fluxo para inserir uma nova avaliação.
 
 
-**1-Inserir Detalhes do Serviço**
+**1-Inserir Avaliação do Serviço**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| Data do Serviço | Data  |  Obrigatório, data futura   |   Valor default       |
-| Horário (preferencial) | Hora  |   Obrigatório    |   Valor default       |
+|Nome do Profissional |Texto informativo | N/A (somente leitura)  |   "Ana Paula Silva", "Carlos Mendes"  |
+| Serviço Realizado | Texto informativo  |   N/A (somente leitura)   |   "Limpeza Residencial", "Manutenção e Reparos"    |
 | Endereço do Serviço | Caixa de Texto  |   Obrigatório   |   Valor default       |
-| Descrição do Serviço | Área de texto  |  Obrigatório, (ex: min 20 caracteres)  |   Valor default       |
-| (Perfil do Profissional) |  (Informativo) |  Obrigatório, data futura   |   (Dados do profissional são exibidos)       |
+|Data do Serviço | Texto informativo | N/A (somente leitura; vem do agendamento concluído) |  "10/12/2025"  |
+|Nota (estrelas) |  Seleção única (1 a 5) |  Obrigatório; valor inteiro de 1 a 5   |  1, 2, 3, 4 ou 5 estrelas   |
+|Data do Serviço | Texto informativo | N/A (somente leitura; vem do agendamento concluído) |  "10/12/2025"  |
+|Nota (estrelas) |  Seleção única (1 a 5) |  Obrigatório; valor inteiro de 1 a 5   |  1, 2, 3, 4 ou 5 estrelas   |
+|Comentário| Área de texto | Obrigatório (recomendado mínimo de 10–20 caracteres)| "Profissional muito atencioso e pontual…"|
+|Tag/Categoria| Caixa de texto ou seleção | Opcional; categorização do serviço/experiência | "Limpeza Residencial", "Pós-obra", etc.  |
 
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Enviar Solicitação | Gateway "Dados completos?"  | default  |     
-| Voltar (ou Cancelar) | Evento de Início | cancel |                |
+| Voltar (ou Cancelar) |Retornar à tela anterior (perfil ou lista de serviços) | cancel |                |
+
+Gateway "Dados da avaliação completos?"
+Condição “Sim”:
+Nota selecionada (1–5).
+Comentário preenchido (respeitando mínimo, se houver).
+Condição “Não”:
+A plataforma exibe uma mensagem de erro (por exemplo:
+“Por favor, selecione uma nota e escreva um comentário sobre o serviço.”)
+Permanece na atividade “Inserir Avaliação do Serviço”.
+Se os dados forem considerados completos, o processo segue para a atividade de análise/registro da avaliação.
 
 **2-Analisar Solicitação de Serviço**
 

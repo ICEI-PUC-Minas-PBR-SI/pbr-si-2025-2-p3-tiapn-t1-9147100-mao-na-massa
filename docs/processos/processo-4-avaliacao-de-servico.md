@@ -71,16 +71,28 @@ A plataforma exibe uma mensagem de erro (por exemplo:
 Permanece na atividade “Inserir Avaliação do Serviço”.
 Se os dados forem considerados completos, o processo segue para a atividade de análise/registro da avaliação.
 
-**2-Analisar Solicitação de Serviço**
+**2-Registrar e Processar Avaliação**
+
+Nesta atividade, a plataforma recebe os dados enviados pelo cliente e os grava no banco de dados.
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| (Dados da Solicitação) | (Texto informativo)  |  N/A   |   Valor default       |
+| Dados da Avaliação| Dados estruturados  |  N/A   |   ID do cliente, ID do profissional, nota, comentário, data/hora  |
+| Status do Registro| Texto informativo  |  N/A   |  "Pendente", depois "Registrado"  |
+|Atualização no Perfil do Prestador| Operação de sistema|  Automático   |  Recalcula média de notas, total de avaliações, lista de comentários |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Aceitar | Evento "Confirmar Solicitação"  | default  |     
-| Recusar (ou Cancelar) | Evento "Recusar solicitação" | cancel |                |
+|Confirmar Registro (automático)| Evento "Avaliação registrada com sucesso"  | default  |     
+
+Aqui não há interação direta do usuário; é o backend que:
+
+Valida novamente (se necessário) a integridade dos dados.
+Grava a avaliação no banco de dados.
+Atualiza as métricas do profissional (média de estrelas, contador de avaliações).
+Dispara uma notificação ao prestador informando sobre o novo feedback.
+Se ocorrer falha de gravação (problema técnico), o fluxo pode seguir para um caminho de erro (atividade “Avaliação Não Concluída”), detalhado mais adiante.
 
 
 **3-Solicitação Concluída**

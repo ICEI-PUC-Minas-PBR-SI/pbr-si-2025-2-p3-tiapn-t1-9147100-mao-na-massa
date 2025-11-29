@@ -57,47 +57,49 @@ _Os tipos de dados a serem utilizados são:_
 | Escolher Outro (#btnVoltarLista) |Retorna à Etapa 2 do Processo 2 (lista de profissionais) | default  |   
 | Confirmar e Enviar (#btnConfirmar) |Gateway "Confirmação válida?" → Etapa 2 deste processo  | default  |  
 
+Gateway "Confirmação válida?" (implementado no evento click do botão #btnConfirmar)
+
+Condições de validação:
+
+profissionalSelecionado não é null (garantido pela seleção anterior).
+Dados da solicitação (do Processo 2) ainda estão disponíveis (não há revalidação explícita no código).
+Se NÃO válidos: (improvável, pois vem do Processo 2) – O código não trata explicitamente, mas em produção haveria verificação.
+
+Se válidos:
+
+Preenche #profissional-confirmado com o nome do profissional.
+Avança para a Etapa 2, exibindo mensagem de sucesso.
+Exemplo prático de uso:
+
+Após selecionar "José Carlos" no Processo 2, cliente vê: foto dele, "José Carlos", "Serviço: Elétrica", "⭐⭐⭐⭐⭐ (4.9)".
+Clica "Confirmar e Enviar" → Vai para Etapa 2 com "Seu pedido foi enviado para José Carlos."
 
 
+**2-Solicitação Enviada (Sucesso)**
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Enviar Solicitação | Gateway "Dados completos?"  | default  |     
-| Voltar (ou Cancelar) | Evento de Início | cancel |                |
+Tela/Atividade: Etapa 4 – "Solicitação Enviada!" (ID etapa4)
+Esta é a conclusão do processo, confirmando que a solicitação foi processada.
 
-**2-Analisar Solicitação de Serviço**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| (Dados da Solicitação) | (Texto informativo)  |  N/A   |   Valor default       |
+|Ícone de Sucesso| Emoji/Imagem | N/A  |  "✅" (grande, centralizado)   |
+| Título(#detalhes-profissional)| Texto informativo|  N/A|"Solicitação Enviada!"|
+| Nota adicional | Texto informativo|   N/A   |  "Aguarde o contato do profissional para finalizar o agendamento."|
+
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Aceitar | Evento "Confirmar Solicitação"  | default  |     
+| Fazer Nova Solicitação (#btnNovo)| Retorna à Etapa 1 do Processo 2 (limpa formulário e reseta mapa) | default  |     
 | Recusar (ou Cancelar) | Evento "Recusar solicitação" | cancel |                |
 
 
-**3-Solicitação Concluída**
+Lógica de conclusão (implementada no evento click do botão #btnConfirmar):
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
-| ---             | ---              | ---            | ---               |
-| (Mensagem de Sucesso) | (Texto informativo)  |  N/A   |   Valor default       |
-| (Ícone de Sucesso) | Imagem  |  N/A   |   Valor default       |
+Preenche a mensagem com o nome do profissional.
+Limpa variáveis (profissionalSelecionado = null ao iniciar nova solicitação).
+Se mapa foi usado, reseta para localização padrão (Belo Horizonte).
+Exemplo prático de uso:
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| OK | Evento de Fim  | default  |     
-| Abrir Chat | Atividade "Criar canal de comunicação" | cancel |                |
-
-
-**4-Solicitação Concluída**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
-| ---             | ---              | ---            | ---               |
-| (Mensagem de Erro) | (Texto informativo)  |  N/A   |   Valor default       |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Tentar Novamente | Atividade "Inserir detalhes do serviço"  | default  |   
-| Buscar Outro Profissional | Atividade "Retomar processo de pesquisa"  | default  |  
-| Cancelar | Evento de Fim | cancel |                |
+Mensagem: "Seu pedido foi enviado para José Carlos. Aguarde o contato do profissional para finalizar o agendamento."
+Cliente clica "Fazer Nova Solicitação" → Volta ao início, limpando todos os campos e resetando o mapa.

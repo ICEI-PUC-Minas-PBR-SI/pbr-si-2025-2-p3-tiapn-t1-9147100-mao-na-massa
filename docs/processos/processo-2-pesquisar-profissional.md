@@ -1,13 +1,17 @@
 ### 3.3.2 Processo 2 – Pesquisar profissional
 
-Início
-O cliente preenche os requisitos (tipo de serviço, local, data e orçamento). Em seguida, o sistema valida se todos os requisitos foram preenchidos corretamente. Se houver algum erro ou dado inválido, o sistema notifica o cliente, que deve ajustar as informações.
-Se os requisitos estiverem corretos, a solicitação é enviada à plataforma, que recebe os dados do cliente e consulta o banco de dados de profissionais. A plataforma aplica filtros de localização, avaliação e disponibilidade para buscar por profissionais compatíveis.
-Após isso, a plataforma verifica se encontrou profissionais que atendam aos critérios.
-Se não, o cliente é notificado sobre a indisponibilidade desse profissional.
-Se sim, apresenta ao cliente uma lista para que ele escolha o profissional ideal.
-O cliente então, escolhe o profissional e verifica se ele realmente atende a todos os critérios.
-Se sim, o processo é concluído com sucesso. Se não, o cliente é notificado sobre a indisponibilidade de profissionais e pode refazer a pesquisa.
+Pesquisar Profissional inicia-se quando o cliente acessa a página "Solicitar Orçamento" na plataforma Mão na Massa e deseja encontrar profissionais adequados para um serviço específico. Este processo combina a definição de requisitos (filtros de busca) com a exibição de resultados e a seleção de um profissional.
+
+O fluxo é dividido em duas etapas principais:
+
+Etapa 1 – Definir Requisitos do Serviço: O cliente preenche os detalhes básicos do serviço que precisa (tipo de serviço, endereço com mapa interativo, data desejada e descrição). O sistema valida se todos os campos obrigatórios foram preenchidos corretamente, incluindo a seleção de um endereço válido via Google Maps.
+
+Etapa 2 – Visualizar e Selecionar Profissional: Com os dados válidos, o sistema simula uma busca no banco de dados (usando dados mock) e exibe uma lista de profissionais compatíveis com os critérios informados. O cliente analisa os perfis (foto, nome, avaliação, número de avaliações) e seleciona o profissional que deseja contratar.
+
+Saída deste processo: Um profissional selecionado pelo cliente.
+Conexão com o próximo processo: A seleção de um profissional automaticamente inicia o Processo 3 – Solicitar Serviço, onde o cliente confirma e envia a solicitação formal.
+
+Observação importante: No código implementado, este processo é integrado ao Processo 3 em uma jornada contínua do usuário. A separação conceitual aqui é didática, para destacar as responsabilidades distintas: busca/filtro (Processo 2) vs confirmação/envio (Processo 3).
 
 
 ### Tela: processo 2
@@ -53,32 +57,90 @@ Se sim, o processo é concluído com sucesso. Se não, o cliente é notificado s
 * **Área de texto** - Valor "Segunda a Sábado"
 * **Área de texto** - Info "8h às 18h"
 * **Link** - "Perguntas Frequentes"
-* **Link** - Botão flutuante "WhatsApp" (Ícone verde)
-* **Link** - Botão flutuante "Chat" (Ícone escuro)
 
 
 
-**1-Cabeçalho da Página (Informativo)**
 
-| **Campo** | **Tipo** | **Restrições** | **Valor** |
-| :--- | :--- | :--- | :--- |
-| Título "Encontre serviços na sua região" | Área de texto | N/A | Valor default (fixo) |
-| Subtítulo "Selecione sua cidade.." | Área de texto | N/A | Valor default (fixo) |
----
+**1-Definir Requisitos do Serviço**
 
-**2-Formulário "Solicitar Orçamento"**
+Tela/Atividade: Etapa 1 – "Descreva sua necessidade" (ID etapa1)
+Nesta etapa, o cliente informa os critérios para a busca de profissionais. O sistema usa esses dados para filtrar profissionais compatíveis.
 
 | **Campo** | **Tipo** | **Restrições** | **Valor** |
-| :--- | :--- | :--- | :--- |
-| Selecione sua cidade | Caixa de Seleção (Checkbox) | Obrigatório | Valor default ("Seu nome") |
-| Todos serviços | Caixa de Seleção (Checkbox) | Obrigatório, (formato (XX) XXXX-XXXX) | Valor default ("(11) 9999-9999") |
-| Buscar | Caixa de texto | Obrigatório, (formato (XX) XXXX-XXXX) | Valor default ("(11) 9999-9999") |
+
+
+Instrução|	Texto informativo|	N/A	|"Preencha os detalhes abaixo para encontrarmos os melhores profissionais para você."
+Selecione um serviço (#servico)|Lista suspensa (select)|Obrigatório; não pode ficar na opção vazia|"Limpeza Residencial", "Manutenção e Reparos", "Jardinagem", "Elétrica", "Encanamento"
+Endereço (#autocomplete-input)|Caixa de texto (com autocomplete do Google Maps)|Obrigatório; deve selecionar um endereço válido da lista de sugestões; integra com mapa interativo|Ex: "Av. Afonso Pena, 1000, Belo Horizonte"
+Mapa interativo (#map)|Mapa Google Maps|N/A; permite arrastar marcador para ajustar localização exata; armazena lat/lng em campos ocultos|Mapa centrado na localização selecionada
+Latitude (#latitude)|Campo oculto (hidden input)|Gerado automaticamente pelo mapa; obrigatório para validação|	Ex: "-19.916681"
+Longitude (#longitude)|Campo oculto (hidden input)|Gerado automaticamente pelo mapa; obrigatório para validação|Ex: "-43.934494"
+Data desejada (#data)|Campo de data|Obrigatório; deve ser uma data futura (validação HTML5)|Ex: "2025-12-10"
+Descreva o que você precisa (#pesquisarDetalhes)|Área de texto (textarea)|Obrigatório; mínimo recomendado de 20 caracteres para detalhar o serviço|Ex: "Preciso instalar um chuveiro novo e consertar uma tomada."
+
 
 | **Comandos** | **Destino** | **Tipo** |
-| :--- | :--- | :--- |
-| Buscar | Aparecer mapa com sua localização | default |
-| Enviar solicitação | Gateway "Dados completos?" | default |
 
+| Buscar Profissionais (#btnEnviar)| Gateway "Dados de busca válidos?" | default |
+
+Gateway "Dados de busca válidos?" (implementado no evento click do botão #btnEnviar)
+Condições de validação:
+
+Serviço selecionado (#servico.value não vazio).
+Endereço preenchido (#autocomplete-input.value não vazio).
+Data selecionada (#data.value não vazio).
+Descrição preenchida (#pesquisarDetalhes.value não vazio).
+Localização válida (#latitude.value e #longitude.value não vazios, gerados pelo mapa).
+Se NÃO válidos:
+
+Exibe alert('Por favor, preencha todos os campos da solicitação.') ou alert('Por favor, selecione um endereço válido da lista ou ajuste o marcador no mapa.').
+Permanece na Etapa 1; não avança.
+Se válidos:
+
+Armazena o serviço selecionado para exibição na Etapa 2 (#servico-selecionado).
+Filtra profissionais do array mockProfissionais baseado no serviço (ex.: se "Elétrica", mostra profissionais com servico: "Elétrica").
+Se nenhum profissional encontrado: exibe mensagem "Nenhum profissional encontrado para este serviço no momento."
+Avança para a Etapa 2, exibindo a lista de profissionais filtrados.
+Exemplo prático de uso:
+
+Cliente seleciona "Elétrica", digita "Rua das Flores, 123, Centro" (seleciona da lista de sugestões), ajusta o marcador no mapa, escolhe data "15/12/2025" e descreve "Preciso trocar fiação antiga na cozinha".
+Clica "Buscar Profissionais" → Se tudo OK, vai para Etapa 2 com lista de eletricistas próximos.
+
+
+| **Comandos** | **Destino** | **Tipo** |
+
+Instrução|	Texto informativo|	N/A; inclui o serviço selecionado	|""Encontramos estes profissionais para o serviço de [serviço-selecionado].""
+Selecione um serviço (#servico)|Cards dinâmicos (HTML gerado via JS)|N/A; gerada com base no filtro do serviço; se vazia, mostra mensagem de "nenhum encontrado"|Cards com: foto, nome, estrelas (rating), número de avaliações
+Card Individual (por profissional)|Container flexível|Cada card contém: imagem (foto), texto (nome, serviço, rating), botão "Selecionar"|Ex: Card de "José Carlos" (Elétrica, 4.9 estrelas, 132 avaliações)
+
+
+| **Comandos** | **Destino** | **Tipo** |
+
+Refazer Pesquisa (#btnRefazer)|Retorna à Etapa 1 (limpa filtros)|default
+
+Lógica da exibição (implementada na função do botão #btnEnviar):
+
+Filtra mockProfissionais pelo serviço selecionado (ex.: p.servico === servicoValor).
+Para cada profissional filtrado, gera um card HTML com:
+Imagem de perfil (URL do Unsplash).
+Nome e serviço.
+Rating com estrelas (ex.: "⭐⭐⭐⭐⭐ (4.9)").
+Botão "Selecionar" que chama selecionarProfissional(id).
+Se filtrados.length === 0: exibe mensagem de indisponibilidade.
+Função selecionarProfissional(id):
+
+Busca o profissional pelo ID no array mockProfissionais.
+Armazena em profissionalSelecionado.
+Preenche #detalhes-profissional com foto, nome, serviço e rating.
+Avança para a Etapa 3 (iniciando o Processo 3).
+Exemplo prático de uso:
+
+Após busca por "Elétrica", sistema mostra 2 cards: "José Carlos (4.9 estrelas)" e "Carlos Souza (4.7 estrelas)".
+Cliente clica "Selecionar" em "José Carlos" → Vai para Etapa 3 com detalhes dele exibidos.
+Gateway implícito "Profissionais encontrados?":
+
+Sim: Exibe lista; cliente seleciona um → Inicia Processo 3.
+Não: Mostra mensagem de erro; cliente pode refazer pesquisa (volta à Etapa 1).
 ---
 
 

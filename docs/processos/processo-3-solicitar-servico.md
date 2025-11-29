@@ -1,8 +1,16 @@
 ### 3.3.3 Processo 3 – Solicitar serviço
 
-O processo de solicitação de serviço inicia-se com o cliente acessando a plataforma, onde pode visualizar o perfil do profissional e inserir detalhes do serviço. Após o preenchimento das informações, a plataforma verifica se os dados estão completos para realizar o envio da solicitação. Caso haja algum dado incompleto ou falha, a plataforma notifica o cliente sobre o erro e o processo é interrompido até que os dados sejam corrigidos.
-Com os dados completos, a plataforma encaminha a solicitação ao profissional, que analisa o tipo de serviço solicitado e decide se deseja aceitar ou não. Caso o profissional recuse a solicitação, o cliente é notificado e pode optar por procurar outro profissional ou refazer a pesquisa.
-Caso o profissional aceite o serviço, a plataforma confirma a solicitação, cria um canal de comunicação entre as partes e notifica  o cliente. A confirmação da aceitação encerra o processo de solicitação de serviço, concluindo a etapa na plataforma.
+O Processo 3 – Solicitar Serviço inicia-se imediatamente após a seleção de um profissional no Processo 2. Ele foca na confirmação e envio formal da solicitação para o profissional escolhido, sem a necessidade de preencher novos detalhes (pois esses foram informados na Etapa 1 do Processo 2).
+
+O fluxo é dividido em duas etapas principais:
+
+Etapa 1 – Confirmar Solicitação: O cliente revisa os detalhes do profissional selecionado e confirma que deseja enviar a solicitação para ele. O sistema exibe um resumo do profissional (foto, nome, serviço, avaliação).
+
+Etapa 2 – Solicitação Enviada: Após confirmação, o sistema registra a solicitação e exibe uma mensagem de sucesso, informando que o profissional será notificado e entrará em contato.
+
+Entrada deste processo: Profissional selecionado + dados da solicitação (do Processo 2).
+Saída: Solicitação enviada e registrada no sistema; cliente aguarda resposta do profissional.
+Observação: No código, este processo é a continuação direta do anterior, sem telas separadas – é uma jornada única.
 
 
 ![1.jpeg](solicitarservico.jpeg)
@@ -35,11 +43,11 @@ _Os tipos de dados a serem utilizados são:_
 
 
 
-**1-Inserir Detalhes do Serviço**
+**1-"Confirmar Solicitação" (ID etapa3)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| Data do Serviço | Data  |  Obrigatório, data futura   |   Valor default       |
+| Instrução| Data  |  Obrigatório, data futura   |   Valor default       |
 | Horário (preferencial) | Hora  |   Obrigatório    |   Valor default       |
 | Endereço do Serviço | Caixa de Texto  |   Obrigatório   |   Valor default       |
 | Descrição do Serviço | Área de texto  |  Obrigatório, (ex: min 20 caracteres)  |   Valor default       |

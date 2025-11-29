@@ -47,11 +47,10 @@ _Os tipos de dados a serem utilizados são:_
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| Instrução| Data  |  Obrigatório, data futura   |   Valor default       |
-| Horário (preferencial) | Hora  |   Obrigatório    |   Valor default       |
-| Endereço do Serviço | Caixa de Texto  |   Obrigatório   |   Valor default       |
-| Descrição do Serviço | Área de texto  |  Obrigatório, (ex: min 20 caracteres)  |   Valor default       |
-| (Perfil do Profissional) |  (Informativo) |  Obrigatório, data futura   |   (Dados do profissional são exibidos)       |
+| Instrução| Texto informativo  | N/A  |  Você está prestes a enviar sua solicitação para:"     |
+| Detalhes do Profissional (#detalhes-profissional)| Container dinâmico (HTML gerado via JS)  |  N/A; preenchido pela função selecionarProfissional()  |  Foto, nome, serviço, rating do profissional selecionado     |
+| Nota informativa | Texto informativo|   N/A   |  "O profissional será notificado e entrará em contato para confirmar o agendamento e o valor final."     |
+
 
 
 | **Comandos**         |  **Destino**                   | **Tipo** |

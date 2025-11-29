@@ -30,8 +30,11 @@ Tela de FeedBack (Perfil do Prestador): Ao selecionar um profissional, o Contrat
 
  Telas do Processo 2 (Pesquisa e Solicitação)
 
+6.3. Tela de Serviços (Busca e Listagem)
+A Tela de Serviços é projetada para facilitar a conexão entre a necessidade do cliente e a oferta do profissional. Nela, o Contratante visualiza os resultados baseados nos filtros de localização (Cidade) e categoria (Checklist de serviços). A interface exibe os profissionais em formato de lista ou cartões (cards), apresentando informações essenciais de forma resumida (Nome, Especialidade e Nota Média), permitindo uma comparação rápida antes de acessar o perfil completo.
+
+Tela de Serviços FOTO
+
 6.4. Tela de Feedback dos Clientes
 A Tela de Feedback é fundamental para a credibilidade da plataforma "Mão na Massa". Esta interface exibe as avaliações e comentários deixados por clientes anteriores após a conclusão dos serviços. O sistema utiliza elementos visuais claros, como classificação por estrelas e campo de texto para depoimentos, permitindo que novos contratantes avaliem a reputação do prestador. Isso promove a segurança e incentiva a qualidade na prestação dos serviços (mitigando a informalidade sem referências).
 
-Tela de Feedback FOTO
-Tela FeedBack dos Clientes

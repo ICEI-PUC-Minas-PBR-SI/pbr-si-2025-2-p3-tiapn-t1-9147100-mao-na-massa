@@ -6,6 +6,9 @@ A interface do sistema "Mão na Massa" foi projetada com foco na simplicidade e 
 
 6.1. Tela Principal (Tela Inicial)
 
+<img src="images/tela principal.jpg" alt="Tela Inicial">
+
+
 A Tela Inicial é o primeiro ponto de contato do usuário com a plataforma. Ela serve como portal de entrada, destacando a proposta de valor do serviço (conectar clientes a profissionais qualificados) e direcionando o usuário para as ações principais: buscar um serviço ou cadastrar-se como profissional. O design é limpo para evitar distrações e focar na conversão.
 
 Tela principal do sistema FOTO

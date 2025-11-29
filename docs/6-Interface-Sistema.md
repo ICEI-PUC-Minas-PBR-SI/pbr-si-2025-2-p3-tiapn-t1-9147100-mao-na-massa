@@ -8,7 +8,7 @@ A interface do sistema "Mão na Massa" foi projetada com foco na simplicidade e 
 
 A Tela Inicial é o primeiro ponto de contato do usuário com a plataforma. Ela serve como portal de entrada, destacando a proposta de valor do serviço (conectar clientes a profissionais qualificados) e direcionando o usuário para as ações principais: buscar um serviço ou cadastrar-se como profissional. O design é limpo para evitar distrações e focar na conversão.
 
-Tela principal do sistema
+Tela principal do sistema FOTO
 
 6.2. Telas do Processo 1 (Cadastro e Login)
 
@@ -18,7 +18,7 @@ Tela de Cadastro: O usuário seleciona seu perfil (Contratante ou Prestador). O 
 
 Tela de Login: Uma tela simples onde o usuário insere seu Email e Senha para acessar a plataforma.
 
-Tela de Cadastro/Login (exemplo)
+Tela de Cadastro/Login FOTO
 
 6.3. Telas do Processo 2 (Pesquisa e Solicitação)
 
@@ -28,5 +28,10 @@ Tela de Serviços (Busca): O Contratante utiliza filtros (tipo de serviço, loca
 
 Tela de FeedBack (Perfil do Prestador): Ao selecionar um profissional, o Contratante acessa seu perfil detalhado. Esta tela é crucial, pois contém as avaliações de clientes anteriores (RF-005), o que ajuda a construir a confiança e a tomar a decisão de contratação. A partir daqui, o Contratante pode iniciar o Processo 3 (Solicitar Serviço).
 
-Tela de Serviços
+ Telas do Processo 2 (Pesquisa e Solicitação)
+
+6.4. Tela de Feedback dos Clientes
+A Tela de Feedback é fundamental para a credibilidade da plataforma "Mão na Massa". Esta interface exibe as avaliações e comentários deixados por clientes anteriores após a conclusão dos serviços. O sistema utiliza elementos visuais claros, como classificação por estrelas e campo de texto para depoimentos, permitindo que novos contratantes avaliem a reputação do prestador. Isso promove a segurança e incentiva a qualidade na prestação dos serviços (mitigando a informalidade sem referências).
+
+Tela de Feedback FOTO
 Tela FeedBack dos Clientes

@@ -12,7 +12,7 @@ O prestador, ao ser notificado, pode acessar a área de avaliações, visualizar
 Por fim, o cliente recebe uma confirmação visual de que sua avaliação foi registrada com sucesso, encerrando o processo de avaliação de serviço.
 
 
-#### Detalhamento das atividades
+####  Depoimentos / Avaliações
 
 ![1.png](feedbacks.png) 
 
@@ -37,6 +37,8 @@ Por fim, o cliente recebe uma confirmação visual de que sua avaliação foi re
 * **Caixa de texto** - Tag (Manutenção...)
 * **Imagem** - Foto do Perfil (Carlos Mendes)
 * **Área de texto** - Nome e Localização (Carlos Mendes)
+
+Esses elementos representam avaliações já registradas (depoimentos públicos). A seguir, detalhamos o fluxo para inserir uma nova avaliação.
 
 
 **1-Inserir Detalhes do Serviço**

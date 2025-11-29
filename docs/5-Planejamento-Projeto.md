@@ -128,7 +128,7 @@ Atualizado em: 23/10/2025
 | Pricilla Lopes Braga   | Implementação completa de duas atividades do processo 2    | 15/10/2025  | 14/11/2025  | ✔️     |  14/11/2025      |
 | Bruno César Lima Araújo   | Implementação do processo 3 | 20/10/2025  | 14/11/2025   | ✔️  |  14/11/2025      |
 | Davi   | Implementação do processo 3 | 20/10/2025   | 14/11/2025   | ✔️   |  14/11/2025      |    
-| Glendha Paulino Caldeira Tolentino   | Implementação do processo 1    | 15/10/2025 | ✔️  | 31/10/2025  | ✔️    |  31/10/2025      |
+| Glendha Paulino Caldeira Tolentino   | Implementação do processo 1    | 15/10/2025   | 31/10/2025  | ✔️    |  31/10/2025      |
 
 
 ## Sprint 6

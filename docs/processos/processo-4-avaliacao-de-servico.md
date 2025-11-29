@@ -127,3 +127,23 @@ Nesta atividade, já no lado do prestador, ele é notificado e pode visualizar a
 | Ver Minhas Avaliações (se existir)| Atividade "Listar avaliações do cliente" | default  |  
 
 Ao chegar aqui, o processo de avaliação está concluído com sucesso e o cliente pode seguir utilizando a plataforma normalmente.
+
+**5-Avaliação Não Concluída (Erro)**
+
+Este fluxo alternativo cobre casos em que:
+
+houve erro técnico ao salvar a avaliação;
+a conexão caiu;
+a validação detectou algum problema não tratável apenas com correção de campos.
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
+
+|Mensagem de Erro | Texto informativo       | N/A | "Não foi possível registrar sua avaliação. Tente novamente mais tarde."
+
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+|Tentar Novamente| Atividade "Inserir Avaliação do Serviço"| default  |   
+|Cancelar| Evento de Fim | default  |  
+
+Ao chegar aqui, o processo de avaliação está concluído com sucesso e o cliente pode seguir utilizando a plataforma normalmente.

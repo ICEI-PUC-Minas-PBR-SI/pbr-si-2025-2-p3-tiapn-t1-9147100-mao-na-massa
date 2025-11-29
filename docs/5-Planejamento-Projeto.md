@@ -56,7 +56,10 @@
 - Relatórios: Pricilla Braga Lopes
 - Implementação completa: Bruno César Lima Araújo
 
- 
+### Sprint 7
+- Project Owner: Pricilla Lopes Braga
+- _Scrum master_: Glendha Paulino Caldeira Tolentino 
+- Todas as correçoes finais completas: Glendha Paulino Caldeira Tolentino e Pricilla Lopes Braga
 
 
 

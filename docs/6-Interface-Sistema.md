@@ -27,6 +27,8 @@ Tela de Cadastro/Login FOTO
 
 6.3. Telas do Processo 2 (Pesquisa e Solicitação)
 
+<img src="images/solicitacaodeserviço.png" alt="Tela Inicial">
+
 O Processo 2, "Pesquisar Profissional", é o coração da experiência do Contratante.
 
 Tela de Serviços (Busca): O Contratante utiliza filtros (tipo de serviço, localização) para encontrar profissionais (RF-012, RF-014). Os resultados são exibidos em listas ou cartões, mostrando o perfil do prestador.

@@ -4,6 +4,7 @@ A seguir são listadas as referências bibliográficas utilizadas como base conc
 
 http://portal.pucminas.br/imagedb/documento/DOC_DSC_NOME_ARQUI20160217102425.pdf
 
+
 **[1.1]** - - ELMASRI, Ramez; NAVATHE, Sham. Sistemas de banco de dados. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9TELA-005.
 
 **[1.2]** - SUTHERLAND, Jeffrey Victor. Scrum: a arte de fazer o dobro do trabalho na metade do tempo. 2. ed. rev. São Paulo, SP: Leya, 2016. 236, [4] p. ISBN 9788544104514.

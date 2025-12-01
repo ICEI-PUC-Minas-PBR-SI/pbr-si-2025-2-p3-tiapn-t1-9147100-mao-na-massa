@@ -15,6 +15,8 @@ Tela principal do sistema FOTO
 
 6.2. Telas do Processo 1 (Cadastro e Login)
 
+<img src="images/telacadastro.png" alt="Tela Inicial">
+
 O Processo 1, "Cadastro de Usuários", é dividido em telas claras de autenticação e registro.
 
 Tela de Cadastro: O usuário seleciona seu perfil (Contratante ou Prestador). O formulário de Contratante solicita dados básicos (Nome, Email, Senha, Telefone, CEP). O formulário de Prestador, além dos dados básicos, solicita informações profissionais (Serviços prestados, descrição, documentos), conforme o RF-010 e RF-013.

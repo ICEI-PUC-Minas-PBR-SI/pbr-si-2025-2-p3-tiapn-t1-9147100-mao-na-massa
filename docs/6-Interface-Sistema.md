@@ -44,5 +44,6 @@ A Tela de Serviços é projetada para facilitar a conexão entre a necessidade d
 <img src="images/captura de tela 2025-11-16 222904.png" alt="Tela Inicial">
 
 6.4. Tela de Feedback dos Clientes
+
 A Tela de Feedback é fundamental para a credibilidade da plataforma "Mão na Massa". Esta interface exibe as avaliações e comentários deixados por clientes anteriores após a conclusão dos serviços. O sistema utiliza elementos visuais claros, como classificação por estrelas e campo de texto para depoimentos, permitindo que novos contratantes avaliem a reputação do prestador. Isso promove a segurança e incentiva a qualidade na prestação dos serviços (mitigando a informalidade sem referências).
 

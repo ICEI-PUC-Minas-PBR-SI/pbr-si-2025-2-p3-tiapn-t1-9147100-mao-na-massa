@@ -35,12 +35,13 @@ Tela de Serviços (Busca): O Contratante utiliza filtros (tipo de serviço, loca
 
 Tela de FeedBack (Perfil do Prestador): Ao selecionar um profissional, o Contratante acessa seu perfil detalhado. Esta tela é crucial, pois contém as avaliações de clientes anteriores (RF-005), o que ajuda a construir a confiança e a tomar a decisão de contratação. A partir daqui, o Contratante pode iniciar o Processo 3 (Solicitar Serviço).
 
- Telas do Processo 2 (Pesquisa e Solicitação)
+<img src="images/solicitacaodeserviço.png" alt="Tela Inicial">
 
 6.3. Tela de Serviços (Busca e Listagem)
 A Tela de Serviços é projetada para facilitar a conexão entre a necessidade do cliente e a oferta do profissional. Nela, o Contratante visualiza os resultados baseados nos filtros de localização (Cidade) e categoria (Checklist de serviços). A interface exibe os profissionais em formato de lista ou cartões (cards), apresentando informações essenciais de forma resumida (Nome, Especialidade e Nota Média), permitindo uma comparação rápida antes de acessar o perfil completo.
 
-Tela de Serviços FOTO
+
+<img src="images/captura de tela 2025-11-16 222904.png" alt="Tela Inicial">
 
 6.4. Tela de Feedback dos Clientes
 A Tela de Feedback é fundamental para a credibilidade da plataforma "Mão na Massa". Esta interface exibe as avaliações e comentários deixados por clientes anteriores após a conclusão dos serviços. O sistema utiliza elementos visuais claros, como classificação por estrelas e campo de texto para depoimentos, permitindo que novos contratantes avaliem a reputação do prestador. Isso promove a segurança e incentiva a qualidade na prestação dos serviços (mitigando a informalidade sem referências).

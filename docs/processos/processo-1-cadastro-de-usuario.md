@@ -120,17 +120,17 @@ Segurança de Dados: Dado que o processo coleta dados sensíveis (CPF, RG, Compr
 
 ---
 
-**6-Complementar Perfil Prestador (Parte 2: Documentos)**
+### 6-Complementar Perfil Prestador (Parte 2: Documentos)
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
-| ---             | ---              | ---            | ---               |
-|Principal Área de Atuação|	Lista suspensa (select)	Obrigatório; não pode ficar em opção vazia|	Selecionado: "Elétrica", "Encanamento", "Limpeza Residencial", "Manutenção e Reparos" ou "Jardinagem"
-Descrição Profissional|	Área de texto (textarea)Obrigatório; mínimo 20 caracteres recomendado (ex: descreva experiência)	Ex: "Sou eletricista com 10 anos de experiência em residências e comércios…"
-CEP	|Caixa de texto	Obrigatório;| formato numérico (ex: 01234-567)	|Valor digitado (ex: 01234567)
-Foto de Perfil|	Upload de arquivo| Opcional; aceita apenas imagens (image/*)|Arquivo .jpg/.png selecionado ou vazio
-Documento (RG ou CNH)|Upload de arquivo|Obrigatório; aceita .pdf, .jpg, .png (comprovante de identidade)|Arquivo selecionado (ex: RG.pdf)
-Checkbox |Termos de Uso	Checkbox (#termos_prestador)|Obrigatório (deve estar marcado para avançar)|true (aceito) ou false
-Links nos Termo|Link hipertexto|	N/A	|"termos de uso" e "política de privacidade" (href="#")
+| **Campo** | **Tipo** | **Restrições** | **Valor** |
+| :--- | :--- | :--- | :--- |
+| Principal Área de Atuação | Lista suspensa (select) | Obrigatório; não pode ficar em opção vazia | Selecionado: "Elétrica", "Encanamento", "Limpeza", "Manutenção" ou "Jardinagem" |
+| Descrição Profissional | Área de texto (textarea) | Obrigatório; mínimo 20 caracteres recomendado | Ex: "Sou eletricista com 10 anos de experiência..." |
+| CEP | Caixa de texto | Obrigatório; formato numérico (ex: 01234-567) | Valor digitado (ex: 01234567) |
+| Foto de Perfil | Upload de arquivo | Opcional; aceita apenas imagens (image/*) | Arquivo .jpg/.png selecionado ou vazio |
+| Documento (RG ou CNH) | Upload de arquivo | Obrigatório; aceita .pdf, .jpg, .png | Arquivo selecionado (ex: RG.pdf) |
+| Termos de Uso | Checkbox (#termos_prestador) | Obrigatório (deve estar marcado para avançar) | true (aceito) ou false |
+| Links nos Termos | Link hipertexto | N/A | "termos de uso" e "política de privacidade" (href="#") |
 
 
 

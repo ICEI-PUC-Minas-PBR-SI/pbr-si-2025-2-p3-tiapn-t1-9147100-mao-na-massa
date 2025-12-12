@@ -52,27 +52,33 @@ _Os tipos de dados a serem utilizados são:_
 | Nota informativa | Texto informativo|   N/A   |  "O profissional será notificado e entrará em contato para confirmar o agendamento e o valor final." |
 
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Escolher Outro (#btnVoltarLista) |Retorna à Etapa 2 do Processo 2 (lista de profissionais) | default  |   
-| Confirmar e Enviar (#btnConfirmar) |Gateway "Confirmação válida?" → Etapa 2 deste processo  | default  |  
+### Comandos
 
-Gateway "Confirmação válida?" (implementado no evento click do botão #btnConfirmar)
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Escolher Outro (`#btnVoltarLista`) | Retorna à Etapa 2 do Processo 2 (lista de profissionais) | default |
+| Confirmar e Enviar (`#btnConfirmar`) | Gateway "Confirmação válida?" → Etapa 2 deste processo | default |
 
-Condições de validação:
+---
 
-profissionalSelecionado não é null (garantido pela seleção anterior).
-Dados da solicitação (do Processo 2) ainda estão disponíveis (não há revalidação explícita no código).
-Se NÃO válidos: (improvável, pois vem do Processo 2) – O código não trata explicitamente, mas em produção haveria verificação.
+####  Gateway "Confirmação válida?"
+*(Implementado no evento click do botão `#btnConfirmar`)*
 
-Se válidos:
+**1. Condições de validação:**
+* `profissionalSelecionado` não é null (garantido pela seleção na etapa anterior).
+* Dados da solicitação (do Processo 2) ainda estão disponíveis.
 
-Preenche #profissional-confirmado com o nome do profissional.
-Avança para a Etapa 2, exibindo mensagem de sucesso.
-Exemplo prático de uso:
+**2. Fluxo (Se NÃO válidos):**
+* *(Cenário improvável, pois o fluxo vem controlado do Processo 2).*
+* O código atual não trata explicitamente, mas em produção haveria verificação/alert de erro.
 
-Após selecionar "José Carlos" no Processo 2, cliente vê: foto dele, "José Carlos", "Serviço: Elétrica", "⭐⭐⭐⭐⭐ (4.9)".
-Clica "Confirmar e Enviar" → Vai para Etapa 2 com "Seu pedido foi enviado para José Carlos."
+**3. Fluxo (Se Válidos):**
+* Preenche `#profissional-confirmado` com o nome do profissional.
+* **Ação:** Avança para a **Etapa 2**, exibindo mensagem de sucesso.
+
+> **Exemplo prático de uso:**
+> Após selecionar "José Carlos" no Processo 2, cliente vê: foto dele, "José Carlos", "Serviço: Elétrica", "⭐⭐⭐⭐⭐ (4.9)".
+> Clica "Confirmar e Enviar" → Vai para Etapa 2 com a mensagem "Seu pedido foi enviado para José Carlos."
 
 
 **2-Solicitação Enviada (Sucesso)**
@@ -88,18 +94,27 @@ Esta é a conclusão do processo, confirmando que a solicitação foi processada
 | Nota adicional | Texto informativo|   N/A   |  "Aguarde o contato do profissional para finalizar o agendamento."|
 
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Fazer Nova Solicitação (#btnNovo)| Retorna à Etapa 1 do Processo 2 (limpa formulário e reseta mapa) | default  |     
-| Recusar (ou Cancelar) | Evento "Recusar solicitação" | cancel |                |
+### Conclusão do Pedido (Mensagem de Sucesso)
 
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Fazer Nova Solicitação (`#btnNovo`) | Retorna à Etapa 1 do Processo 2 (limpa formulário e reseta mapa) | default |
+| Recusar (ou Cancelar) | Evento "Recusar solicitação" | cancel |
 
-Lógica de conclusão (implementada no evento click do botão #btnConfirmar):
+---
 
-Preenche a mensagem com o nome do profissional.
-Limpa variáveis (profissionalSelecionado = null ao iniciar nova solicitação).
-Se mapa foi usado, reseta para localização padrão (Belo Horizonte).
-Exemplo prático de uso:
+#### Lógica de Conclusão
+*(Processamento final e preparação para novo ciclo)*
 
-Mensagem: "Seu pedido foi enviado para José Carlos. Aguarde o contato do profissional para finalizar o agendamento."
-Cliente clica "Fazer Nova Solicitação" → Volta ao início, limpando todos os campos e resetando o mapa.
+**1. Exibição da Confirmação:**
+* *(Executado ao entrar nesta tela, vindo do botão `#btnConfirmar`)*
+* Preenche a mensagem de sucesso com o nome do profissional selecionado.
+
+**2. Reset de Variáveis (Ao clicar em Nova Solicitação):**
+* Limpa a variável `profissionalSelecionado` (define como `null`).
+* Limpa os campos do formulário da busca anterior.
+* Se o mapa foi alterado, reseta para a localização padrão (ex: Belo Horizonte).
+
+> **Exemplo prático de uso:**
+> **Visualização:** O usuário vê a mensagem: "Seu pedido foi enviado para José Carlos. Aguarde o contato do profissional para finalizar o agendamento."
+> **Ação:** Cliente clica em "Fazer Nova Solicitação" → O sistema volta para a tela inicial de busca, com todos os campos limpos e o mapa resetado.

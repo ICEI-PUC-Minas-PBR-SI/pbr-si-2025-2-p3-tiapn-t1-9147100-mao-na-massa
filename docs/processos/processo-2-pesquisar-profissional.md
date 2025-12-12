@@ -67,80 +67,94 @@ Tela/Atividade: Etapa 1 – "Descreva sua necessidade" (ID etapa1)
 Nesta etapa, o cliente informa os critérios para a busca de profissionais. O sistema usa esses dados para filtrar profissionais compatíveis.
 
 | **Campo** | **Tipo** | **Restrições** | **Valor** |
+| :--- | :--- | :--- | :--- |
+| Instrução | Texto informativo | N/A | "Preencha os detalhes abaixo para encontrarmos os melhores profissionais para você." |
+| Selecione um serviço (#servico) | Lista suspensa (select) | Obrigatório; não pode ficar na opção vazia | "Limpeza Residencial", "Manutenção e Reparos", "Jardinagem", "Elétrica", "Encanamento" |
+| Endereço (#autocomplete-input) | Caixa de texto (com autocomplete Google Maps) | Obrigatório; deve selecionar um endereço válido da lista; integra com mapa | Ex: "Av. Afonso Pena, 1000, Belo Horizonte" |
+| Mapa interativo (#map) | Mapa Google Maps | N/A; permite arrastar marcador; armazena lat/lng em campos ocultos | Mapa centrado na localização selecionada |
+| Latitude (#latitude) | Campo oculto (hidden input) | Gerado automaticamente pelo mapa; obrigatório para validação | Ex: "-19.916681" |
+| Longitude (#longitude) | Campo oculto (hidden input) | Gerado automaticamente pelo mapa; obrigatório para validação | Ex: "-43.934494" |
+| Data desejada (#data) | Campo de data | Obrigatório; deve ser uma data futura (validação HTML5) | Ex: "2025-12-10" |
+| Descreva o que você precisa (#pesquisarDetalhes) | Área de texto (textarea) | Obrigatório; min. 20 caracteres para detalhar o serviço | Ex: "Preciso instalar um chuveiro novo e consertar uma tomada." |
 
-
-Instrução|	Texto informativo|	N/A	|"Preencha os detalhes abaixo para encontrarmos os melhores profissionais para você."
-Selecione um serviço (#servico)|Lista suspensa (select)|Obrigatório; não pode ficar na opção vazia|"Limpeza Residencial", "Manutenção e Reparos", "Jardinagem", "Elétrica", "Encanamento"
-Endereço (#autocomplete-input)|Caixa de texto (com autocomplete do Google Maps)|Obrigatório; deve selecionar um endereço válido da lista de sugestões; integra com mapa interativo|Ex: "Av. Afonso Pena, 1000, Belo Horizonte"
-Mapa interativo (#map)|Mapa Google Maps|N/A; permite arrastar marcador para ajustar localização exata; armazena lat/lng em campos ocultos|Mapa centrado na localização selecionada
-Latitude (#latitude)|Campo oculto (hidden input)|Gerado automaticamente pelo mapa; obrigatório para validação|	Ex: "-19.916681"
-Longitude (#longitude)|Campo oculto (hidden input)|Gerado automaticamente pelo mapa; obrigatório para validação|Ex: "-43.934494"
-Data desejada (#data)|Campo de data|Obrigatório; deve ser uma data futura (validação HTML5)|Ex: "2025-12-10"
-Descreva o que você precisa (#pesquisarDetalhes)|Área de texto (textarea)|Obrigatório; mínimo recomendado de 20 caracteres para detalhar o serviço|Ex: "Preciso instalar um chuveiro novo e consertar uma tomada."
-
-
-| **Comandos** | **Destino** | **Tipo** |
-
-| Buscar Profissionais (#btnEnviar)| Gateway "Dados de busca válidos?" | default |
-
-Gateway "Dados de busca válidos?" (implementado no evento click do botão #btnEnviar)
-Condições de validação:
-
-Serviço selecionado (#servico.value não vazio).
-Endereço preenchido (#autocomplete-input.value não vazio).
-Data selecionada (#data.value não vazio).
-Descrição preenchida (#pesquisarDetalhes.value não vazio).
-Localização válida (#latitude.value e #longitude.value não vazios, gerados pelo mapa).
-Se NÃO válidos:
-
-Exibe alert('Por favor, preencha todos os campos da solicitação.') ou alert('Por favor, selecione um endereço válido da lista ou ajuste o marcador no mapa.').
-Permanece na Etapa 1; não avança.
-Se válidos:
-
-Armazena o serviço selecionado para exibição na Etapa 2 (#servico-selecionado).
-Filtra profissionais do array mockProfissionais baseado no serviço (ex.: se "Elétrica", mostra profissionais com servico: "Elétrica").
-Se nenhum profissional encontrado: exibe mensagem "Nenhum profissional encontrado para este serviço no momento."
-Avança para a Etapa 2, exibindo a lista de profissionais filtrados.
-Exemplo prático de uso:
-
-Cliente seleciona "Elétrica", digita "Rua das Flores, 123, Centro" (seleciona da lista de sugestões), ajusta o marcador no mapa, escolhe data "15/12/2025" e descreve "Preciso trocar fiação antiga na cozinha".
-Clica "Buscar Profissionais" → Se tudo OK, vai para Etapa 2 com lista de eletricistas próximos.
-
+### Comandos
 
 | **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Buscar Profissionais (`#btnEnviar`) | Gateway "Dados de busca válidos?" | default |
 
-Instrução|	Texto informativo|	N/A; inclui o serviço selecionado	|""Encontramos estes profissionais para o serviço de [serviço-selecionado].""
-Selecione um serviço (#servico)|Cards dinâmicos (HTML gerado via JS)|N/A; gerada com base no filtro do serviço; se vazia, mostra mensagem de "nenhum encontrado"|Cards com: foto, nome, estrelas (rating), número de avaliações
-Card Individual (por profissional)|Container flexível|Cada card contém: imagem (foto), texto (nome, serviço, rating), botão "Selecionar"|Ex: Card de "José Carlos" (Elétrica, 4.9 estrelas, 132 avaliações)
-
-
-| **Comandos** | **Destino** | **Tipo** |
-
-Refazer Pesquisa (#btnRefazer)|Retorna à Etapa 1 (limpa filtros)|default
-
-Lógica da exibição (implementada na função do botão #btnEnviar):
-
-Filtra mockProfissionais pelo serviço selecionado (ex.: p.servico === servicoValor).
-Para cada profissional filtrado, gera um card HTML com:
-Imagem de perfil (URL do Unsplash).
-Nome e serviço.
-Rating com estrelas (ex.: "⭐⭐⭐⭐⭐ (4.9)").
-Botão "Selecionar" que chama selecionarProfissional(id).
-Se filtrados.length === 0: exibe mensagem de indisponibilidade.
-Função selecionarProfissional(id):
-
-Busca o profissional pelo ID no array mockProfissionais.
-Armazena em profissionalSelecionado.
-Preenche #detalhes-profissional com foto, nome, serviço e rating.
-Avança para a Etapa 3 (iniciando o Processo 3).
-Exemplo prático de uso:
-
-Após busca por "Elétrica", sistema mostra 2 cards: "José Carlos (4.9 estrelas)" e "Carlos Souza (4.7 estrelas)".
-Cliente clica "Selecionar" em "José Carlos" → Vai para Etapa 3 com detalhes dele exibidos.
-Gateway implícito "Profissionais encontrados?":
-
-Sim: Exibe lista; cliente seleciona um → Inicia Processo 3.
-Não: Mostra mensagem de erro; cliente pode refazer pesquisa (volta à Etapa 1).
 ---
 
+#### Detalhamento: Gateway "Dados de busca válidos?"
+*(Implementado no evento click do botão `#btnEnviar`)*
+
+**1. Condições de validação:**
+* **Serviço:** `#servico.value` não vazio.
+* **Endereço:** `#autocomplete-input.value` não vazio.
+* **Data:** `#data.value` não vazio.
+* **Descrição:** `#pesquisarDetalhes.value` não vazio.
+* **Localização Válida:** `#latitude.value` e `#longitude.value` não vazios (gerados automaticamente pelo mapa).
+
+**2. Fluxo (Se NÃO válidos):**
+* Exibe `alert('Por favor, preencha todos os campos da solicitação.')` ou mensagem específica sobre o endereço.
+* **Ação:** Permanece na Etapa 1; não avança.
+
+**3. Fluxo (Se Válidos):**
+* Armazena o serviço selecionado para a próxima etapa (`#servico-selecionado`).
+* Filtra profissionais do array `mockProfissionais` baseado no serviço (ex.: `servico: "Elétrica"`).
+* **Tratamento de erro:** Se nenhum profissional encontrado, exibe mensagem "Nenhum profissional encontrado para este serviço no momento."
+* **Ação:** Avança para a **Etapa 2**, exibindo a lista de profissionais filtrados.
+
+> **Exemplo prático de uso:**
+> Cliente seleciona "Elétrica", digita "Rua das Flores, 123" (seleciona da lista), ajusta o mapa, escolhe data "15/12/2025" e descreve o problema.
+> Clica "Buscar Profissionais" → Sistema valida → Vai para Etapa 2 com lista de eletricistas.
+
+
+
+| **Campo** | **Tipo** | **Restrições** | **Valor** |
+| :--- | :--- | :--- | :--- |
+| Instrução | Texto informativo | N/A; inclui o serviço selecionado | "Encontramos estes profissionais para o serviço de [serviço-selecionado]." |
+| Selecione um serviço (#servico) | Cards dinâmicos (HTML gerado via JS) | N/A; gerada com base no filtro do serviço; se vazia, mostra mensagem de "nenhum encontrado" | Cards com: foto, nome, estrelas (rating), número de avaliações |
+| Card Individual (por profissional) | Container flexível | Cada card contém: imagem (foto), texto (nome, serviço, rating), botão "Selecionar" | Ex: Card de "José Carlos" (Elétrica, 4.9 estrelas, 132 avaliações) |
+
+### Comandos
+
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Refazer Pesquisa (`#btnRefazer`) | Retorna à Etapa 1 (limpa filtros) | default |
+
+---
+
+#### ⚙️ Lógica da Exibição
+*(Implementada na função de callback da busca)*
+
+**1. Filtragem e Renderização:**
+* Filtra `mockProfissionais` pelo serviço selecionado (ex.: `p.servico === servicoValor`).
+* **Para cada profissional filtrado**, gera um card HTML contendo:
+    * Imagem de perfil (URL).
+    * Nome e serviço.
+    * Rating com estrelas (ex.: "⭐⭐⭐⭐⭐ (4.9)").
+    * **Botão "Selecionar"**: chama a função `selecionarProfissional(id)`.
+
+**2. Tratamento de Erro:**
+* Se `filtrados.length === 0`: exibe mensagem de indisponibilidade ("Nenhum profissional encontrado...").
+
+---
+
+####  Função `selecionarProfissional(id)`
+* **Ação 1:** Busca o profissional pelo ID no array `mockProfissionais`.
+* **Ação 2:** Armazena o objeto em `profissionalSelecionado`.
+* **Ação 3:** Preenche os campos da próxima tela (`#detalhes-profissional`) com foto, nome, serviço e rating.
+* **Navegação:** Avança para a **Etapa 3** (iniciando o Processo 3).
+
+---
+
+####  Gateway Implícito "Profissionais encontrados?"
+
+* **SIM:** Exibe lista de cards; cliente seleciona um → Inicia Processo 3.
+* **NÃO:** Mostra mensagem de erro; cliente pode refazer pesquisa (volta à Etapa 1).
+
+> **Exemplo prático de uso:**
+> Após busca por "Elétrica", sistema mostra 2 cards: "José Carlos (4.9 estrelas)" e "Carlos Souza (4.7 estrelas)".
+> Cliente clica "Selecionar" em "José Carlos" → Vai para Etapa 3 com detalhes dele exibidos.
 

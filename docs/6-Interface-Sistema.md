@@ -1,10 +1,10 @@
-6. Interface do Sistema
+### 6. Interface do Sistema
 
 <span style="color:red">Pré-requisitos: <a href="4-Projeto-Solucao.md"> Projeto da Solução</a></span>
 
 A interface do sistema "Mão na Massa" foi projetada com foco na simplicidade e usabilidade, conforme definido nos protótipos de tela (Seção 4.2). O objetivo é guiar o usuário de forma intuitiva através do fluxo de contratação, desde a busca até a avaliação, garantindo uma experiência clara tanto para o Contratante quanto para o Prestador.
 
-6.1. Tela Principal (Tela Inicial)
+### 6.1. Tela Principal (Tela Inicial)
 
 <img src="images/tela principal.jpg" alt="Tela Inicial">
 
@@ -13,7 +13,7 @@ A Tela Inicial é o primeiro ponto de contato do usuário com a plataforma. Ela 
 
 Tela principal do sistema FOTO
 
-6.2. Telas do Processo 1 (Cadastro e Login)
+### 6.2. Telas do Processo 1 (Cadastro e Login)
 
 <img src="images/telacadastro.png" alt="Tela Inicial">
 
@@ -25,7 +25,7 @@ Tela de Login: Uma tela simples onde o usuário insere seu Email e Senha para ac
 
 Tela de Cadastro/Login FOTO
 
-6.3. Telas do Processo 2 (Pesquisa e Solicitação)
+### 6.3. Telas do Processo 2 (Pesquisa e Solicitação)
 
 <img src="images/solicitacaodeserviço.png" alt="Tela Inicial">
 
@@ -43,7 +43,7 @@ A Tela de Serviços é projetada para facilitar a conexão entre a necessidade d
 
 <img src="images/captura de tela 2025-11-16 222904.png" alt="Tela Inicial">
 
-6.4. Tela de Feedback dos Clientes
+### 6.4. Tela de Feedback dos Clientes
 
 A Tela de Feedback é fundamental para a credibilidade da plataforma "Mão na Massa". Esta interface exibe as avaliações e comentários deixados por clientes anteriores após a conclusão dos serviços. O sistema utiliza elementos visuais claros, como classificação por estrelas e campo de texto para depoimentos, permitindo que novos contratantes avaliem a reputação do prestador. Isso promove a segurança e incentiva a qualidade na prestação dos serviços (mitigando a informalidade sem referências).
 

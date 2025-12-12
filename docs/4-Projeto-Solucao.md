@@ -202,7 +202,7 @@ Abaixo estão detalhadas as tecnologias, frameworks e ferramentas selecionadas p
 * **Maven:** Gerenciamento de dependências e build.
 * **IDE:** IntelliJ IDEA (Community/Ultimate).
 
-### 🗄️Dados e Infraestrutura
+### Dados e Infraestrutura
 * **MySQL:** SGBD Relacional para persistência dos dados.
 * **MySQL Workbench:** Ferramenta de modelagem e administração.
 * **Git & GitHub:** Versionamento e hospedagem do código.

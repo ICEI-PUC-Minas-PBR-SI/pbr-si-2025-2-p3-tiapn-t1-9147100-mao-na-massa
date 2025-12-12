@@ -56,21 +56,29 @@ Esses elementos representam avaliações já registradas (depoimentos públicos)
 |Tag/Categoria| Caixa de texto ou seleção | Opcional; categorização do serviço/experiência | "Limpeza Residencial", "Pós-obra", etc.  |
 
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Enviar Solicitação | Gateway "Dados completos?"  | default  |     
-| Voltar (ou Cancelar) |Retornar à tela anterior (perfil ou lista de serviços) | cancel |                |
+### Enviar Avaliação (Feedback)
 
-Gateway "Dados da avaliação completos?"
-Condição “Sim”:
-Nota selecionada (1–5).
-Comentário preenchido (respeitando mínimo, se houver).
-Condição “Não”:
-A plataforma exibe uma mensagem de erro (por exemplo:
-“Por favor, selecione uma nota e escreva um comentário sobre o serviço.”)
-Permanece na atividade “Inserir Avaliação do Serviço”.
-Se os dados forem considerados completos, o processo segue para a atividade de análise/registro da avaliação.
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Enviar Solicitação | Gateway "Dados completos?" | default |
+| Voltar (ou Cancelar) | Retornar à tela anterior (perfil ou lista de serviços) | cancel |
 
+---
+
+#### Gateway "Dados da avaliação completos?"
+
+**1. Condição "Sim" (Dados Válidos):**
+* **Requisitos:**
+    * Nota selecionada (escala 1–5).
+    * Comentário preenchido (respeitando limite mínimo de caracteres, se houver).
+* **Ação:** O processo segue para a atividade de análise/registro da avaliação.
+
+**2. Condição "Não" (Dados Inválidos):**
+* **Cenário:** Usuário tentou enviar sem nota ou sem comentário obrigatório.
+* **Ação:**
+    * A plataforma exibe uma mensagem de erro.
+    * *Exemplo:* "Por favor, selecione uma nota e escreva um comentário sobre o serviço."
+    * **Resultado:** Permanece na atividade "Inserir Avaliação do Serviço" para correção.
 **2-Registrar e Processar Avaliação**
 
 Nesta atividade, a plataforma recebe os dados enviados pelo cliente e os grava no banco de dados.
@@ -82,17 +90,26 @@ Nesta atividade, a plataforma recebe os dados enviados pelo cliente e os grava n
 |Atualização no Perfil do Prestador| Operação de sistema|  Automático   |  Recalcula média de notas, total de avaliações, lista de comentários |
 
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-|Confirmar Registro (automático)| Evento "Avaliação registrada com sucesso"  | default  |     
+### Registro da Avaliação (Processamento)
 
-Aqui não há interação direta do usuário; é o backend que:
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Confirmar Registro (automático) | Evento "Avaliação registrada com sucesso" | default |
 
-Valida novamente (se necessário) a integridade dos dados.
-Grava a avaliação no banco de dados.
-Atualiza as métricas do profissional (média de estrelas, contador de avaliações).
-Dispara uma notificação ao prestador informando sobre o novo feedback.
-Se ocorrer falha de gravação (problema técnico), o fluxo pode seguir para um caminho de erro (atividade “Avaliação Não Concluída”), detalhado mais adiante.
+---
+
+####  Lógica do Sistema (Backend)
+*(Interação automática, sem ação do usuário)*
+
+**1. Processamento de Sucesso:**
+* **Validação:** O sistema verifica novamente a integridade dos dados recebidos.
+* **Persistência:** Grava a avaliação definitivamente no banco de dados.
+* **Atualização de Métricas:** Recalcula a média de estrelas do profissional e incrementa o contador de avaliações recebidas.
+* **Notificação:** Dispara um alerta para o prestador informando sobre o novo feedback.
+
+**2. Tratamento de Falha (Erro Técnico):**
+* **Condição:** Se ocorrer falha na gravação (ex: banco fora do ar).
+* **Ação:** O fluxo segue para o caminho de erro (atividade "Avaliação Não Concluída"), detalhado posteriormente.
 
 
 **3-Visualizar e Responder Avaliação (Prestador)**
@@ -121,29 +138,42 @@ Nesta atividade, já no lado do prestador, ele é notificado e pode visualizar a
 
 
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-|OK / Voltar| Evento de Fim (retornar à tela de serviços, perfil ou depoimentos)  | default  |   
-| Ver Minhas Avaliações (se existir)| Atividade "Listar avaliações do cliente" | default  |  
+### Conclusão da Avaliação (Sucesso)
 
-Ao chegar aqui, o processo de avaliação está concluído com sucesso e o cliente pode seguir utilizando a plataforma normalmente.
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| OK / Voltar | Evento de Fim (retornar à tela de serviços, perfil ou depoimentos) | default |
+| Ver Minhas Avaliações (se existir) | Atividade "Listar avaliações do cliente" | default |
 
-**5-Avaliação Não Concluída (Erro)**
+---
 
-Este fluxo alternativo cobre casos em que:
+####  Status do Processo
+* **Conclusão:** Ao chegar nesta etapa, o processo de avaliação foi finalizado com sucesso.
+* **Estado Final:** O cliente recebe a confirmação visual e pode seguir utilizando a plataforma normalmente.
 
-houve erro técnico ao salvar a avaliação;
-a conexão caiu;
-a validação detectou algum problema não tratável apenas com correção de campos.
+### 5-Avaliação Não Concluída (Erro)
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor** |
+####  Fluxo Alternativo
+Este fluxo cobre casos de falha onde o processo não pode seguir adiante.
 
-|Mensagem de Erro | Texto informativo       | N/A | "Não foi possível registrar sua avaliação. Tente novamente mais tarde."
+**Cenários de ativação:**
+* **Erro Técnico:** Falha interna ao tentar salvar a avaliação no banco de dados.
+* **Conectividade:** A conexão com a internet caiu durante o envio.
+* **Validação Crítica:** O sistema detectou um problema nos dados que não é tratável apenas pedindo para o usuário corrigir um campo (ex: ID do profissional inválido).
 
+### Tela de Erro (Detalhes e Comandos)
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-|Tentar Novamente| Atividade "Inserir Avaliação do Serviço"| default  |   
-|Cancelar| Evento de Fim | default  |  
+| **Campo** | **Tipo** | **Restrições** | **Valor** |
+| :--- | :--- | :--- | :--- |
+| Mensagem de Erro | Texto informativo | N/A | "Não foi possível registrar sua avaliação. Tente novamente mais tarde." |
 
-Ao chegar aqui, o processo de avaliação está concluído com sucesso e o cliente pode seguir utilizando a plataforma normalmente.
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Tentar Novamente | Atividade "Inserir Avaliação do Serviço" | default |
+| Cancelar | Evento de Fim | cancel |
+
+---
+
+#### Status do Processo
+* **Conclusão:** Ao chegar aqui, o processo de avaliação foi **encerrado sem sucesso** (ou interrompido).
+* **Próximos Passos:** O cliente optou por não tentar novamente no momento e retorna à navegação normal da plataforma.

@@ -95,27 +95,35 @@ Dispara uma notificação ao prestador informando sobre o novo feedback.
 Se ocorrer falha de gravação (problema técnico), o fluxo pode seguir para um caminho de erro (atividade “Avaliação Não Concluída”), detalhado mais adiante.
 
 
-**3-Solicitação Concluída**
+**3-Visualizar e Responder Avaliação (Prestador)**
+
+Nesta atividade, já no lado do prestador, ele é notificado e pode visualizar a nova avaliação.
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
 | ---             | ---              | ---            | ---               |
-| (Mensagem de Sucesso) | (Texto informativo)  |  N/A   |   Valor default       |
-| (Ícone de Sucesso) | Imagem  |  N/A   |   Valor default       |
+|Lista de Avaliações | Lista informativa |  N/A   |  Avaliações ordenadas por data ou relevância     |
+|Avaliação específica| Texto informativo |  N/A   | "Nota: 5 estrelas. Comentário: Excelente serviço!…"     |
+|Campo de Resposta (opcional) | LÁrea de texto|  Opcional; tamanho máximo  |  "Obrigado pelo feedback! Foi um prazer atender você." |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| OK | Evento de Fim  | default  |     
-| Abrir Chat | Atividade "Criar canal de comunicação" | cancel |                |
+|Responder Avaliação| Atividade "Registrar resposta do prestador" | default  |     
+|Não responder / Voltar | Retornar à lista de avaliações| cancel |                |
 
 
-**4-Solicitação Concluída**
+**4-Avaliação Concluída (Sucesso)**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor** |
-| ---             | ---              | ---            | ---               |
-| (Mensagem de Erro) | (Texto informativo)  |  N/A   |   Valor default       |
+
+|Mensagem de Sucesso     | Texto informativo       | "Sua avaliação foi registrada com sucesso. Obrigado pelo feedback!"  | 
+|Ícone de Sucesso | Imagem/Ícone |  N/A   |  Ícone de check, estrela, ou similar       |
+
+
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Tentar Novamente | Atividade "Inserir detalhes do serviço"  | default  |   
-| Buscar Outro Profissional | Atividade "Retomar processo de pesquisa"  | default  |  
-| Cancelar | Evento de Fim | cancel |                |
+|OK / Voltar| Evento de Fim (retornar à tela de serviços, perfil ou depoimentos)  | default  |   
+| Ver Minhas Avaliações (se existir)| Atividade "Listar avaliações do cliente" | default  |  
+
+Ao chegar aqui, o processo de avaliação está concluído com sucesso e o cliente pode seguir utilizando a plataforma normalmente.
